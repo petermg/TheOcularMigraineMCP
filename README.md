@@ -4,11 +4,11 @@
 Installation.
 1. Make sure your device is in developer mode. If it isn't, watch this 60 second video here which shows you how: https://youtu.be/jB1gwgSpU3E
 
-2. Download the zip file "Install.zip" https://github.com/petermg/TheOcularMigraineMCP/releases/download/v1.0/Install.zip and extract it to any folder on your computer.
+2. Download the zip file ["Install.zip"](https://github.com/petermg/TheOcularMigraineMCP/releases/download/v1.0/Install.zip) and extract it to any folder on your computer.
  
  ![image](https://github.com/petermg/TheOcularMigraineMCP/assets/20764493/248e2c89-a0fa-4906-b4dd-612938073e33)
 
-3. Download the latest version of The Oculus Migraine apk file from the latest releses here: https://github.com/petermg/TheOcularMigraineMCP/releases
+3. Download the latest version of The Oculus Migraine apk file from the latest releses [here.](https://github.com/petermg/TheOcularMigraineMCP/releases)
 
 4. Take the APK you downloaded and drag and DROP it onto the bat file named "Installation.bat" from the zip file "Install.zip" that you extracted earlier and follow the onscreen prompts. DO NOT CLOSE THE BAT FILE WINDOW after the file has been installed! Press any key to continue as it then runs the command "adb tcpip 5555" which opens up the port on the Quest for this application to authenticate itself on the very first run. This is the one and **ONLY** time your PC will be required for this!
 
@@ -43,28 +43,42 @@ Each screen has 3 sub-sections, top, middle, bottom.
 
 From this section you will find a statistics read-out showing things like your device name, IP address, SSID name and signal strength, free space, and battery level. If you click on this it will update.
 
+## About
+![image](https://github.com/petermg/TheOcularMigraineMCP/assets/20764493/1ed8def8-24d1-4df5-ac2c-0e79355048fe)
+
+Clicking on "About" will take you to a screen showing the current version number of the app, credits, and an UPDATE button that will update the app. Currently it does not have version checking enabled so it just downloads the latest apk and installs it, regardless of if it's newer or not. Version checking implimentation is on the TO-DO list.
+
+![image](https://github.com/petermg/TheOcularMigraineMCP/assets/20764493/c5e796eb-4e79-4ac3-8d94-d4541d1be168)
+
+## Font Size Adjustment
+![image](https://github.com/petermg/TheOcularMigraineMCP/assets/20764493/b571075c-0803-4023-bcdd-aa9688c1ab20)
+
+Below the "About" button you will see the name of your device, for exmaple on the Quest 3 it will say "eureka", Quest 2 will say "hollywood". If you click on this you will have the option to change the scale of the font for the application.
+
+![image](https://github.com/petermg/TheOcularMigraineMCP/assets/20764493/93a0fce5-0be6-4d1c-ac46-295604aa8141)
+
+
+## Resolution Slider
+
 ![image](https://github.com/petermg/TheOcularMigraineMCP/assets/20764493/f87abc03-1854-4d92-9d3e-a7f0b926089c)
 
 "Resolution Slider" is a slider where you can slide the cross-hair to the left and right. Left REDUCES the resolution and right INCREASES the resolution. However you must click on "Set Resolution" to apply your resolution setting. The slider also has the options "AR 1:1.1" and "x32". The first is the aspect multiplier of the slider, for example, if the height was set to 1000, the width is set to 1100. You can change this "AR" by simply clicking on it and it will change the mathematical function of the slider. Also there is the "x32" option. This is the number by which the notch of the cross-hair is multiplied by. The cross-hair starts on the left at 32 and all the way on the right goes to 130. Changing the default "x32" to another number changes what each notch on the slider is multiplied by.
-
+## FFR Level
 ![image](https://github.com/petermg/TheOcularMigraineMCP/assets/20764493/68cc9cc8-43b1-402c-851a-5c442235693f)
 
 "FFR Level" allows you to set the Fixed Foveated Rendering amount. For best performance set this to 4 and keep "dynamic" enabled.
-
+## CPU Level
 ![image](https://github.com/petermg/TheOcularMigraineMCP/assets/20764493/ad320f08-0169-4993-acaf-317d65e2f8f0)
 
 "CPU Level" allows you to change the CPU to a set clock level. This is NOT recommended however as the device is set to dynamically do this. Setting this will result in more battery useage and more heat. This will NOT "unlock" any performance as the headset is DESIGNED to automatically scale the CPU up when needed to it's maximum clock rate.
-
+## GPU Level
 ![image](https://github.com/petermg/TheOcularMigraineMCP/assets/20764493/6a7d2360-94e7-4c46-b766-a03eb1e51cb9)
 
 "GPU Level" allows you to change the GPU to a set clock level. This is NOT recommended however as the device is set to dynamically do this. Setting this will result in more battery useage and more heat. This will NOT "unlock" any performance as the headset is DESIGNED to automatically scale the GPU up when needed to it's maximum clock rate.
-
+## All Levels
 ![image](https://github.com/petermg/TheOcularMigraineMCP/assets/20764493/f4114b93-7097-4956-aee1-2117d15854f5)
 
 "All Levels" simply has the 3 former options on their own menu screen (FFR Level/CPU Level/GPU Level). So this is redundant and later will be depricated itself or the other options will be, I've not decided yet.
-
-
-
 
 ### Main screen MIDDLE section:
 
