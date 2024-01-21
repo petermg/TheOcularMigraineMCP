@@ -32,8 +32,66 @@ Installation.
 
 ### NOTE: From now on, after each reboot of your device, the **FIRST** time you launch The Ocular Migraine, it will prompt you to "Allow USB debugging?". Select "Always allow from this computer" each time. This only happens on the initial launch of the applicaiton after a reboot of your device. It will not ask this question again until the next device reboot on it's inital launch.
 
+Each screen has 3 sub-sections, top, middle, bottom.
+
 ## Main Screen:
 
 ![image](https://github.com/petermg/TheOcularMigraineMCP/assets/20764493/2ac5e1ad-c750-4818-a935-afeebd6621bc)
 
+### Main screen TOP section:
+![image](https://github.com/petermg/TheOcularMigraineMCP/assets/20764493/2ef53df2-c617-4b80-8e20-723b74d81717)
+
+From this section you will find a statistics read-out showing things like your device name, IP address, SSID name and signal strength, free space, and battery level. If you click on this it will update.
+
+### Main screen MIDDLE section:
+
+![image](https://github.com/petermg/TheOcularMigraineMCP/assets/20764493/dde5dcc0-2b85-4375-babc-c60d21c24c72)
+
+![image](https://github.com/petermg/TheOcularMigraineMCP/assets/20764493/54142827-008d-4840-b034-a35b1ca1bec0)
+
+"Display Frequency:" The options are 60hz, 72hz, 90hz, 120hz. Only the Quest 2 headset supports all 4 frequencies. The Quest 1 cannot go past 72hz. The Quest Pro cannot go past 90hz, nor can it do 60hz. The Quest 3 cannot do 60hz. Click on the frequency you want to set and it will be set if supported for your device.
+
+![image](https://github.com/petermg/TheOcularMigraineMCP/assets/20764493/42eb76b2-af6f-472a-8545-97bce3e4a286)
+
+If you click on "Default Display Settings" any custom display settings you enabled will be cleared, thus setting the device back to default settings.
+
+![image](https://github.com/petermg/TheOcularMigraineMCP/assets/20764493/d7b58b55-329d-4690-a929-b6d12a4dc19c)
+
+"Reset These Settings To Default" will reset the display settings to defaul - redundant and will probably be removed in an update.
+
+![image](https://github.com/petermg/TheOcularMigraineMCP/assets/20764493/d8cdd52b-7ad1-42fe-8895-1e0f5cd791d1)
+
+"Reset ALL settings to default" will clear any settings changes you made on the headset. This will NOT remove any custom profiles nor will it erase any files on the device nor anything you saved to the device. It only clears any "setprop" commands that were sent to the headset, thus restoring the default settings.
+
+![image](https://github.com/petermg/TheOcularMigraineMCP/assets/20764493/001623b3-84a9-4b5c-8cfe-e3f362e2ae6f)
+
+"Delete BlazeRush config" will delete the config settings file for the game "BlazeRush". This is required if you want to run that game at a different resolution. This is because upon first run BlazeRush will get the device resolution and create a config file telling the game to run at that resolution. Once this config file is created, it will no longer look to see if the device has a different display resolution than what is stored in the config file. Therefore, if you want to run BlazeRush at a different resolution you MUST first delete the config file so that it will create a new config file based on the resolution you have set the device to.
+
+![image](https://github.com/petermg/TheOcularMigraineMCP/assets/20764493/78d89a82-adf7-4c68-a474-fc6165f062f3)
+
+"Save Game Profile" will save your custom display settings, (resolution, refresh rate, FFR amount, etc.) to a text file for whichever game you choose. You can also set these profiles to **AUTOMATICALLY** run by DEFAULT whenever you run the game you specify for it. When you click "Save Game Profile" you will be prompted to select the game you want to save the profile for. You will also then be prompted with a summary of the profile you are about to save.
+
+![image](https://github.com/petermg/TheOcularMigraineMCP/assets/20764493/5ca62129-1ec1-4b87-ba49-d07dd30c825c)
+
+"Load Game Profile" is an option that will allow you to load the settings of a saved game profile that you saved earlier. You can then test it with other games and possibly save those settings to another profile for other games as well, with the option to also save it as default for another game.
+
+![image](https://github.com/petermg/TheOcularMigraineMCP/assets/20764493/2ee96f56-8dce-4d57-9549-c3649a69fead)
+
+"Run Game" is for running a game while BYPASSING it's DEFAULT GAMING PROFILE that you saved for it. This is useful for testing other settings on a game when it ALREADY has a default gaming profile. This way you can launch the game with the current device settings that you set WITHOUT the app loading the custom default gaming profile settings, so you can test other settings to create other profiles without having to first DELETE the default gaming profile for that game.
+
+![image](https://github.com/petermg/TheOcularMigraineMCP/assets/20764493/38f73240-5ba1-4878-9099-da8e951c54b6)
+
+"Game Backup" will open a menu to back up the game of your choice. This will give you the option to backup the entire game, (i.e. APK, obb and data folders from /sdcard/Android/), or to just back up the data files (from /sdcard/Android/data/yourgame). This can only back up the data folders that are stored in "/sdcard/Android/" This will ALSO present you a menu from which you can RESTORE your game backups with the option to restore the ENTIRE game, (APK, OBB, Data files), or JUST the data folders. Again, this only applies to data folders in "/sdcard/Android/" You can also select to restore backups from OTG media! This means if you copy your game backups onto a thumbdrive via an OTG cable, you can browse to it to select them. HOWEVER you must FIRST allow all files access to The Ocular Migraine and MOUNT an OTG device via a third party app, which The Ocular Migraine can download and install for you, "File Manager +".
+
+## Recording Screen:
+
+![image](https://github.com/petermg/TheOcularMigraineMCP/assets/20764493/64fda31e-d15d-4427-b69e-e6e5e57f1413)
+
+## Tools Screen:
+
+![image](https://github.com/petermg/TheOcularMigraineMCP/assets/20764493/4c62b54b-b81e-44f0-bdde-4927649f68fd)
+
+## Misc Screen:
+
+![image](https://github.com/petermg/TheOcularMigraineMCP/assets/20764493/267ac2dd-a3e3-49ba-b6cb-df8bc2cb3d86)
 
