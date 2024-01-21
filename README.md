@@ -1,7 +1,7 @@
 # The Ocular Migraine {Dev Mode} Master Control Program.
 
 ### This is an applicaiton for use with the Oculus / Meta Quest mobile VR headsets, including the original Oculus Quest, Oculus / Meta Quest 2, Meta Quest Pro, Meta Quest 3.
-Installation.
+## Installation.
 1. Make sure your device is in developer mode. If it isn't, watch this 60 second video here which shows you how: https://youtu.be/jB1gwgSpU3E
 
 2. Download the zip file ["Install.zip"](https://github.com/petermg/TheOcularMigraineMCP/releases/download/v1.0/Install.zip) and extract it to any folder on your computer.
@@ -38,10 +38,15 @@ Each screen has 3 sub-sections, top, middle, bottom.
 
 ![image](https://github.com/petermg/TheOcularMigraineMCP/assets/20764493/2ac5e1ad-c750-4818-a935-afeebd6621bc)
 
-### Main screen TOP section:
-![image](https://github.com/petermg/TheOcularMigraineMCP/assets/20764493/2ef53df2-c617-4b80-8e20-723b74d81717)
+## Main screen TOP section:
+![image](https://github.com/petermg/TheOcularMigraineMCP/assets/20764493/4434c847-89c4-490c-a82b-c298bb66871d)
 
-From this section you will find a statistics read-out showing things like your device name, IP address, SSID name and signal strength, free space, and battery level. If you click on this it will update.
+
+![image](https://github.com/petermg/TheOcularMigraineMCP/assets/20764493/079550a3-e1c0-426e-950b-18017fb9806a)
+
+## Statistics
+
+From this section you will find a statistics read-out showing things like your device name, IP address, SSID name and signal strength, free space, and battery level and currently enabled display resolution. If you click on this it will update.
 
 ## About
 ![image](https://github.com/petermg/TheOcularMigraineMCP/assets/20764493/1ed8def8-24d1-4df5-ac2c-0e79355048fe)
@@ -67,20 +72,28 @@ Below the "About" button you will see the name of your device, for exmaple on th
 ![image](https://github.com/petermg/TheOcularMigraineMCP/assets/20764493/68cc9cc8-43b1-402c-851a-5c442235693f)
 
 "FFR Level" allows you to set the Fixed Foveated Rendering amount. For best performance set this to 4 and keep "dynamic" enabled.
+![image](https://github.com/petermg/TheOcularMigraineMCP/assets/20764493/0f6e74c3-29b9-4819-bb38-30c9d19829a6)
+
 ## CPU Level
 ![image](https://github.com/petermg/TheOcularMigraineMCP/assets/20764493/ad320f08-0169-4993-acaf-317d65e2f8f0)
 
 "CPU Level" allows you to change the CPU to a set clock level. This is NOT recommended however as the device is set to dynamically do this. Setting this will result in more battery useage and more heat. This will NOT "unlock" any performance as the headset is DESIGNED to automatically scale the CPU up when needed to it's maximum clock rate.
+![image](https://github.com/petermg/TheOcularMigraineMCP/assets/20764493/f1202bb1-88a5-462a-b811-2872c00c29f5)
+
 ## GPU Level
 ![image](https://github.com/petermg/TheOcularMigraineMCP/assets/20764493/6a7d2360-94e7-4c46-b766-a03eb1e51cb9)
 
 "GPU Level" allows you to change the GPU to a set clock level. This is NOT recommended however as the device is set to dynamically do this. Setting this will result in more battery useage and more heat. This will NOT "unlock" any performance as the headset is DESIGNED to automatically scale the GPU up when needed to it's maximum clock rate.
+![image](https://github.com/petermg/TheOcularMigraineMCP/assets/20764493/2ae5cda2-e7c3-4d98-892f-47ede3b798f9)
+
 ## All Levels
 ![image](https://github.com/petermg/TheOcularMigraineMCP/assets/20764493/f4114b93-7097-4956-aee1-2117d15854f5)
 
 "All Levels" simply has the 3 former options on their own menu screen (FFR Level/CPU Level/GPU Level). So this is redundant and later will be depricated itself or the other options will be, I've not decided yet.
 
-### Main screen MIDDLE section:
+![image](https://github.com/petermg/TheOcularMigraineMCP/assets/20764493/a264a9ea-8516-42f8-9041-0cc421251519)
+
+## Main screen MIDDLE section:
 
 ![image](https://github.com/petermg/TheOcularMigraineMCP/assets/20764493/dde5dcc0-2b85-4375-babc-c60d21c24c72)
 
