@@ -42,9 +42,8 @@ Each screen has 3 sub-sections, top, middle, bottom.
 ![image](https://github.com/petermg/TheOcularMigraineMCP/assets/20764493/4434c847-89c4-490c-a82b-c298bb66871d)
 
 
-![image](https://github.com/petermg/TheOcularMigraineMCP/assets/20764493/079550a3-e1c0-426e-950b-18017fb9806a)
-
 ## Statistics
+![image](https://github.com/petermg/TheOcularMigraineMCP/assets/20764493/079550a3-e1c0-426e-950b-18017fb9806a)
 
 From this section you will find a statistics read-out showing things like your device name, IP address, SSID name and signal strength, free space, and battery level and currently enabled display resolution. If you click on this it will update.
 
