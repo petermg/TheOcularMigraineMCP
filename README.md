@@ -28,7 +28,8 @@
     * [Load Game Profile](#load-game-profile)
     * [Run Game](#run-game)
     * [Game Backup](#game-backup)
-    * [Full Game Backup]([#game-+-data-full-backup])
+    * [Full Game Backup](#game-data-full-backup)
+    * 
 [The Main Screen (About)](#about)
 [The Main Screen (About)](#about)
 [The Main Screen (About)](#about)
