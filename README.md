@@ -10,7 +10,7 @@
 
 [The Main Screen (top section)](#main-screen-top-section)
 
-     [The Main Screen (Statistics Readout)](#statistics)
+   [The Main Screen (Statistics Readout)](#statistics)
 
 [The Main Screen (Font Size Adjustment)](#font-size-adjustment)
 
