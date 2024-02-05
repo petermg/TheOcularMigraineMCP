@@ -27,13 +27,14 @@
     * [Save Game Profile](#save-game-profile)
     * [Load Game Profile](#load-game-profile)
     * [Run Game](#run-game)
-    * [Game Backup](#game-backup)
-    * [Full Game Backup](#game-+-data-(full-backup))
-    * 
-[The Main Screen (About)](#about)
-[The Main Screen (About)](#about)
-[The Main Screen (About)](#about)
-[The Main Screen (About)](#about)
+    * [Game Backup Menu](#game-backup)
+      * Backup Options
+        * [Game + Data (Full Game Backup)](#full-game-backup)
+        * [Game Data Only](#game-data-backup-only)
+      * Restore Options
+        * [Full Game](#full-game)
+        * [Game ONLY](#game-only)
+        * [Game Data](#game-data)
 [The Main Screen (About)](#about)
 [The Main Screen (About)](#about)
 [The Main Screen (About)](#about)
@@ -226,26 +227,30 @@ https://github.com/petermg/TheOcularMigraineMCP/assets/20764493/89bacee2-60b9-46
 ![image](https://github.com/petermg/TheOcularMigraineMCP/assets/20764493/02199091-4404-4ab5-924c-d2c0ef002899)
 BACKUP OPTIONS: 
 
-### Game + Data (full backup)
+### Full Game Backup
  "Game + Data" (backs up the APK file of the game, plus any obb and data folders contained in /sdcard/Android)
  
  https://github.com/petermg/TheOcularMigraineMCP/assets/20764493/7ff9378e-28b5-4ad1-a2f0-d8604ed88d0a
  
- "Game Data Only" (backs up only the data folders for the game from /sdcard/Android)
+ ### Game Data Backup Only
+"Game Data Only" (backs up only the data folders for the game from /sdcard/Android)
  
  https://github.com/petermg/TheOcularMigraineMCP/assets/20764493/d11e2f6e-c2a0-41ef-9e7e-6ccfce484fcd
  
 RESTORE OPTIONS:
 
- Full Game (restores the game by installing the APK files and copying it's data and obb folders back to /sdcard/Android)
+ ### Full Game
+Full Game (restores the game by installing the APK files and copying it's data and obb folders back to /sdcard/Android)
  
  https://github.com/petermg/TheOcularMigraineMCP/assets/20764493/528e0edf-3bb5-4af6-9058-12851487430d
  
- Game ONLY (Installs the APK file and copies any OBB folder back to /sdcard/Android)
+ ### Game ONLY
+Game ONLY (Installs the APK file and copies any OBB folder back to /sdcard/Android)
  
  https://github.com/petermg/TheOcularMigraineMCP/assets/20764493/b3f516e4-19a7-4690-b468-0714b90b5b65
  
- Game Data (just copies the data folder back to /sdcard/Android)
+ ### Game Data
+Game Data (just copies the data folder back to /sdcard/Android)
  
  https://github.com/petermg/TheOcularMigraineMCP/assets/20764493/6e0edf9a-8a69-452b-8f5f-2950f107efbd
 
