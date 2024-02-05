@@ -294,7 +294,48 @@ On the top section of the Recording Screen you can set different recording resol
 ![image](https://github.com/petermg/TheOcularMigraineMCP/assets/20764493/dbc3d68f-ac10-4f5c-a3b6-62925cf2da90)
 
 Here you can enter in your own recording Width and Height.
+##
+### Recording Screen Middle Section
+![image](https://github.com/petermg/TheOcularMigraineMCP/assets/20764493/caecbe54-75c5-40c6-9cdf-3d0b0e1c4978)
+##
+### Recording FrameRate
+The following options are:
+* 60hz/fps
+* 60fps@120hz
+* 72hz/fps
+* 90hz/fps
+* 120hz/fps
 
+![image](https://github.com/petermg/TheOcularMigraineMCP/assets/20764493/afc32c5a-d0cb-489e-94ba-8d21c48647fc)
+
+Please note, the Quest 1 cannot go above 72hz, the Quest Pro can only do 72hz and 90hz, and the Quest 3 can not do 60hz. Only the Quest 2 can do all 4 options. Also the 60fps@120hz option is NOT recommended as it makes your experience jerky, even though the recording may look fine. This was more of an exeprimental feature to get the Quest Pro and Quest 3 to record at 60fps.
+##
+### Recording Eye
+![image](https://github.com/petermg/TheOcularMigraineMCP/assets/20764493/29463ba8-a5f0-4fca-9a4a-29cc2a03b189)
+
+The following options are:
+* Left Eye - Records from the left eye.
+* Both(3D) - Records BOTH eyes, for 3D.
+* Right Eye - Records from the right eye.
+##
+### Recording Screen Bottom Section
+![image](https://github.com/petermg/TheOcularMigraineMCP/assets/20764493/376beecf-a1fb-4c7e-b697-a5a93b4ca268)
+##
+### Recording Bitrate
+![image](https://github.com/petermg/TheOcularMigraineMCP/assets/20764493/94bc0e28-8220-46ed-aee1-3f701be1190a)
+
+Select this to set your recording bitrate. I have made the default selection 45Mbps.
+##
+### FOV Crop
+![image](https://github.com/petermg/TheOcularMigraineMCP/assets/20764493/039a40de-debf-4738-bc81-30b5fee89229)
+
+This seems to be a little known feature that allows you to crop the rendered areas of your screen. This concentrats whatever your set resolution is into this cropped area, thus making the image much clearer. This is beneficial for gameplay recordings, it improves the visual quality of them greatly. Here are the following options:
+* Up - crops the top part of the render area.
+* Down - crops the bottom part of the render area.
+* Outward - crops the outward edges of the render area, the edges of the screen that are away from your nose for each eye.
+* Inward - crops the inward edges of the render area, the edges of the screen that are toward your nose for each eye.
+* Remove Crop - removes any crop you have set.
+* Optimal Crop - enables a preset crop that should correctly match up with the rendering area for recording.
 
 ## Tools Screen:
 
