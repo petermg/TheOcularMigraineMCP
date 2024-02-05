@@ -7,12 +7,9 @@
 [Installation](#installation)
 
 [The Main Screen](#main-screen)
-
-[The Main Screen (top section)](#main-screen-top-section)
-
-   [The Main Screen (Statistics Readout)](#statistics)
-
-[The Main Screen (Font Size Adjustment)](#font-size-adjustment)
+1. [The Main Screen (top section)](#main-screen-top-section)
+2. [The Main Screen (Statistics Readout)](#statistics)
+3. [The Main Screen (Font Size Adjustment)](#font-size-adjustment)
 
 [The Main Screen (About)](#about)
 
