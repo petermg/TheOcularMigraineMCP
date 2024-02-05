@@ -176,7 +176,7 @@ BACKUP OPTIONS:
 
  "Game + Data" (backs up the APK file of the game, plus any obb and data folders contained in /sdcard/Android)
  
- add steps with possible screen shot
+ https://github.com/petermg/TheOcularMigraineMCP/assets/20764493/7ff9378e-28b5-4ad1-a2f0-d8604ed88d0a
  
  "Game Data Only" (backs up only the data folders for the game from /sdcard/Android)
  
@@ -208,13 +208,6 @@ RESTORE OPTIONS:
 ## Misc Screen:
 
 ![image](https://github.com/petermg/TheOcularMigraineMCP/assets/20764493/267ac2dd-a3e3-49ba-b6cb-df8bc2cb3d86)
-
-
-
-
-
-
-
 
 
 
