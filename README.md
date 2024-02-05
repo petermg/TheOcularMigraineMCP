@@ -190,7 +190,7 @@ RESTORE OPTIONS:
  
  Game ONLY (Installs the APK file and copies any OBB folder back to /sdcard/Android)
  
- add steps with possible screen shot
+ https://github.com/petermg/TheOcularMigraineMCP/assets/20764493/b3f516e4-19a7-4690-b468-0714b90b5b65
  
  Game Data (just copies the data folder back to /sdcard/Android)
  
@@ -208,8 +208,6 @@ RESTORE OPTIONS:
 ## Misc Screen:
 
 ![image](https://github.com/petermg/TheOcularMigraineMCP/assets/20764493/267ac2dd-a3e3-49ba-b6cb-df8bc2cb3d86)
-
-
 
 
 
