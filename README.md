@@ -80,23 +80,23 @@ Each screen has 3 sub-sections, top, middle, bottom.
 ## Main Screen:
 
 ![image](https://github.com/petermg/TheOcularMigraineMCP/assets/20764493/2ac5e1ad-c750-4818-a935-afeebd6621bc)
-
+## 
 ## Main screen TOP section:
 ![image](https://github.com/petermg/TheOcularMigraineMCP/assets/20764493/4434c847-89c4-490c-a82b-c298bb66871d)
 
-
+## 
 ## Statistics
 ![image](https://github.com/petermg/TheOcularMigraineMCP/assets/20764493/079550a3-e1c0-426e-950b-18017fb9806a)
 
 From this section you will find a statistics read-out showing things like your device name, IP address, SSID name and signal strength, free space, and battery level and currently enabled display resolution. If you click on this it will update.
-
+## 
 ## About
 ![image](https://github.com/petermg/TheOcularMigraineMCP/assets/20764493/1ed8def8-24d1-4df5-ac2c-0e79355048fe)
 
 Clicking on "About" will take you to a screen showing the current version number of the app, credits, and an UPDATE button that will update the app. Currently it does not have version checking enabled so it just downloads the latest apk and installs it, regardless of if it's newer or not. Version checking implimentation is on the TO-DO list.
 
 ![image](https://github.com/petermg/TheOcularMigraineMCP/assets/20764493/c5e796eb-4e79-4ac3-8d94-d4541d1be168)
-
+## 
 ## Font Size Adjustment
 ![image](https://github.com/petermg/TheOcularMigraineMCP/assets/20764493/b571075c-0803-4023-bcdd-aa9688c1ab20)
 
@@ -104,71 +104,77 @@ Below the "About" button you will see the name of your device, for exmaple on th
 
 ![image](https://github.com/petermg/TheOcularMigraineMCP/assets/20764493/93a0fce5-0be6-4d1c-ac46-295604aa8141)
 
-
+## 
 ## Resolution Slider
 
 ![image](https://github.com/petermg/TheOcularMigraineMCP/assets/20764493/f87abc03-1854-4d92-9d3e-a7f0b926089c)
 
 "Resolution Slider" is a slider where you can slide the cross-hair to the left and right. Left REDUCES the resolution and right INCREASES the resolution. However you must click on "Set Resolution" to apply your resolution setting. The slider also has the options "AR 1:1.1" and "x32". The first is the aspect multiplier of the slider, for example, if the height was set to 1000, the width is set to 1100. You can change this "AR" by simply clicking on it and it will change the mathematical function of the slider. Also there is the "x32" option. This is the number by which the notch of the cross-hair is multiplied by. The cross-hair starts on the left at 32 and all the way on the right goes to 130. Changing the default "x32" to another number changes what each notch on the slider is multiplied by.
+## 
 ## FFR Level
 ![image](https://github.com/petermg/TheOcularMigraineMCP/assets/20764493/68cc9cc8-43b1-402c-851a-5c442235693f)
 
 "FFR Level" allows you to set the Fixed Foveated Rendering amount. For best performance set this to 4 and keep "dynamic" enabled.
 ![image](https://github.com/petermg/TheOcularMigraineMCP/assets/20764493/0f6e74c3-29b9-4819-bb38-30c9d19829a6)
-
+## 
 ## CPU Level
 ![image](https://github.com/petermg/TheOcularMigraineMCP/assets/20764493/ad320f08-0169-4993-acaf-317d65e2f8f0)
 
 "CPU Level" allows you to change the CPU to a set clock level. This is NOT recommended however as the device is set to dynamically do this. Setting this will result in more battery useage and more heat. This will NOT "unlock" any performance as the headset is DESIGNED to automatically scale the CPU up when needed to it's maximum clock rate.
 ![image](https://github.com/petermg/TheOcularMigraineMCP/assets/20764493/f1202bb1-88a5-462a-b811-2872c00c29f5)
-
+## 
 ## GPU Level
 ![image](https://github.com/petermg/TheOcularMigraineMCP/assets/20764493/6a7d2360-94e7-4c46-b766-a03eb1e51cb9)
 
 "GPU Level" allows you to change the GPU to a set clock level. This is NOT recommended however as the device is set to dynamically do this. Setting this will result in more battery useage and more heat. This will NOT "unlock" any performance as the headset is DESIGNED to automatically scale the GPU up when needed to it's maximum clock rate.
 ![image](https://github.com/petermg/TheOcularMigraineMCP/assets/20764493/2ae5cda2-e7c3-4d98-892f-47ede3b798f9)
-
+## 
 ## All Levels
 ![image](https://github.com/petermg/TheOcularMigraineMCP/assets/20764493/f4114b93-7097-4956-aee1-2117d15854f5)
 
 "All Levels" simply has the 3 former options on their own menu screen (FFR Level/CPU Level/GPU Level). So this is redundant and later will be depricated itself or the other options will be, I've not decided yet.
 
 ![image](https://github.com/petermg/TheOcularMigraineMCP/assets/20764493/a264a9ea-8516-42f8-9041-0cc421251519)
-
+## 
 ## Main screen MIDDLE section:
 
 ![image](https://github.com/petermg/TheOcularMigraineMCP/assets/20764493/dde5dcc0-2b85-4375-babc-c60d21c24c72)
-
+## 
+ 
+### Display Frequency
 ![image](https://github.com/petermg/TheOcularMigraineMCP/assets/20764493/54142827-008d-4840-b034-a35b1ca1bec0)
 
-### Display Frequency
 "Display Frequency:" The options are 60hz, 72hz, 90hz, 120hz. Only the Quest 2 headset supports all 4 frequencies. The Quest 1 cannot go past 72hz. The Quest Pro cannot go past 90hz, nor can it do 60hz. The Quest 3 cannot do 60hz. Click on the frequency you want to set and it will be set if supported for your device.
-
+##
+ 
+### Default Display Settings
 ![image](https://github.com/petermg/TheOcularMigraineMCP/assets/20764493/42eb76b2-af6f-472a-8545-97bce3e4a286)
 
-### Default Display Settings
 If you click on "Default Display Settings" any custom display settings you enabled will be cleared, thus setting the device back to default settings.
-
+##
+### Reset These Settings To Default
 ![image](https://github.com/petermg/TheOcularMigraineMCP/assets/20764493/d7b58b55-329d-4690-a929-b6d12a4dc19c)
 
-### Reset These Settings To Default
 "Reset These Settings To Default" will reset the display settings to defaul - redundant and will probably be removed in an update.
-
+##
+ 
+### Reset ALL settings to default 
 ![image](https://github.com/petermg/TheOcularMigraineMCP/assets/20764493/d8cdd52b-7ad1-42fe-8895-1e0f5cd791d1)
 
-### Reset ALL settings to default 
 "Reset ALL settings to default" will clear any settings changes you made on the headset. This will NOT remove any custom profiles nor will it erase any files on the device nor anything you saved to the device. It only clears any "setprop" commands that were sent to the headset, thus restoring the default settings.
-
+##
+### Delete BlazeRush config
 ![image](https://github.com/petermg/TheOcularMigraineMCP/assets/20764493/001623b3-84a9-4b5c-8cfe-e3f362e2ae6f)
 
-### Delete BlazeRush config
 "Delete BlazeRush config" will delete the config settings file for the game "BlazeRush". This is required if you want to run that game at a different resolution. This is because upon first run BlazeRush will get the device resolution and create a config file telling the game to run at that resolution. Once this config file is created, it will no longer look to see if the device has a different display resolution than what is stored in the config file. Therefore, if you want to run BlazeRush at a different resolution you MUST first delete the config file so that it will create a new config file based on the resolution you have set the device to.
 
+
+## 
+### Save Game Profile 
 ![image](https://github.com/petermg/TheOcularMigraineMCP/assets/20764493/78d89a82-adf7-4c68-a474-fc6165f062f3)
 
 https://github.com/petermg/TheOcularMigraineMCP/assets/20764493/3c85d9f7-503c-44a0-b0c2-ac10f90198a5
 
-### Save Game Profile 
 "Save Game Profile" will save your custom display settings, (resolution, refresh rate, FFR amount, etc.) to a text file for whichever game you choose. You can also set these profiles to **AUTOMATICALLY** run by DEFAULT whenever you run the game you specify for it. When you click "Save Game Profile" you will be prompted to select the game you want to save the profile for. You will also then be prompted with a summary of the profile you are about to save.
 In order to create a custom game profile, do the following:
 1. Move the Resolution Slider to your desired game resolution.
@@ -181,12 +187,14 @@ In order to create a custom game profile, do the following:
 
 6. Run your game from the normal game selection menu and it will automatically load it's default profile if you saved one for it. Otherwise you can go to "Manage Game Profiles" on the Tools page and load different profiles you have saved for your games, you can have multiple profiles per game, and run ones from that menu without invoking the default profile being loaded. This is good for testing different profiles or just switching between different profiles for different reasons, like recording vs just gameplay.
 
+## 
+### Load Game Profile
+
 ![image](https://github.com/petermg/TheOcularMigraineMCP/assets/20764493/5ca62129-1ec1-4b87-ba49-d07dd30c825c)
 
 https://github.com/petermg/TheOcularMigraineMCP/assets/20764493/89bacee2-60b9-4615-bf78-c1a77d8af6b8
 
-### Load Game Profile
-"Load Game Profile" is an option that will allow you to load the settings of a saved game profile that you saved earlier. You can then test it with other game profiles and possibly save those settings to another profile for other games as well, with the option to also save it as default for another game.
+"Load Game Profile" is an option that will allow you to load the settings of a saved game profile that you saved earlier. You can then test it with other game profiles and possibly save those settings to another profile for other games as well, with the option to also save it as default for another game, for example if you find that multiple games work well with the same profile.
 1. Select "Load Game Profile"
 2. Select the folder of your game.
 
@@ -209,7 +217,7 @@ https://github.com/petermg/TheOcularMigraineMCP/assets/20764493/89bacee2-60b9-46
 
 
 
-
+## 
 ![image](https://github.com/petermg/TheOcularMigraineMCP/assets/20764493/2ee96f56-8dce-4d57-9549-c3649a69fead)
 
 
@@ -219,6 +227,7 @@ https://github.com/petermg/TheOcularMigraineMCP/assets/20764493/89bacee2-60b9-46
 2. Select the game you wish to run.
 3. The game will now launch without loading it's default profile, thus enabling you to test different settings on the game without it changing them by loading the default profile if it has one. If a game does NOT have a default profile, you can just launch it normally from the games menu.
 
+## 
 ![image](https://github.com/petermg/TheOcularMigraineMCP/assets/20764493/38f73240-5ba1-4878-9099-da8e951c54b6)
 
 ## Game Backup
