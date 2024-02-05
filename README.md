@@ -186,7 +186,7 @@ RESTORE OPTIONS:
 
  Full Game (restores the game by installing the APK files and copying it's data and obb folders back to /sdcard/Android)
  
- add steps with possible screen shot
+ https://github.com/petermg/TheOcularMigraineMCP/assets/20764493/528e0edf-3bb5-4af6-9058-12851487430d
  
  Game ONLY (Installs the APK file and copies any OBB folder back to /sdcard/Android)
  
