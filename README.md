@@ -194,7 +194,7 @@ RESTORE OPTIONS:
  
  Game Data (just copies the data folder back to /sdcard/Android)
  
- add steps with possible screen shot
+ https://github.com/petermg/TheOcularMigraineMCP/assets/20764493/6e0edf9a-8a69-452b-8f5f-2950f107efbd
 
 
 ## Recording Screen:
