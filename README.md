@@ -340,10 +340,22 @@ This seems to be a little known feature that allows you to crop the rendered are
 ### Save Recording Profile
 ![image](https://github.com/petermg/TheOcularMigraineMCP/assets/20764493/6c1611cd-8329-4e0f-ba3f-908aededc8ff)
 
-Saving a Recording Profile creates a recording profile that stores all of your current disiplay information, such as resolution, GPU/CPU levels, FFR level, Refresh Rate and also your recording settings such as recording bitrate, recording eye, recording resolution, screen crop and saves it to a recording profile which you can load for the game you have selected or even load it for use with any game. You can even save it as a default profile using the Manage Default Profiles option on the Tools Screen.
+Saving a Recording Profile creates a recording profile that stores all of your current disiplay information, such as resolution, GPU/CPU levels, FFR level, Refresh Rate and also your recording settings such as recording bitrate, recording eye, recording resolution, screen crop and saves it to a recording profile which you can load for the game you have selected or even load it for use with any game. You can even save it as a default profile using the Manage Default Profiles option on the Tools Screen. In order to create a Recording Profile, just set whatever resolution you want from the Main Screen, set the recording resolution and framerate and bitrate and eye recording selection then click on Save Recording Profile. It will propmt you to select which game you wish to save it for, but this does NOT make it a default profile for that game. The game selected will still be run with it's default profile unless you load it's recording profile from the Load Recording Profile screen and select RUN.
 
 https://github.com/petermg/TheOcularMigraineMCP/assets/20764493/52f6b17d-b7ce-4039-9c19-b74b02ce06a4
 ##
+### Load Recording Profile
+![image](https://github.com/petermg/TheOcularMigraineMCP/assets/20764493/8ecf5c16-4bf7-462a-bf0d-f0f15ef96f8d)
+
+Clicking on Load Recording Profile you will be able to load any saved recording profiles. After selecting your recording profile you are presented with the following options:
+* Load Only - This will load the settings in the selected Recording Profile onto the headset.
+* Run - This will engage the settings from the Recording Profile and run the game it was saved for.
+* Delete - This will delete the selected Recording Profile.
+* Cancel - This will cancel the operation.
+  
+https://github.com/petermg/TheOcularMigraineMCP/assets/20764493/34e7da94-53b9-49a1-9664-1e49b497e103
+
+
 ## Tools Screen:
 
 ![image](https://github.com/petermg/TheOcularMigraineMCP/assets/20764493/4c62b54b-b81e-44f0-bdde-4927649f68fd)
@@ -351,6 +363,9 @@ https://github.com/petermg/TheOcularMigraineMCP/assets/20764493/52f6b17d-b7ce-40
 ## Misc Screen:
 
 ![image](https://github.com/petermg/TheOcularMigraineMCP/assets/20764493/267ac2dd-a3e3-49ba-b6cb-df8bc2cb3d86)
+
+
+
 
 
 
