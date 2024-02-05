@@ -1,4 +1,4 @@
-![image](https://github.com/petermg/TheOcularMigraineMCP/assets/20764493/2e3114d9-78a9-456d-a097-c720de3e82f9)# The Ocular Migraine {Dev Mode} Master Control Program.
+# The Ocular Migraine {Dev Mode} Master Control Program.
 
 ### This is an applicaiton for use with the Oculus / Meta Quest mobile VR headsets, including the original Oculus Quest, Oculus / Meta Quest 2, Meta Quest Pro, Meta Quest 3.
 ## Installation.
@@ -135,9 +135,14 @@ In order to create a custom game profile, do the following:
 "Load Game Profile" is an option that will allow you to load the settings of a saved game profile that you saved earlier. You can then test it with other game profiles and possibly save those settings to another profile for other games as well, with the option to also save it as default for another game.
 1. Select "Load Game Profile"
 2. Select the folder of your game.
+
 ![image](https://github.com/petermg/TheOcularMigraineMCP/assets/20764493/c9749f23-8b37-48ae-a0ac-9222013fc45c)
+
 3. Select the profile you wish to load.
+
 4. The following screen will show you the details of the game profile you just selected and present the following options to you: "Delete" (this deletes the profile), "Cancel", (this cancels the operation and takes you back to the Main page), "Delete Default", (this deletes any default profile for the game), "Set Default", (this makes the currently loaded profile the default profile for the selected game), "Run", (this will run the game with the selected profile BYPASSING any default profile saved for the game, which is useful for testing alternate profiles for things like gameplay or recording or just testing different settings).
+![image](https://github.com/petermg/TheOcularMigraineMCP/assets/20764493/719d81a1-9236-4350-87a1-c44bd387f69b)
+
 
 
 ![image](https://github.com/petermg/TheOcularMigraineMCP/assets/20764493/2ee96f56-8dce-4d57-9549-c3649a69fead)
