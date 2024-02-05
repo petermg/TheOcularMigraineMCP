@@ -165,7 +165,24 @@ In order to create a custom game profile, do the following:
 
 ![image](https://github.com/petermg/TheOcularMigraineMCP/assets/20764493/38f73240-5ba1-4878-9099-da8e951c54b6)
 
-"Game Backup" will open a menu to back up the game of your choice. This will give you the option to backup the entire game, (i.e. APK, obb and data folders from /sdcard/Android/), or to just back up the data files (from /sdcard/Android/data/yourgame). This can only back up the data folders that are stored in "/sdcard/Android/" This will ALSO present you a menu from which you can RESTORE your game backups with the option to restore the ENTIRE game, (APK, OBB, Data files), or JUST the data folders. Again, this only applies to data folders in "/sdcard/Android/" You can also select to restore backups from OTG media! This means if you copy your game backups onto a thumbdrive via an OTG cable, you can browse to it to select them. HOWEVER you must FIRST allow all files access to The Ocular Migraine and MOUNT an OTG device via a third party app, which The Ocular Migraine can download and install for you, "File Manager +".
+"Game Backup" will open a menu to back up (or restore a backup of) the game of your choice. This will give you the option to backup the entire game, (i.e. APK, obb and data folders from /sdcard/Android/), or to just back up the data files (from /sdcard/Android/data/yourgame). This can only back up the data folders that are stored in "/sdcard/Android/" From this same menu you can RESTORE your game backups with the option to restore the ENTIRE game, (APK, OBB, Data files), or JUST the data folders. Again, this only applies to data folders in "/sdcard/Android/" You can also select to restore backups from OTG media! This means if you copy your game backups onto a thumbdrive via an OTG cable, you can browse to it to select them. HOWEVER you must FIRST allow all files access to The Ocular Migraine and MOUNT an OTG device via a third party app, which The Ocular Migraine can download and install for you, "File Manager +".
+
+![image](https://github.com/petermg/TheOcularMigraineMCP/assets/20764493/02199091-4404-4ab5-924c-d2c0ef002899)
+BACKUP OPTIONS: 
+
+ "Game + Data" (backs up the APK file of the game, plus any obb and data folders contained in /sdcard/Android)
+ 
+ "Game Data Only" (backs up only the data folders for the game from /sdcard/Android)
+ 
+RESTORE OPTIONS:
+
+ Full Game (restores the game by installing the APK files and copying it's data and obb folders back to /sdcard/Android)
+ 
+ Game ONLY (Installs the APK file and copies any OBB folder back to /sdcard/Android)
+ 
+ Game Data (just copies the data folder back to /sdcard/Android)
+ 
+
 
 ## Recording Screen:
 
