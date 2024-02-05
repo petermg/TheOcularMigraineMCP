@@ -159,6 +159,9 @@ In order to create a custom game profile, do the following:
 ![image](https://github.com/petermg/TheOcularMigraineMCP/assets/20764493/2ee96f56-8dce-4d57-9549-c3649a69fead)
 
 "Run Game" is for running a game while BYPASSING it's DEFAULT GAMING PROFILE that you saved for it. This is useful for testing other settings on a game when it ALREADY has a default gaming profile. This way you can launch the game with the current device settings that you set WITHOUT the app loading the custom default gaming profile settings, so you can test other settings to create other profiles without having to first DELETE the default gaming profile for that game.
+1. Click on "Run Game".
+2. Select the game you wish to run.
+3. The game will now launch without loading it's default profile, thus enabling you to test different settings on the game without it changing them by loading the default profile if it has one. If a game does NOT have a default profile, you can just launch it normally from the games menu.
 
 ![image](https://github.com/petermg/TheOcularMigraineMCP/assets/20764493/38f73240-5ba1-4878-9099-da8e951c54b6)
 
