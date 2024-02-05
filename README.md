@@ -5,10 +5,15 @@
 ##Table Of Contents:
 
 [Installation](#installation)
+
 [The Main Screen](#main-screen)
+
 [The Main Screen (top section)](#main-screen-top-section)
+
 [The Main Screen (Statistics Readout)](#statistics)
+
 [The Main Screen (About)](#about)
+
 
 
 
