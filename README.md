@@ -4,20 +4,18 @@
 
 ##Table Of Contents:
 
-[Installation](#installation)
+- [Installation](#installation)
 
-[The Main Screen](#main-screen)
-1. [The Main Screen (top section)](#main-screen-top-section)
-2. [The Main Screen (Statistics Readout)](#statistics)
-3. [The Main Screen (Font Size Adjustment)](#font-size-adjustment)
 
-[The Main Screen (About)](#about)
-
-[The Main Screen (About)](#about)
+* [The Main Screen](#main-screen)
+  * [Top Section](#main-screen-top-section)
+    * [Statistics Readout](#statistics)
+    * [Font Size Adjustment](#font-size-adjustment)
+    * [About](#about)
 
 [The Main Screen (About)](#about)
 
-
+[The Main Screen (About)](#about)
 
 
 
