@@ -140,8 +140,19 @@ In order to create a custom game profile, do the following:
 
 3. Select the profile you wish to load.
 
-4. The following screen will show you the details of the game profile you just selected and present the following options to you: "Delete" (this deletes the profile), "Cancel", (this cancels the operation and takes you back to the Main page), "Delete Default", (this deletes any default profile for the game), "Set Default", (this makes the currently loaded profile the default profile for the selected game), "Run", (this will run the game with the selected profile BYPASSING any default profile saved for the game, which is useful for testing alternate profiles for things like gameplay or recording or just testing different settings).
+4. The following screen will show you the details of the game profile you just selected and present the following options to you:
 ![image](https://github.com/petermg/TheOcularMigraineMCP/assets/20764493/719d81a1-9236-4350-87a1-c44bd387f69b)
+
+     "Delete" (this deletes the profile).
+
+     "Cancel", (this cancels the operation and takes you back to the Main page).
+
+     "Delete Default", (this deletes any default profile for the game).
+
+     "Set Default", (this makes the currently loaded profile the default profile for the selected game).
+
+     "Run", (this will run the game with the selected profile BYPASSING any default profile saved for the game, which is useful for testing alternate profiles for things like gameplay or recording or just testing different settings).
+
 
 
 
