@@ -171,7 +171,7 @@ If you click on "Default Display Settings" any custom display settings you enabl
 
 ## 
 ### Save Game Profile 
-![image](https://github.com/petermg/TheOcularMigraineMCP/assets/20764493/78d89a82-adf7-4c68-a474-fc6165f062f3)
+
 
 https://github.com/petermg/TheOcularMigraineMCP/assets/20764493/3c85d9f7-503c-44a0-b0c2-ac10f90198a5
 
@@ -180,10 +180,12 @@ In order to create a custom game profile, do the following:
 1. Move the Resolution Slider to your desired game resolution.
 2. Press Set Resolution.
 3. Click on Save Game Profile.
-4. Select the game you want to save the profile for.
-5. Make your selection of "Yes" (creates loadable non-default profile), "Make Kiosk App" (sets the game as the Kiosk App), "Set as Default" (saves the profile AND makes it the default profile to load when you launch the game), or "No", which cancels the action without saving the profile.
+   ![image](https://github.com/petermg/TheOcularMigraineMCP/assets/20764493/78d89a82-adf7-4c68-a474-fc6165f062f3)
+5. Select the game you want to save the profile for.
+6. Make your selection of "Yes" (creates loadable non-default profile), "Make Kiosk App" (sets the game as the Kiosk App), "Set as Default" (saves the profile AND makes it the default profile to load when you launch the game), or "No", which cancels the action without saving the profile.
 
-![image](https://github.com/petermg/TheOcularMigraineMCP/assets/20764493/ace4f55d-42f4-4495-a02c-d904fb7459c3)
+![image](https://github.com/petermg/TheOcularMigraineMCP/assets/20764493/17908281-5af8-4ed8-af07-c266d71cc45e)
+
 
 6. Run your game from the normal game selection menu and it will automatically load it's default profile if you saved one for it. Otherwise you can go to "Manage Game Profiles" on the Tools page and load different profiles you have saved for your games, you can have multiple profiles per game, and run ones from that menu without invoking the default profile being loaded. This is good for testing different profiles or just switching between different profiles for different reasons, like recording vs just gameplay.
 
@@ -203,17 +205,19 @@ https://github.com/petermg/TheOcularMigraineMCP/assets/20764493/89bacee2-60b9-46
 3. Select the profile you wish to load.
 
 4. The following screen will show you the details of the game profile you just selected and present the following options to you:
-![image](https://github.com/petermg/TheOcularMigraineMCP/assets/20764493/719d81a1-9236-4350-87a1-c44bd387f69b)
 
-     "Delete" (this deletes the profile).
+![image](https://github.com/petermg/TheOcularMigraineMCP/assets/20764493/fa53932e-5486-42b5-b607-a6154fcf9dfe)
 
-     "Cancel", (this cancels the operation and takes you back to the Main page).
 
-     "Delete Default", (this deletes any default profile for the game).
+"Delete" (this deletes the profile).
 
-     "Set Default", (this makes the currently loaded profile the default profile for the selected game).
+"Cancel", (this cancels the operation and takes you back to the Main page).
 
-     "Run", (this will run the game with the selected profile BYPASSING any default profile saved for the game, which is useful for testing alternate profiles for things like gameplay or recording or just testing different settings).
+"Delete Default", (this deletes any default profile for the game).
+
+"Set Default", (this makes the currently loaded profile the default profile for the selected game).
+
+"Run", (this will run the game with the selected profile BYPASSING any default profile saved for the game, which is useful for testing alternate profiles for things like gameplay or recording or just testing different settings).
 
 
 
