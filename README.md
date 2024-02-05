@@ -1,4 +1,4 @@
-# The Ocular Migraine {Dev Mode} Master Control Program.
+![image](https://github.com/petermg/TheOcularMigraineMCP/assets/20764493/2e3114d9-78a9-456d-a097-c720de3e82f9)# The Ocular Migraine {Dev Mode} Master Control Program.
 
 ### This is an applicaiton for use with the Oculus / Meta Quest mobile VR headsets, including the original Oculus Quest, Oculus / Meta Quest 2, Meta Quest Pro, Meta Quest 3.
 ## Installation.
@@ -124,12 +124,21 @@ In order to create a custom game profile, do the following:
 2. Press Set Resolution.
 3. Click on Save Game Profile.
 4. Select the game you want to save the profile for.
-5. Make your selection of "Yes" (creates loadable non-default profile), "Make Kiosk App" (sets the game as the Kiosk App), "Make Default" (saves the profile AND makes it the default profile to load when you launch the game), or "No", which cancels the action without saving the profile.
-6. Run your game and it will automatically load it's default profile if you saved one for it. Otherwise you can go to "Manage Game Profiles" on the Tools page and load different profiles you have saved for your games, you can have multiple profiles per game, and run ones from that menu without invoking the default profile being loaded. This is good for testing different profiles or just switching between different profiles for different reasons, like recording vs just gameplay.
+5. Make your selection of "Yes" (creates loadable non-default profile), "Make Kiosk App" (sets the game as the Kiosk App), "Set as Default" (saves the profile AND makes it the default profile to load when you launch the game), or "No", which cancels the action without saving the profile.
+
+![image](https://github.com/petermg/TheOcularMigraineMCP/assets/20764493/ace4f55d-42f4-4495-a02c-d904fb7459c3)
+
+6. Run your game from the normal game selection menu and it will automatically load it's default profile if you saved one for it. Otherwise you can go to "Manage Game Profiles" on the Tools page and load different profiles you have saved for your games, you can have multiple profiles per game, and run ones from that menu without invoking the default profile being loaded. This is good for testing different profiles or just switching between different profiles for different reasons, like recording vs just gameplay.
 
 ![image](https://github.com/petermg/TheOcularMigraineMCP/assets/20764493/5ca62129-1ec1-4b87-ba49-d07dd30c825c)
 
-"Load Game Profile" is an option that will allow you to load the settings of a saved game profile that you saved earlier. You can then test it with other games and possibly save those settings to another profile for other games as well, with the option to also save it as default for another game.
+"Load Game Profile" is an option that will allow you to load the settings of a saved game profile that you saved earlier. You can then test it with other game profiles and possibly save those settings to another profile for other games as well, with the option to also save it as default for another game.
+1. Select "Load Game Profile"
+2. Select the folder of your game.
+![image](https://github.com/petermg/TheOcularMigraineMCP/assets/20764493/c9749f23-8b37-48ae-a0ac-9222013fc45c)
+3. Select the profile you wish to load.
+4. The following screen will show you the details of the game profile you just selected and present the following options to you: "Delete" (this deletes the profile), "Cancel", (this cancels the operation and takes you back to the Main page), "Delete Default", (this deletes any default profile for the game), "Set Default", (this makes the currently loaded profile the default profile for the selected game), "Run", (this will run the game with the selected profile BYPASSING any default profile saved for the game, which is useful for testing alternate profiles for things like gameplay or recording or just testing different settings).
+
 
 ![image](https://github.com/petermg/TheOcularMigraineMCP/assets/20764493/2ee96f56-8dce-4d57-9549-c3649a69fead)
 
