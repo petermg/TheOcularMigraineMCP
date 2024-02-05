@@ -266,6 +266,35 @@ Game Data (just copies the data folder back to /sdcard/Android). You can restore
 ## Recording Screen:
 
 ![image](https://github.com/petermg/TheOcularMigraineMCP/assets/20764493/64fda31e-d15d-4427-b69e-e6e5e57f1413)
+##
+### Recording Screen Top Section
+![image](https://github.com/petermg/TheOcularMigraineMCP/assets/20764493/d22322b4-3b9e-47f5-b3b9-bd924e79d7d6)
+##
+### Resolution Presets
+![image](https://github.com/petermg/TheOcularMigraineMCP/assets/20764493/fd68f709-b140-4a84-af74-41b10de389e6)
+
+
+On the top section of the Recording Screen you can set different recording resolutions. There are custom resolution presets and the option to set your own custom resolution. The presets are as follows:
+
+1920x1080(16:9) - this is the Full HD resolution, pretty self explainitory.
+
+3840x2160(16:9) - this is 4K resolution, only recommended for the Quest 3.
+
+1280X720(16:9) - "HD" resolution.
+
+3840X1080(3D) - I created this preset thinking that the device would record both eyes in a 16:9 aspect ratio. However when telling the device to record both eyes, it records each eye in a 1 by 1 aspect ration. This seems not to be able to be changed. However you can still use this when recording in 3D if you want, but this does NOT set the device to record in 3D, it only sets the resolution, you will need to click on [Both(3D)] in the Middle Section under Recording Eye to record in 3D.
+
+2560X720(3D) - see notes from previous preset.
+
+1080X1920(9:16) - makes a vertical recording like for YouTube Shorts, tiktok, etc..
+
+720X1280(9:16) - makes a vertical recording like for YouTube Shorts, tiktok, etc..
+##
+### Custom Resolution
+![image](https://github.com/petermg/TheOcularMigraineMCP/assets/20764493/dbc3d68f-ac10-4f5c-a3b6-62925cf2da90)
+
+Here you can enter in your own recording Width and Height.
+
 
 ## Tools Screen:
 
