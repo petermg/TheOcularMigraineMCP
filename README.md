@@ -119,6 +119,12 @@ If you click on "Default Display Settings" any custom display settings you enabl
 ![image](https://github.com/petermg/TheOcularMigraineMCP/assets/20764493/78d89a82-adf7-4c68-a474-fc6165f062f3)
 
 "Save Game Profile" will save your custom display settings, (resolution, refresh rate, FFR amount, etc.) to a text file for whichever game you choose. You can also set these profiles to **AUTOMATICALLY** run by DEFAULT whenever you run the game you specify for it. When you click "Save Game Profile" you will be prompted to select the game you want to save the profile for. You will also then be prompted with a summary of the profile you are about to save.
+In order to create a custom game profile, do the following:
+1. Move the Resolution Slider to your desired game resolution.
+2. Press Set Resolution.
+3. Click on Save Game Profile.
+4. Select the game you want to save the profile for.
+5. Make your selection of "Yes" (creates loadable non-default profile), "Make Kiosk App" (sets the game as the Kiosk App), "Make Default" (saves the profile AND makes it the default profile to load when you launch the game), or "No", which cancels the action without saving the profile.
 
 ![image](https://github.com/petermg/TheOcularMigraineMCP/assets/20764493/5ca62129-1ec1-4b87-ba49-d07dd30c825c)
 
