@@ -1,9 +1,16 @@
 # The Ocular Migraine: {Dev Mode} Master Control Program.
 
-[the link](#main-screen)
-
 ### This is an applicaiton for use with the Oculus / Meta Quest mobile VR headsets, including the original Oculus Quest, Oculus / Meta Quest 2, Meta Quest Pro, Meta Quest 3.
+
+##Table Of Contents:
+
+[Installation](#installation)
+
+
+
 ## Installation.
+
+
 1. Make sure your device is in developer mode. If it isn't, watch this 60 second video here which shows you how: https://youtu.be/jB1gwgSpU3E
 
 2. Download the zip file ["Install.zip"](https://github.com/petermg/TheOcularMigraineMCP/releases/download/v1.0/Install.zip) and extract it to any folder on your computer.
