@@ -134,6 +134,8 @@ In order to create a custom game profile, do the following:
 
 ![image](https://github.com/petermg/TheOcularMigraineMCP/assets/20764493/5ca62129-1ec1-4b87-ba49-d07dd30c825c)
 
+https://github.com/petermg/TheOcularMigraineMCP/assets/20764493/89bacee2-60b9-4615-bf78-c1a77d8af6b8
+
 "Load Game Profile" is an option that will allow you to load the settings of a saved game profile that you saved earlier. You can then test it with other game profiles and possibly save those settings to another profile for other games as well, with the option to also save it as default for another game.
 1. Select "Load Game Profile"
 2. Select the folder of your game.
@@ -155,7 +157,7 @@ In order to create a custom game profile, do the following:
 
      "Run", (this will run the game with the selected profile BYPASSING any default profile saved for the game, which is useful for testing alternate profiles for things like gameplay or recording or just testing different settings).
 
-https://github.com/petermg/TheOcularMigraineMCP/assets/20764493/89bacee2-60b9-4615-bf78-c1a77d8af6b8
+
 
 
 ![image](https://github.com/petermg/TheOcularMigraineMCP/assets/20764493/2ee96f56-8dce-4d57-9549-c3649a69fead)
