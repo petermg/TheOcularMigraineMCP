@@ -125,6 +125,7 @@ In order to create a custom game profile, do the following:
 3. Click on Save Game Profile.
 4. Select the game you want to save the profile for.
 5. Make your selection of "Yes" (creates loadable non-default profile), "Make Kiosk App" (sets the game as the Kiosk App), "Make Default" (saves the profile AND makes it the default profile to load when you launch the game), or "No", which cancels the action without saving the profile.
+6. Run your game and it will automatically load it's default profile if you saved one for it. Otherwise you can go to "Manage Game Profiles" on the Tools page and load different profiles you have saved for your games, you can have multiple profiles per game, and run ones from that menu without invoking the default profile being loaded. This is good for testing different profiles or just switching between different profiles for different reasons, like recording vs just gameplay.
 
 ![image](https://github.com/petermg/TheOcularMigraineMCP/assets/20764493/5ca62129-1ec1-4b87-ba49-d07dd30c825c)
 
