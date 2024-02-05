@@ -153,7 +153,7 @@ In order to create a custom game profile, do the following:
 
      "Run", (this will run the game with the selected profile BYPASSING any default profile saved for the game, which is useful for testing alternate profiles for things like gameplay or recording or just testing different settings).
 
-
+https://github.com/petermg/TheOcularMigraineMCP/assets/20764493/89bacee2-60b9-4615-bf78-c1a77d8af6b8
 
 
 ![image](https://github.com/petermg/TheOcularMigraineMCP/assets/20764493/2ee96f56-8dce-4d57-9549-c3649a69fead)
@@ -204,4 +204,8 @@ RESTORE OPTIONS:
 ## Misc Screen:
 
 ![image](https://github.com/petermg/TheOcularMigraineMCP/assets/20764493/267ac2dd-a3e3-49ba-b6cb-df8bc2cb3d86)
+
+
+
+
 
