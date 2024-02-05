@@ -118,6 +118,8 @@ If you click on "Default Display Settings" any custom display settings you enabl
 
 ![image](https://github.com/petermg/TheOcularMigraineMCP/assets/20764493/78d89a82-adf7-4c68-a474-fc6165f062f3)
 
+https://github.com/petermg/TheOcularMigraineMCP/assets/20764493/3c85d9f7-503c-44a0-b0c2-ac10f90198a5
+
 "Save Game Profile" will save your custom display settings, (resolution, refresh rate, FFR amount, etc.) to a text file for whichever game you choose. You can also set these profiles to **AUTOMATICALLY** run by DEFAULT whenever you run the game you specify for it. When you click "Save Game Profile" you will be prompted to select the game you want to save the profile for. You will also then be prompted with a summary of the profile you are about to save.
 In order to create a custom game profile, do the following:
 1. Move the Resolution Slider to your desired game resolution.
@@ -204,6 +206,10 @@ RESTORE OPTIONS:
 ## Misc Screen:
 
 ![image](https://github.com/petermg/TheOcularMigraineMCP/assets/20764493/267ac2dd-a3e3-49ba-b6cb-df8bc2cb3d86)
+
+
+
+
 
 
 
