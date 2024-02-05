@@ -171,16 +171,25 @@ In order to create a custom game profile, do the following:
 BACKUP OPTIONS: 
 
  "Game + Data" (backs up the APK file of the game, plus any obb and data folders contained in /sdcard/Android)
+ 
  add steps with possible screen shot
+ 
  "Game Data Only" (backs up only the data folders for the game from /sdcard/Android)
+ 
  add steps with possible screen shot
+ 
 RESTORE OPTIONS:
 
  Full Game (restores the game by installing the APK files and copying it's data and obb folders back to /sdcard/Android)
+ 
  add steps with possible screen shot
+ 
  Game ONLY (Installs the APK file and copies any OBB folder back to /sdcard/Android)
+ 
  add steps with possible screen shot
+ 
  Game Data (just copies the data folder back to /sdcard/Android)
+ 
  add steps with possible screen shot
 
 
