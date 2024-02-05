@@ -336,7 +336,14 @@ This seems to be a little known feature that allows you to crop the rendered are
 * Inward - crops the inward edges of the render area, the edges of the screen that are toward your nose for each eye.
 * Remove Crop - removes any crop you have set.
 * Optimal Crop - enables a preset crop that should correctly match up with the rendering area for recording.
+##
+### Save Recording Profile
+![image](https://github.com/petermg/TheOcularMigraineMCP/assets/20764493/6c1611cd-8329-4e0f-ba3f-908aededc8ff)
 
+Saving a Recording Profile creates a recording profile that stores all of your current disiplay information, such as resolution, GPU/CPU levels, FFR level, Refresh Rate and also your recording settings such as recording bitrate, recording eye, recording resolution, screen crop and saves it to a recording profile which you can load for the game you have selected or even load it for use with any game. You can even save it as a default profile using the Manage Default Profiles option on the Tools Screen.
+
+https://github.com/petermg/TheOcularMigraineMCP/assets/20764493/52f6b17d-b7ce-4039-9c19-b74b02ce06a4
+##
 ## Tools Screen:
 
 ![image](https://github.com/petermg/TheOcularMigraineMCP/assets/20764493/4c62b54b-b81e-44f0-bdde-4927649f68fd)
@@ -344,6 +351,9 @@ This seems to be a little known feature that allows you to crop the rendered are
 ## Misc Screen:
 
 ![image](https://github.com/petermg/TheOcularMigraineMCP/assets/20764493/267ac2dd-a3e3-49ba-b6cb-df8bc2cb3d86)
+
+
+
 
 
 
