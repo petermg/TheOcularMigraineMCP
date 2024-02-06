@@ -35,8 +35,22 @@
         * [Full Game](#full-game)
         * [Game ONLY](#game-only)
         * [Game Data](#game-data)
-[The Main Screen (About)](#about)
-[The Main Screen (About)](#about)
+* [The Recording Screen](#recording-screen)
+  * [Top Section](#recording-screen-top-section)
+    * [Resolution Presets](#resolution-presets)
+    * [Custom Resolution](#custom-resolution)
+  * [Middle Section](#recording-screen-middle-section)
+    * [Recording FrameRate](#recording-framerate)
+    * [Recording Eye](#recording-eye)
+  * [Bottom Section](#recording-screen-bottom-section)
+    * [Recording Bitrate](#recording-bitrate)
+    * [FOV Crop](#fov-crop)
+    * [Save Recording Profile](#save-recording-profile)
+    * [Load Recording Profile](#load-recording-profile)
+    * 
+* [The Tools Screen](#tools-screen)
+* [The Misc Screen](#misc-screen)
+* 
 [The Main Screen (About)](#about)
 
 
