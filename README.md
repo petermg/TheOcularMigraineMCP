@@ -368,7 +368,7 @@ Clicking on Load Recording Profile you will be able to load any saved recording 
   
 https://github.com/petermg/TheOcularMigraineMCP/assets/20764493/34e7da94-53b9-49a1-9664-1e49b497e103
 
-
+##
 ## Tools Screen:
 
 ![image](https://github.com/petermg/TheOcularMigraineMCP/assets/20764493/4c62b54b-b81e-44f0-bdde-4927649f68fd)
