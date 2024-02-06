@@ -17,7 +17,6 @@
     * [CPU Level](#cpu-level)
     * [GPU Level](#gpu-level)
     * [All Levels](#all-levels)
-    *
   * [Middle Section](#main-screen-middle-section)
     * [Display Frequency](#display-frequency)
     * [Default Display Settings](#default-display-settings)
