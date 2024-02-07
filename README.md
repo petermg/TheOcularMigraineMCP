@@ -369,6 +369,37 @@ Clicking on Load Recording Profile you will be able to load any saved recording 
 https://github.com/petermg/TheOcularMigraineMCP/assets/20764493/34e7da94-53b9-49a1-9664-1e49b497e103
 
 ##
+## Inject 3D Metadata
+This is used to inject 3D metadata into the videos you've recorded after selecting "Both(3D)" for eye recording, for upload to YouTube. This will allow your video to be played back in 3D from YouTube in YouTube VR for sharing with friends.
+1. Click on Inject 3D Metadata
+
+![image](https://github.com/petermg/TheOcularMigraineMCP/assets/20764493/30f98d44-638b-4dab-b0ee-81ffba91a847)
+
+2. You will be prompted to select your video file:
+
+![image](https://github.com/petermg/TheOcularMigraineMCP/assets/20764493/841fe1bc-e09f-4e07-9f92-c2bdf694276f)
+
+3. You will be propmted to CONFIRM your video file in a different window showing the entire listing with full names: 
+![image](https://github.com/petermg/TheOcularMigraineMCP/assets/20764493/ec243a43-cfa5-4c06-a9cf-0628dd3a6078)
+4. You will be prompted to accept or change the aspect ratio if needed. This should NEVER be needed unless the Quest 3 no longer records 3D in a 1:1 aspect ratio. So just click on the green arrow to accept. 
+![image](https://github.com/petermg/TheOcularMigraineMCP/assets/20764493/556c58d6-a643-4ccc-971c-c08583ee8b6a)
+5. You will be shown the ffmpeg command about to be run. You can modify this commend from here before pressing OK, if you know what you're doing. Otherwise don't touch this: 
+![image](https://github.com/petermg/TheOcularMigraineMCP/assets/20764493/c034fe4a-31c2-4486-9496-ac01f1fe0b7c)
+6. After it is finished it will show you the command output results: 
+![image](https://github.com/petermg/TheOcularMigraineMCP/assets/20764493/07acbad9-e925-4cc3-9d23-cf749fdfafb7)
+7. Your video file is now ready to be uploaded to YouTube for 3D processing. You will find it in the same directory from the video you selected with the end of the file name saying "3D_AR_1x1" before the file extension.
+
+**NOTICE**: For some reason things seem to have changed somewhat with how YouTube processes these 3D files. While this currently still works for the YouTube app on mobile devices like Android/iOS, and the Quest via YouTubeVR, on the desktop browser it no longer appears in anaglyph 3D but just as side-by-side video.
+
+**NOTICE #2**: For some reason there is an issue with the Quest recording for long recordings, the audio goes out of sync and trails BEHIND the video. I have confirmed this is an issue with the audio only and NOT the video length. As of now I have not come up with a solution for correcting this in processing. If anyone has any ideas, please let me know. I've tried a lot to figure this out and so far no answer.
+
+
+
+
+
+
+
+
 ## Tools Screen:
 
 ![image](https://github.com/petermg/TheOcularMigraineMCP/assets/20764493/4c62b54b-b81e-44f0-bdde-4927649f68fd)
