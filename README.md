@@ -285,7 +285,8 @@ Game Data (just copies the data folder back to /sdcard/Android). You can restore
 
 ## Recording Screen:
 
-![image](https://github.com/petermg/TheOcularMigraineMCP/assets/20764493/64fda31e-d15d-4427-b69e-e6e5e57f1413)
+![image](https://github.com/petermg/TheOcularMigraineMCP/assets/20764493/baf19839-23f3-47b9-9542-2ab687cd6112)
+
 ##
 ### Recording Screen Top Section
 ![image](https://github.com/petermg/TheOcularMigraineMCP/assets/20764493/d22322b4-3b9e-47f5-b3b9-bd924e79d7d6)
@@ -339,7 +340,8 @@ The following options are:
 * Right Eye - Records from the right eye.
 ##
 ### Recording Screen Bottom Section
-![image](https://github.com/petermg/TheOcularMigraineMCP/assets/20764493/376beecf-a1fb-4c7e-b697-a5a93b4ca268)
+![image](https://github.com/petermg/TheOcularMigraineMCP/assets/20764493/552eb29a-8bd8-4829-aa23-ca8e74e97bf6)
+
 ##
 ### Recording Bitrate
 ![image](https://github.com/petermg/TheOcularMigraineMCP/assets/20764493/94bc0e28-8220-46ed-aee1-3f701be1190a)
