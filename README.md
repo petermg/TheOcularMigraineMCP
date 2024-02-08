@@ -115,7 +115,7 @@ From this section you will find a statistics read-out showing things like your d
 ## About
 ![image](https://github.com/petermg/TheOcularMigraineMCP/assets/20764493/1ed8def8-24d1-4df5-ac2c-0e79355048fe)
 
-Clicking on "About" will take you to a screen showing the current version number of the app, credits, and an UPDATE button that will update the app. Currently it does not have version checking enabled so it just downloads the latest apk and installs it, regardless of if it's newer or not. Version checking implimentation is on the TO-DO list.
+Clicking on "About" will take you to a screen showing the current version number of the app, credits, and an UPDATE button that will update the app. Currently it does not have version checking enabled so it just downloads the latest apk and installs it, regardless of if it's newer or not. Version checking implimentation is on the TO-DO list. You will also find a link to this online help document if you click on "Help! How do I use this thing?!".
 
 ![image](https://github.com/petermg/TheOcularMigraineMCP/assets/20764493/b6ecc39e-1e12-4316-b7de-7a2e81c0cca0)
 
