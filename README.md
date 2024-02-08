@@ -47,11 +47,12 @@
     * [Save Recording Profile](#save-recording-profile)
     * [Load Recording Profile](#load-recording-profile)
     * [Inject 3D Metadata](#inject-3d-metadata)
+    * [Swap Interval](#swap-interval)
 * [The Tools Screen](#tools-screen)
 * [The Misc Screen](#misc-screen)
 * 
 
-[The Main Screen (About)](#about)
+
 [The Main Screen (About)](#about)
 [The Main Screen (About)](#about)
 [The Main Screen (About)](#about)
@@ -375,7 +376,7 @@ Clicking on Load Recording Profile you will be able to load any saved recording 
 https://github.com/petermg/TheOcularMigraineMCP/assets/20764493/34e7da94-53b9-49a1-9664-1e49b497e103
 
 ##
-## Inject 3D Metadata
+### Inject 3D Metadata
 This is used to inject 3D metadata into the videos you've recorded after selecting "Both(3D)" for eye recording, for upload to YouTube. This will allow your video to be played back in 3D from YouTube in YouTube VR for sharing with friends.
 1. Click on Inject 3D Metadata
 
@@ -398,10 +399,12 @@ This is used to inject 3D metadata into the videos you've recorded after selecti
 **NOTICE**: For some reason things seem to have changed somewhat with how YouTube processes these 3D files. While this currently still works for the YouTube app on mobile devices like Android/iOS, and the Quest via YouTubeVR, on the desktop browser it no longer appears in anaglyph 3D but just as side-by-side video.
 
 **NOTICE #2**: For some reason there is an issue with the Quest recording for long recordings, the audio goes out of sync and trails BEHIND the video. I have confirmed this is an issue with the audio only and NOT the video length. As of now I have not come up with a solution for correcting this in processing. If anyone has any ideas, please let me know. I've tried a lot to figure this out and so far no answer.
+##
+### Swap Interval
 
+![image](https://github.com/petermg/TheOcularMigraineMCP/assets/20764493/59c902bf-d1d8-4af7-9602-64a5517a36fa)
 
-
-
+The Swap Interval settings is a bit hard to explain. [THIS PAGE](https://github.com/MortimerGoro/ovr-mobile-sys/blob/master/VrApi/Include/VrApi.h) seems to explain it in a very technical manner, under "Frame Timing". In practice this is what it seems to do, if your refresh rate is 90hz and you have the Swap Interval set to 1, when you record the framerate will be 90fps. However if you set the Swap Interval to 2, it will halve the recorded framerate. This is automatically applied in my framerate recording presets, specifically the 60fps/120hz setting. That one sets the display frequency to 120hz and the swap interval to 2, thus making the recording be 60fps. However the gameplay will have juttering, although this will not appear in the recorded video. There is another setting that is built into those recording framerate presets, namely debug.oculus.fullRateCapture, which gets set to 1, as by default it's set to 0. This seems to possibly toggle between variable framerate capture and full, else it is full and half respectively. Nevertheless to have this as an independent option isn't really useful by itself and I already have it in preset where it would be required so I may end up just removing this option all together.
 
 
 
