@@ -158,7 +158,10 @@ Below the "About" button you will see the name of your device, for exmaple on th
 ## 
 ## Main screen MIDDLE section:
 
-![image](https://github.com/petermg/TheOcularMigraineMCP/assets/20764493/dde5dcc0-2b85-4375-babc-c60d21c24c72)
+![image](https://github.com/petermg/TheOcularMigraineMCP/assets/20764493/58c0e0da-07be-4877-ad27-bcfa208f8faa)
+
+
+
 ## 
  
 ### Display Frequency
@@ -187,7 +190,18 @@ If you click on "Default Display Settings" any custom display settings you enabl
 ![image](https://github.com/petermg/TheOcularMigraineMCP/assets/20764493/001623b3-84a9-4b5c-8cfe-e3f362e2ae6f)
 
 "Delete BlazeRush config" will delete the config settings file for the game "BlazeRush". This is required if you want to run that game at a different resolution. This is because upon first run BlazeRush will get the device resolution and create a config file telling the game to run at that resolution. Once this config file is created, it will no longer look to see if the device has a different display resolution than what is stored in the config file. Therefore, if you want to run BlazeRush at a different resolution you MUST first delete the config file so that it will create a new config file based on the resolution you have set the device to.
+##
+### Manage Saved Profiles
+![image](https://github.com/petermg/TheOcularMigraineMCP/assets/20764493/c81cdb8d-9f52-43b4-a035-cbee50c5f259)
 
+Manage Saved Profiles allows you to load any saved profiles you have. Select from any of the 3 folders, **DefaultProfiles**, **RecordingProfiles**, or **GameProfiles**. It will read the selected profile and open a window showing the details of the profile. You then have the following options:
+1. Delete - Deletes the saved profile.
+2. Cancel - Closes this screen without doing anything else.
+3. Delete Default - This will delete the default profile for the game.
+4. Set Default - This will set the currently shown profile as default for the selected game.
+5. Run - This will run the game with the profile listed, BYPASSING any default profiles.
+
+https://github.com/petermg/TheOcularMigraineMCP/assets/20764493/e2f9ba41-fe13-4b89-b0f2-2fe84c72c9a5
 
 ## 
 ### Save Game Profile 
