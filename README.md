@@ -311,16 +311,16 @@ Game Data (just copies the data folder back to /sdcard/Android). You can restore
 ##
 
 ## Main Screen Bottom Section
-Currently some of what's on this section is up in the air right now. I originally had this as multiple global resolution presets you could set. This was a feature from very early development and I may get rid of it and just clean up this page a bit with the added space. Not sure yet. What do you think? On the bottom you have three page options, [Recording,](#recording-screen), Misc, and Tools. Clicking either of those will take you to those pages
+Currently some of what's on this section is up in the air right now. I originally had this as multiple global resolution presets you could set. This was a feature from very early development and I may get rid of it and just clean up this page a bit with the added space. Not sure yet. What do you think? On the bottom you have three page options, [Recording,](#recording-screen), Misc, and Tools. Clicking either of those will take you to those pages.
 ![image](https://github.com/petermg/TheOcularMigraineMCP/assets/20764493/8786d5d7-e176-43bd-b1a4-a29ff804613a)
 
 
-
+##
 ### Disable
 ![image](https://github.com/petermg/TheOcularMigraineMCP/assets/20764493/d759d381-834a-46a2-8653-3bf8498b819d)
 
 Clicking on Disable will disable The Ocular Migraine from monitoring app launches. This will prevent the gaming profiles from working. If you disable it, it will close the app. Just run The Ocular Migraine again and it will be re-enabled.
-###
+##
 
 
 ## Recording Screen:
