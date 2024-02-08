@@ -204,6 +204,11 @@ Manage Saved Profiles allows you to load any saved profiles you have. Select fro
 https://github.com/petermg/TheOcularMigraineMCP/assets/20764493/e2f9ba41-fe13-4b89-b0f2-2fe84c72c9a5
 
 ## 
+### Create Shortcut App
+The Create Shotcut App feature allows you to redirect one app to another. This is useful especially for apps that are in the UNKNOWN SOURCES menu. You can substitute an offical app for one that's in your UNKNOWN SOURCES in which case you don't have to go to the UNKNOWN SOURCES menu. Official apps are able to be pinned to the bottom menu, making it even more convienent to launch an UNKNOWN SOURCES app directly from the main menu! In the video example below, I create a shortcut for the app File Manager + that's in UNKNOWN SOURCES using an official app, which allows me to launch File Manager + simply by launching the official app I set as it's shortcut. Now obviously you cannot run the app you are using as the shortcut while this is in effect. To remove this shortcut just use the Manage Saved Profile feature and find the saved profile in the Default Profiles folder, load it and select DELETE, then you will be able to run the original program again. I recommend using this with apps you have no interest in running. I personally use this to launch this exact app, The Ocular Migrain. I have set the ESPN app as the shortcut. When I click on it, it runs The Ocular Migraine instead.
+
+https://github.com/petermg/TheOcularMigraineMCP/assets/20764493/ef3d2702-df86-4937-af4b-5b7ed06d4f81
+##
 ### Save Game Profile 
 
 https://github.com/petermg/TheOcularMigraineMCP/assets/20764493/3c85d9f7-503c-44a0-b0c2-ac10f90198a5
@@ -432,6 +437,10 @@ The Swap Interval settings is a bit hard to explain. [THIS PAGE](https://github.
 ## Misc Screen:
 
 ![image](https://github.com/petermg/TheOcularMigraineMCP/assets/20764493/267ac2dd-a3e3-49ba-b6cb-df8bc2cb3d86)
+
+
+
+
 
 
 
