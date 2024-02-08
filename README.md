@@ -26,6 +26,8 @@
     * [Save Game Profile](#save-game-profile)
     * [Load Game Profile](#load-game-profile)
     * [Run Game](#run-game)
+    * [Manage Saved Profiles](#manage-saved-profiles)
+    * [Create Shortcut App](#create-shortcut-app)
     * [Game Backup Menu](#game-backup)
       * Backup Options
         * [Game + Data (Full Game Backup)](#full-game-backup)
