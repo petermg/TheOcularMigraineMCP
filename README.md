@@ -54,7 +54,7 @@
 * # [The Tools Screen](#tools-screen)
 * # [The Misc Screen](#misc-screen)
   * [Disable Battery Optimization](#disable-battery-optimization)
-  * [Enable All File Access](enable-all-file-access)
+  * [Enable All File Access](#enable-all-file-access)
 
 
 [Enable All File Access](enable-all-file-access)
@@ -465,6 +465,7 @@ This is required to prevent the Quest from killing The Ocular Migraine when runn
 
 https://github.com/petermg/TheOcularMigraineMCP/assets/20764493/ae12b7ab-07ae-4a4a-9a7c-4ef3bfac6f79
 ##
+
 ### Enable All File Access
 The purpose of granting this special permission to The Ocular Migrains is so that it can access OTG storage for the purpose of restoring any backups you might have copied to a thumb drive. Yes, you can connect a thumb drive to your Quest via an OTG cable and copy game backups onto it using a file manager that supports OTG storage, such as "File Manager +" which you can install using the menu on The Ocular Migraine.
 
