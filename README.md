@@ -2,9 +2,9 @@
 
 ### This is an applicaiton for use with the Oculus / Meta Quest mobile VR headsets, including the original Oculus Quest, Oculus / Meta Quest 2, Meta Quest Pro, Meta Quest 3.
 
-## Table Of Contents:
+# Table Of Contents:
 
-- [Installation](#installation)
+- ## [Installation](#installation)
 
 
 * # [The Main Screen](#main-screen)
