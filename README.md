@@ -4,7 +4,7 @@
 
 # Table Of Contents:
 
-- ## [Installation](#installation)
+- ## [Installing](#installation)
 
 
 * # [The Main Screen](#main-screen)
