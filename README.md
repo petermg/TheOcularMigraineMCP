@@ -470,8 +470,9 @@ The Swap Interval settings is a bit hard to explain. [THIS PAGE](https://github.
 ##
 ### Switch App Launch Detection Method
 ![image](https://github.com/petermg/TheOcularMigraineMCP/assets/20764493/5eda6d0b-401c-4507-8d7c-97de01901225)
-Clicking on this will toggle between two different app launch detection methods. The default is Logcat. The other is App Usage.
 
+Clicking on this will toggle between two different app launch detection methods. The default is Logcat. The other is App Usage.
+##
 ### Disable Battery Optimization
 This is required to prevent the Quest from killing The Ocular Migraine when running in the background which is required for it to detect when apps are launched so that it can enable the resolution presets for that app. Also for the Kiosk mode and access lists to work.
 
