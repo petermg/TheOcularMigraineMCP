@@ -54,9 +54,10 @@
 * # [The Tools Screen](#tools-screen)
 * # [The Misc Screen](#misc-screen)
   * [Disable Battery Optimization](#disable-battery-optimization)
+  * [Enable All File Access](enable-all-file-access)
 
 
-[The Main Screen (About)](#about)
+[Enable All File Access](enable-all-file-access)
 [The Main Screen (About)](#about)
 [The Main Screen (About)](#about)
 [The Main Screen (About)](#about)
@@ -463,4 +464,9 @@ The Swap Interval settings is a bit hard to explain. [THIS PAGE](https://github.
 This is required to prevent the Quest from killing The Ocular Migraine when running in the background which is required for it to detect when apps are launched so that it can enable the resolution presets for that app. Also for the Kiosk mode and access lists to work.
 
 https://github.com/petermg/TheOcularMigraineMCP/assets/20764493/ae12b7ab-07ae-4a4a-9a7c-4ef3bfac6f79
+##
+### Enable All File Access
+The purpose of granting this special permission to The Ocular Migrains is so that it can access OTG storage for the purpose of restoring any backups you might have copied to a thumb drive. Yes, you can connect a thumb drive to your Quest via an OTG cable and copy game backups onto it using a file manager that supports OTG storage, such as "File Manager +" which you can install using the menu on The Ocular Migraine.
+
+https://github.com/petermg/TheOcularMigraineMCP/assets/20764493/e84dc6d6-f2e3-413b-92a1-91ef5048ba88
 
