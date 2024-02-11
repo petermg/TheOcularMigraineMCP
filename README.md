@@ -53,6 +53,7 @@
     * [Swap Interval](#swap-interval)
 * # [The Tools Screen](#tools-screen)
 * # [The Misc Screen](#misc-screen)
+  * ## [Top Section](#misc-screen-top-section)
   * [Switch App Launch Detection Method](#switch-app-launch-detection-method)
   * [Disable Battery Optimization](#disable-battery-optimization)
   * [Enable All File Access](#enable-all-file-access)
@@ -61,7 +62,7 @@
 
 
 
-[Switch App Launch Detection Method](#switch-app-launch-detection-method)
+[Top Section](#misc-screen-top-section)
 [The Main Screen (About)](#about)
 [The Main Screen (About)](#about)
 [The Main Screen (About)](#about)
