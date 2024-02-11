@@ -489,4 +489,12 @@ https://github.com/petermg/TheOcularMigraineMCP/assets/20764493/e84dc6d6-f2e3-41
 This is NOT a requirement but a recommendation. If you want to do it, this is how:
 
 https://github.com/petermg/TheOcularMigraineMCP/assets/20764493/ad4c4d3f-7f98-416a-8ea7-db4c07d522cc
+##
+### Misc Screen Middle Section
+![image](https://github.com/petermg/TheOcularMigraineMCP/assets/20764493/40ec6811-88a4-4e40-9abd-029062e3c93e)
+##
+Right now the only thing in this section are three customizable buttons. If you LONG PRESS on one, it will prompt you to enter an adb shell command. When you press OK, it will save that command as a preset for that button. So now in order to run that command just do a short single click on the button and it will then run the command and show a pop up of the output after the command is finished running. I don't know how useful this is, I may make more of these buttons, or remove them all together.
+##
+
+
 
