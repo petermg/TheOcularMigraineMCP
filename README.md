@@ -100,7 +100,7 @@
 
 Each screen has 3 sub-sections, top, middle, bottom.
 
-## Main Screen:
+# Main Screen:
 
 ![image](https://github.com/petermg/TheOcularMigraineMCP/assets/20764493/d2095cf5-de37-40aa-abf9-73cf46b8695c)
 
@@ -323,7 +323,7 @@ Clicking on Disable will disable The Ocular Migraine from monitoring app launche
 ##
 
 
-## Recording Screen:
+# Recording Screen:
 
 ![image](https://github.com/petermg/TheOcularMigraineMCP/assets/20764493/baf19839-23f3-47b9-9542-2ab687cd6112)
 
@@ -451,11 +451,11 @@ The Swap Interval settings is a bit hard to explain. [THIS PAGE](https://github.
 
 
 
-## Tools Screen:
+# Tools Screen:
 
 ![image](https://github.com/petermg/TheOcularMigraineMCP/assets/20764493/4c62b54b-b81e-44f0-bdde-4927649f68fd)
 
-## Misc Screen:
+# Misc Screen:
 
 ![image](https://github.com/petermg/TheOcularMigraineMCP/assets/20764493/267ac2dd-a3e3-49ba-b6cb-df8bc2cb3d86)
 
