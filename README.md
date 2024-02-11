@@ -53,7 +53,7 @@
     * [Swap Interval](#swap-interval)
 * # [The Tools Screen](#tools-screen)
 * # [The Misc Screen](#misc-screen)
-* 
+  * [Disable Battery Optimization](#disable-battery-optimization)
 
 
 [The Main Screen (About)](#about)
@@ -459,16 +459,8 @@ The Swap Interval settings is a bit hard to explain. [THIS PAGE](https://github.
 
 ![image](https://github.com/petermg/TheOcularMigraineMCP/assets/20764493/267ac2dd-a3e3-49ba-b6cb-df8bc2cb3d86)
 
+### Disable Battery Optimization
+This is required to prevent the Quest from killing The Ocular Migraine when running in the background which is required for it to detect when apps are launched so that it can enable the resolution presets for that app. Also for the Kiosk mode and access lists to work.
 
-
-
-
-
-
-
-
-
-
-
-
+https://github.com/petermg/TheOcularMigraineMCP/assets/20764493/ae12b7ab-07ae-4a4a-9a7c-4ef3bfac6f79
 
