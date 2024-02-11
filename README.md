@@ -65,7 +65,7 @@
 
 
 
-## Installation.
+## Installation
 
 
 1. Make sure your device is in developer mode. If it isn't, watch this 60 second video here which shows you how: https://youtu.be/jB1gwgSpU3E
