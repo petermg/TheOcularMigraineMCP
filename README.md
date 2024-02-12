@@ -60,11 +60,12 @@
     * [Disable Notifications](#disable-notifications)
   * ## [Bottom Section](#misc-screen-bottom-section)
     * [Restart the Home Environment](#restart-home-environment)
+    * [Check Enabled Profiles](#check-enabled-profiles)
 
 
 
 ##
-[Restart the Home Environment](#restart-home-environment)
+[Check Enabled Profiles](#check-enabled-profiles)
 [The Main Screen (About)](#about)
 [The Main Screen (About)](#about)
 [The Main Screen (About)](#about)
@@ -507,6 +508,11 @@ Right now the only thing in this section are three customizable buttons. If you 
 
 Clicking this will restart your home environment. This is for the purpose of applying resolution changes to it. If you want to change the resolution in your home environment, you must select this option after making the settings changes on the Main Screen.
 ##
+### Check Enabled Profiles
+This is mainly for troubleshooting. I will probably remove this button to make it able to be toggled by a "debug" option.
+
+![image](https://github.com/petermg/TheOcularMigraineMCP/assets/20764493/118b87b2-3f4f-41c5-a861-3cc1ecc9d93d)
+
 
 
 
