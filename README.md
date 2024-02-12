@@ -61,11 +61,15 @@
   * ## [Bottom Section](#misc-screen-bottom-section)
     * [Restart the Home Environment](#restart-home-environment)
     * [Check Enabled Profiles](#check-enabled-profiles)
+    * [Devices](#devices)
+    * [Restart ADB Server](#restart-adb-server)
+    * [Reboot](#reboot)
+    * [Dynamic Clock](#dynamic-clock)
 
 
 
 ##
-[Check Enabled Profiles](#check-enabled-profiles)
+[Dynamic Clock](#dynamic-clock)
 [The Main Screen (About)](#about)
 [The Main Screen (About)](#about)
 [The Main Screen (About)](#about)
@@ -512,7 +516,25 @@ Clicking this will restart your home environment. This is for the purpose of app
 This is mainly for troubleshooting. I will probably remove this button or make it able to be toggled on by a "debug" option.
 
 ![image](https://github.com/petermg/TheOcularMigraineMCP/assets/20764493/118b87b2-3f4f-41c5-a861-3cc1ecc9d93d)
+### Devices
+This is also good for troubleshooting. It runs the "adb devices" command and then shows the output. I also may only make this show up in a debug mode.
+![image](https://github.com/petermg/TheOcularMigraineMCP/assets/20764493/5de28c4d-b292-4937-a69b-07f9687b005c)
+##
+### Restart ADB Server
+Restarts the ADB server on the device, for troubleshooting.
 
+![image](https://github.com/petermg/TheOcularMigraineMCP/assets/20764493/1787d1b2-a1c4-4a46-a98d-e7af21c74f5a)
+##
+### Reboot
+This will INSTANTLY reboot the headset. Sometimes however the ADB server seems to go stale. So if pressing this once doesn't immediately reboot your headset, pressing it again will.
+
+![image](https://github.com/petermg/TheOcularMigraineMCP/assets/20764493/4fd996f4-3ec4-4a49-8066-ea009de3296c)
+##
+### Dynamic Clock
+There used to be a dynamic clock property that could be set via ADB on the Oculus / Meta headsets. This command doesn't seem to do anything anymore so I put it here and will probably remove it.
+
+![image](https://github.com/petermg/TheOcularMigraineMCP/assets/20764493/5b597fb5-b1ad-439c-8d14-abd987cf7345)
+##
 
 
 
