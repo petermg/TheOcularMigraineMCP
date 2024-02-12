@@ -58,11 +58,12 @@
     * [Disable Battery Optimization](#disable-battery-optimization)
     * [Enable All File Access](#enable-all-file-access)
     * [Disable Notifications](#disable-notifications)
+  * ## [Bottom Section](#misc-screen-bottom-section)
 
 
 
 
-[Top Section](#misc-screen-top-section)
+[Bottom Section](#misc-screen-bottom-section)
 [The Main Screen (About)](#about)
 [The Main Screen (About)](#about)
 [The Main Screen (About)](#about)
@@ -495,6 +496,14 @@ https://github.com/petermg/TheOcularMigraineMCP/assets/20764493/ad4c4d3f-7f98-41
 ![image](https://github.com/petermg/TheOcularMigraineMCP/assets/20764493/40ec6811-88a4-4e40-9abd-029062e3c93e)
 ##
 Right now the only thing in this section are three customizable buttons. If you LONG PRESS on one, it will prompt you to enter an adb shell command. When you press OK, it will save that command as a preset for that button. So now in order to run that command just do a short single click on the button and it will then run the command and show a pop up of the output after the command is finished running. I don't know how useful this is, I may make more of these buttons, or remove them all together.
+##
+
+### Misc Screen Bottom Section
+![image](https://github.com/petermg/TheOcularMigraineMCP/assets/20764493/f466d697-67ac-4ea4-ad97-85c6806049eb)
+##
+### Restart Home Environment
+![image](https://github.com/petermg/TheOcularMigraineMCP/assets/20764493/c02cd736-b48f-41dc-bbd7-c509c7ba9f71)
+Clicking this will restart your home environment. This is for the purpose of applying resolution changes to it. If you want to change the resolution in your home environment, you must select this option after making the settings changes on the Main Screen.
 ##
 
 
