@@ -518,6 +518,7 @@ This is mainly for troubleshooting. I will probably remove this button or make i
 ![image](https://github.com/petermg/TheOcularMigraineMCP/assets/20764493/118b87b2-3f4f-41c5-a861-3cc1ecc9d93d)
 ### Devices
 This is also good for troubleshooting. It runs the "adb devices" command and then shows the output. I also may only make this show up in a debug mode.
+
 ![image](https://github.com/petermg/TheOcularMigraineMCP/assets/20764493/5de28c4d-b292-4937-a69b-07f9687b005c)
 ##
 ### Restart ADB Server
