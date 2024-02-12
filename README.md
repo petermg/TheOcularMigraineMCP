@@ -504,6 +504,7 @@ Right now the only thing in this section are three customizable buttons. If you 
 ##
 ### Restart Home Environment
 ![image](https://github.com/petermg/TheOcularMigraineMCP/assets/20764493/c02cd736-b48f-41dc-bbd7-c509c7ba9f71)
+
 Clicking this will restart your home environment. This is for the purpose of applying resolution changes to it. If you want to change the resolution in your home environment, you must select this option after making the settings changes on the Main Screen.
 ##
 
