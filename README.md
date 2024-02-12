@@ -59,11 +59,12 @@
     * [Enable All File Access](#enable-all-file-access)
     * [Disable Notifications](#disable-notifications)
   * ## [Bottom Section](#misc-screen-bottom-section)
+    * [Restart the Home Environment](#restart-home-environment)
 
 
 
-
-[Bottom Section](#misc-screen-bottom-section)
+##
+[Restart the Home Environment](#restart-home-environment)
 [The Main Screen (About)](#about)
 [The Main Screen (About)](#about)
 [The Main Screen (About)](#about)
