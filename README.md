@@ -24,7 +24,7 @@
     * [Reset ALL settings to default](#reset-all-settings-to-default)
     * [Delete BlazeRush config](#delete-blazerush-config)
     * [Save Game Profile](#save-game-profile)
-    * [Load Game Profile](#load-game-profile)
+    * [Manage Game Profile](#manage-game-profile)
     * [Run Game](#run-game)
     * [Manage Saved Profiles](#manage-saved-profiles)
     * [Create Shortcut App](#create-shortcut-app)
@@ -249,14 +249,15 @@ In order to create a custom game profile, do the following:
 6. Run your game from the normal game selection menu and it will automatically load it's default profile if you saved one for it. Otherwise you can go to "Manage Game Profiles" on the Tools page and load different profiles you have saved for your games, you can have multiple profiles per game, and run ones from that menu without invoking the default profile being loaded. This is good for testing different profiles or just switching between different profiles for different reasons, like recording vs just gameplay.
 
 ## 
-### Load Game Profile
+### Manage Game Profile
 
 
 
 https://github.com/petermg/TheOcularMigraineMCP/assets/20764493/89bacee2-60b9-4615-bf78-c1a77d8af6b8
 
-"Load Game Profile" is an option that will allow you to load the settings of a saved game profile that you saved earlier. You can then test it with other game profiles and possibly save those settings to another profile for other games as well, with the option to also save it as default for another game, for example if you find that multiple games work well with the same profile.
-1. Select "Load Game Profile" ![image](https://github.com/petermg/TheOcularMigraineMCP/assets/20764493/5ca62129-1ec1-4b87-ba49-d07dd30c825c)
+"Manage Game Profile" is an option that will allow you to load the settings of a saved game profile that you saved earlier. You can then test it with other game profiles and possibly save those settings to another profile for other games as well, with the option to also save it as default for another game, for example if you find that multiple games work well with the same profile.
+1. Select "Manage Game Profile" ![image](https://github.com/petermg/TheOcularMigraineMCP/assets/20764493/74ac3dcf-96bb-4b22-b305-f88ceff3b6a6)
+
 2. Select the folder of your game.
 
 ![image](https://github.com/petermg/TheOcularMigraineMCP/assets/20764493/c9749f23-8b37-48ae-a0ac-9222013fc45c)
