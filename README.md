@@ -24,9 +24,8 @@
     * [Reset ALL settings to default](#reset-all-settings-to-default)
     * [Delete BlazeRush config](#delete-blazerush-config)
     * [Save Game Profile](#save-game-profile)
-    * [Manage Game Profile](#manage-game-profile)
     * [Run Game](#run-game)
-    * [Manage Saved Profiles](#manage-saved-profiles)
+    * [Manage Game Profiles](#manage-game-profiles)
     * [Create Shortcut App](#create-shortcut-app)
     * ### [Game Backup Menu](#game-backup)
       * Backup Options
@@ -210,17 +209,18 @@ If you click on "Default Display Settings" any custom display settings you enabl
 
 "Delete BlazeRush config" will delete the config settings file for the game "BlazeRush". This is required if you want to run that game at a different resolution. This is because upon first run BlazeRush will get the device resolution and create a config file telling the game to run at that resolution. Once this config file is created, it will no longer look to see if the device has a different display resolution than what is stored in the config file. Therefore, if you want to run BlazeRush at a different resolution you MUST first delete the config file so that it will create a new config file based on the resolution you have set the device to.
 ##
-### Manage Saved Profiles
-![image](https://github.com/petermg/TheOcularMigraineMCP/assets/20764493/c81cdb8d-9f52-43b4-a035-cbee50c5f259)
+### Manage Game Profiles
+![image](https://github.com/petermg/TheOcularMigraineMCP/assets/20764493/74ac3dcf-96bb-4b22-b305-f88ceff3b6a6)
 
-Manage Saved Profiles allows you to load any saved profiles you have. Select from any of the 3 folders, **DefaultProfiles**, **RecordingProfiles**, or **GameProfiles**. It will read the selected profile and open a window showing the details of the profile. You then have the following options:
+Manage Game Profiles allows you to load any saved profiles you have. Select from any of the 3 folders, **DefaultProfiles**, **RecordingProfiles**, or **GameProfiles**. It will read the selected profile and open a window showing the details of the profile. You then have the following options:
 1. Delete - Deletes the saved profile.
 2. Cancel - Closes this screen without doing anything else.
 3. Delete Default - This will delete the default profile for the game.
 4. Set Default - This will set the currently shown profile as default for the selected game.
 5. Run - This will run the game with the profile listed, BYPASSING any default profiles.
 
-https://github.com/petermg/TheOcularMigraineMCP/assets/20764493/e2f9ba41-fe13-4b89-b0f2-2fe84c72c9a5
+https://github.com/petermg/TheOcularMigraineMCP/assets/20764493/40e12818-ce48-4621-afd6-12e6479f64d0
+
 
 ## 
 ### Create Shortcut App
@@ -249,36 +249,9 @@ In order to create a custom game profile, do the following:
 6. Run your game from the normal game selection menu and it will automatically load it's default profile if you saved one for it. Otherwise you can go to "Manage Game Profiles" on the Tools page and load different profiles you have saved for your games, you can have multiple profiles per game, and run ones from that menu without invoking the default profile being loaded. This is good for testing different profiles or just switching between different profiles for different reasons, like recording vs just gameplay.
 
 ## 
-### Manage Game Profile
 
 
 
-https://github.com/petermg/TheOcularMigraineMCP/assets/20764493/89bacee2-60b9-4615-bf78-c1a77d8af6b8
-
-"Manage Game Profile" is an option that will allow you to load the settings of a saved game profile that you saved earlier. You can then test it with other game profiles and possibly save those settings to another profile for other games as well, with the option to also save it as default for another game, for example if you find that multiple games work well with the same profile.
-1. Select "Manage Game Profile" ![image](https://github.com/petermg/TheOcularMigraineMCP/assets/20764493/74ac3dcf-96bb-4b22-b305-f88ceff3b6a6)
-
-2. Select the folder of your game.
-
-![image](https://github.com/petermg/TheOcularMigraineMCP/assets/20764493/c9749f23-8b37-48ae-a0ac-9222013fc45c)
-
-3. Select the profile you wish to load.
-
-4. The following screen will show you the details of the game profile you just selected and present the following options to you:
-
-![image](https://github.com/petermg/TheOcularMigraineMCP/assets/20764493/fa53932e-5486-42b5-b607-a6154fcf9dfe)
-
-
-"Delete" (this deletes the profile).
-
-"Cancel", (this cancels the operation and takes you back to the Main page).
-
-"Delete Default", (this deletes any default profile for the game).
-
-"Set Default", (this makes the currently loaded profile the default profile for the selected game).
-
-"Run", (this will run the game with the selected profile BYPASSING any default profile saved for the game, which is useful for testing alternate profiles for things like gameplay or recording or just testing different settings).
-##
 
 ### Run Game
 "Run Game" is for running a game while BYPASSING it's DEFAULT GAMING PROFILE that you saved for it. This is useful for testing other settings on a game when it ALREADY has a default gaming profile. This way you can launch the game with the current device settings that you set WITHOUT the app loading the custom default gaming profile settings, so you can test other settings to create other profiles without having to first DELETE the default gaming profile for that game.
