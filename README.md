@@ -115,7 +115,7 @@ Each screen has 3 sub-sections, top, middle, bottom.
 
 # Main Screen:
 
-![image](https://github.com/petermg/TheOcularMigraineMCP/assets/20764493/d2095cf5-de37-40aa-abf9-73cf46b8695c)
+![image](https://github.com/petermg/TheOcularMigraineMCP/assets/20764493/d98a3d0c-6a24-4b98-9d66-01ca2f148327)
 
 ## 
 ## Main screen TOP section:
