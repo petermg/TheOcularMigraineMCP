@@ -176,7 +176,8 @@ Below the "About" button you will see the name of your device, for exmaple on th
 
 ## Main screen MIDDLE section:
 
-![image](https://github.com/petermg/TheOcularMigraineMCP/assets/20764493/58c0e0da-07be-4877-ad27-bcfa208f8faa)
+![image](https://github.com/petermg/TheOcularMigraineMCP/assets/20764493/c9964974-dc0f-4679-a83f-62d2ab47a6c7)
+
 
 
 
