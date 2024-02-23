@@ -442,17 +442,17 @@ The Swap Interval settings is a bit hard to explain. [THIS PAGE](https://github.
 
 ![image](https://github.com/petermg/TheOcularMigraineMCP/assets/20764493/2fea58d2-a040-48e0-adcb-772a85d28974)
 ##
-# Install APK via ADB
+### Install APK via ADB
 
 ![image](https://github.com/petermg/TheOcularMigraineMCP/assets/20764493/c56a08e2-052e-426a-babb-1822d175657c)
 Clicking on this will prompt you to select an APK to install. It will then be installed via the internal adb binary.
 ##
-# Input ADB command
+### Input ADB command
 
 ![image](https://github.com/petermg/TheOcularMigraineMCP/assets/20764493/8946a9f7-31c8-4817-b7a9-869c6cbd2919)
 For anyone who wants to play with the internal ADB binary.
 ##
-# ADB Shell command
+### ADB Shell command
 
 ![image](https://github.com/petermg/TheOcularMigraineMCP/assets/20764493/9412247f-3143-4b16-99cc-655bba6b702a)
 
@@ -462,31 +462,31 @@ Runs a command after "ADB shell".
 
 ![image](https://github.com/petermg/TheOcularMigraineMCP/assets/20764493/5dd1e2c4-62a1-4ce1-aff3-2073fb323605)
 ##
-# Enable OVR Metrics Tool Overlay
+### Enable OVR Metrics Tool Overlay
 
 ![image](https://github.com/petermg/TheOcularMigraineMCP/assets/20764493/bff210dc-5ebd-4c63-9fff-e54f81ac40d2)
 
 This will cause the OVR Metrics Tool to display an overlay consisting of statistics to monitor the performance of your game. This is useful when testing out new gaming profiles.
 ##
-# Open File Manager
+### Open File Manager
 
 ![image](https://github.com/petermg/TheOcularMigraineMCP/assets/20764493/5a0e702d-80ab-4317-b414-90d220035786)
 
 This will open File Manager +. If it is not installed, it will download it and install it then open it.
 ##
-# Open QAVS
+### Open QAVS
 
 ![image](https://github.com/petermg/TheOcularMigraineMCP/assets/20764493/8af1e8c8-de12-4146-982a-3e487c7e5e6d)
 
 This will open [Quest App Version Switcher](https://sidequestvr.com/app/5333/questappversionswitcher-qavs). If it is not installed, it will download it and install it, then open it.
 ##
-# Open SideQuest
+### Open SideQuest
 
 ![image](https://github.com/petermg/TheOcularMigraineMCP/assets/20764493/28bcc7e0-1dd8-484f-97b8-dd575c212fba)
 
 This will open the Android version of SideQuest. If it is not installed, it will download it and install it.
 ##
-# Set Kiosk Mode App
+### Set Kiosk Mode App
 
 ![image](https://github.com/petermg/TheOcularMigraineMCP/assets/20764493/3658cd7c-e9b0-4de6-a3b0-88130f38bd5d)
 
@@ -502,14 +502,14 @@ This is how Kiosk Mode works:
 8. Kiosk Mode effectively "disables" the Oculus / Meta home button on the right controller. You can still however hold it down to recenter yourself.
 
 ##
-# Un-set Kiosk Mode
+### Un-set Kiosk Mode
 
 ![image](https://github.com/petermg/TheOcularMigraineMCP/assets/20764493/1793ee1d-1fba-4492-af3b-58ed3fcadd96)
 
 This will propmt you for the Kiosk Mode password and then it will entirely disable Kiosk Mode. This is here so that pressing the Volume Up button for an extended amount of time no longer triggers the Kiosk Mode enable password prompt.
 ##
 
-# Create Shortcut App
+### Create Shortcut App
 
 ![image](https://github.com/petermg/TheOcularMigraineMCP/assets/20764493/40a991d1-031b-4dbb-affa-101d8a051a88)
 
@@ -517,14 +517,14 @@ The Create Shortcut App feature allows you to redirect one app to another. This 
 
 https://github.com/petermg/TheOcularMigraineMCP/assets/20764493/ef3d2702-df86-4937-af4b-5b7ed06d4f81
 ##
-# Create Startup App
+### Create Startup App
 
 ![image](https://github.com/petermg/TheOcularMigraineMCP/assets/20764493/9cab6f4b-e83c-4a6d-95ac-e335497347c6)
 
 This allows you to set an application to launch upon start up. Useful for an alternate launcher for example.
 ##
 
-# Disable Startup App
+### Disable Startup App
 
 ![image](https://github.com/petermg/TheOcularMigraineMCP/assets/20764493/c8ad61da-a7b4-490a-ac30-f7e2340e2787)
 
@@ -534,37 +534,37 @@ Disables the auto startup of the previously selected application.
 
 ![image](https://github.com/petermg/TheOcularMigraineMCP/assets/20764493/fb99e977-2aa5-4272-b885-53a9d94e5bf0)
 ##
-# Access Lists
+## Access Lists
 Here you can create access lists.
 NOTE: If you enable the white list, the black list is disabled. If you enable the black list, the white list gets disabled.
 
-# Create White List
+### Create White List
 
 ![image](https://github.com/petermg/TheOcularMigraineMCP/assets/20764493/33c945cf-b8d1-4fa4-82b5-5e7b1b5fb2a1)
 
 This will prompt you to select applications to be white-listed. After which if you try to launch any other application other than those on the white list, they will be immediately shut down.
 
-# Create Black List
+### Create Black List
 
 ![image](https://github.com/petermg/TheOcularMigraineMCP/assets/20764493/bef1cd10-e871-42ef-b9cc-43f1b683f491)
 
 This will prompt you to select applications to be black-listed. If you try to run any application on the black list it will be immediately shut down. You can alternatively use the built in "lock" function for applications that Meta has now enabled in the menu for each app.
 ##
 
-# Disable Access Lists
+### Disable Access Lists
 
 ![image](https://github.com/petermg/TheOcularMigraineMCP/assets/20764493/2eba98f5-37da-4473-8d05-9d5bf00e61f4)
 
 This disables the access lists without deleting them. The purpose of this is so that when you create the list again, it will reload your previously created list with your previously select applications to which you can add or remove applications from that list. It's useful if you just want to add or remove another application or two and not have to create your list all over from scratch.
 ##
-# Delete Access Lists
+### Delete Access Lists
 
 ![image](https://github.com/petermg/TheOcularMigraineMCP/assets/20764493/80eb2131-1eb4-43cc-b709-75646baa627a)
 
 This will actually DELETE the access lists files, both white list and black list. This is useful if you want to create another list from scratch without having anything from before selected.
 
 ##
-# Access List Enforcement Method
+### Access List Enforcement Method
 
 ![image](https://github.com/petermg/TheOcularMigraineMCP/assets/20764493/24940b54-4302-4068-b67f-1b83a586d60e)
 
