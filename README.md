@@ -164,21 +164,29 @@ Below "About" you will see "Font Size". If you click on this you will have the o
 
 
 "FFR Level" allows you to set the Fixed Foveated Rendering amount. For best performance set this to 4 and keep "dynamic" enabled.
-![image](https://github.com/petermg/TheOcularMigraineMCP/assets/20764493/0f6e74c3-29b9-4819-bb38-30c9d19829a6)
+
+![image](https://github.com/petermg/TheOcularMigraineMCP/assets/20764493/98b50167-df30-4527-b652-04ec418b2875)
+
 ## 
 ## CPU Level
+
 ![image](https://github.com/petermg/TheOcularMigraineMCP/assets/20764493/36d23c55-5ae6-43e8-811b-1d7b6d799750)
 
 
 "CPU Level" allows you to change the CPU to a set clock level. This is NOT recommended however as the device is set to dynamically do this. Setting this will result in more battery useage and more heat. This will NOT "unlock" any performance as the headset is DESIGNED to automatically scale the CPU up when needed to it's maximum clock rate.
-![image](https://github.com/petermg/TheOcularMigraineMCP/assets/20764493/f1202bb1-88a5-462a-b811-2872c00c29f5)
+
+![image](https://github.com/petermg/TheOcularMigraineMCP/assets/20764493/db2d14e3-0fe8-4958-b537-38b442c435c9)
+
 ## 
 ## GPU Level
+
 ![image](https://github.com/petermg/TheOcularMigraineMCP/assets/20764493/bc184c15-e7ac-4ea3-b497-e43e29a1e1fe)
 
 
 "GPU Level" allows you to change the GPU to a set clock level. This is NOT recommended however as the device is set to dynamically do this. Setting this will result in more battery useage and more heat. This will NOT "unlock" any performance as the headset is DESIGNED to automatically scale the GPU up when needed to it's maximum clock rate.
-![image](https://github.com/petermg/TheOcularMigraineMCP/assets/20764493/2ae5cda2-e7c3-4d98-892f-47ede3b798f9)
+
+![image](https://github.com/petermg/TheOcularMigraineMCP/assets/20764493/6cbab271-627e-4efc-bccb-328ab83fb20f)
+
 ## 
 ## Main screen MIDDLE section:
 
@@ -187,6 +195,7 @@ Below "About" you will see "Font Size". If you click on this you will have the o
 ## 
  
 ### Display Frequency
+
 ![image](https://github.com/petermg/TheOcularMigraineMCP/assets/20764493/db2f6214-b298-4e8b-9e51-45ff436df0c6)
 
 
