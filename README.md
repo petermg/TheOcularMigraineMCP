@@ -435,76 +435,253 @@ The Swap Interval settings is a bit hard to explain. [THIS PAGE](https://github.
 
 # Tools Screen:
 
-![image](https://github.com/petermg/TheOcularMigraineMCP/assets/20764493/4c62b54b-b81e-44f0-bdde-4927649f68fd)
+![image](https://github.com/petermg/TheOcularMigraineMCP/assets/20764493/0f37d68c-1a09-4ea4-bd18-0548333a5361)
+##
+
+# Tools Screen Top Section
+
+![image](https://github.com/petermg/TheOcularMigraineMCP/assets/20764493/2fea58d2-a040-48e0-adcb-772a85d28974)
+##
+# Install APK via ADB
+
+![image](https://github.com/petermg/TheOcularMigraineMCP/assets/20764493/c56a08e2-052e-426a-babb-1822d175657c)
+Clicking on this will prompt you to select an APK to install. It will then be installed via the internal adb binary.
+##
+# Input ADB command
+
+![image](https://github.com/petermg/TheOcularMigraineMCP/assets/20764493/8946a9f7-31c8-4817-b7a9-869c6cbd2919)
+For anyone who wants to play with the internal ADB binary.
+##
+# ADB Shell command
+
+![image](https://github.com/petermg/TheOcularMigraineMCP/assets/20764493/9412247f-3143-4b16-99cc-655bba6b702a)
+
+Runs a command after "ADB shell".
+##
+# Tools Screen Middle Section
+
+![image](https://github.com/petermg/TheOcularMigraineMCP/assets/20764493/5dd1e2c4-62a1-4ce1-aff3-2073fb323605)
+##
+# Enable OVR Metrics Tool Overlay
+
+![image](https://github.com/petermg/TheOcularMigraineMCP/assets/20764493/bff210dc-5ebd-4c63-9fff-e54f81ac40d2)
+
+This will cause the OVR Metrics Tool to display an overlay consisting of statistics to monitor the performance of your game. This is useful when testing out new gaming profiles.
+##
+# Open File Manager
+
+![image](https://github.com/petermg/TheOcularMigraineMCP/assets/20764493/5a0e702d-80ab-4317-b414-90d220035786)
+
+This will open File Manager +. If it is not installed, it will download it and install it then open it.
+##
+# Open QAVS
+
+![image](https://github.com/petermg/TheOcularMigraineMCP/assets/20764493/8af1e8c8-de12-4146-982a-3e487c7e5e6d)
+
+This will open [Quest App Version Switcher](https://sidequestvr.com/app/5333/questappversionswitcher-qavs). If it is not installed, it will download it and install it, then open it.
+##
+# Open SideQuest
+
+![image](https://github.com/petermg/TheOcularMigraineMCP/assets/20764493/28bcc7e0-1dd8-484f-97b8-dd575c212fba)
+
+This will open the Android version of SideQuest. If it is not installed, it will download it and install it.
+##
+# Set Kiosk Mode App
+
+![image](https://github.com/petermg/TheOcularMigraineMCP/assets/20764493/3658cd7c-e9b0-4de6-a3b0-88130f38bd5d)
+
+This will prompt you to set up Kiosk mode.
+This is how Kiosk Mode works:
+1. Prompted to select your app for Kiosk Mode.
+2. Prompted to create a password.
+3. When you are running your Kiosk mode app, hold the volume up for a few seconds until you are prompted to enter the Kiosk Mode password.
+4. Kiosk mode will be enabled if you entered the password correctly.
+5. In order to get out of Kiosk Mode you must restart your headset and open The Ocular Migraine and input the correct Kiosk Mode password to disable it.
+6. If you enter the wrong password at this point, the Kiosk Mode app will launch again and you will need to reboot your headset to try again to reset it.
+7. The only time you do NOT need to reboot your headset is in cases where the application you are running has an "EXIT" button allowing you to quit the application.
+8. Kiosk Mode effectively "disables" the Oculus / Meta home button on the right controller. You can still however hold it down to recenter yourself.
+
+##
+# Un-set Kiosk Mode
+
+![image](https://github.com/petermg/TheOcularMigraineMCP/assets/20764493/1793ee1d-1fba-4492-af3b-58ed3fcadd96)
+
+This will propmt you for the Kiosk Mode password and then it will entirely disable Kiosk Mode. This is here so that pressing the Volume Up button for an extended amount of time no longer triggers the Kiosk Mode enable password prompt.
+##
+
+# Create Shortcut App
+
+![image](https://github.com/petermg/TheOcularMigraineMCP/assets/20764493/40a991d1-031b-4dbb-affa-101d8a051a88)
+
+The Create Shortcut App feature allows you to redirect one app to another. This is useful especially for apps that are in the UNKNOWN SOURCES menu. You can substitute an offical app for one that's in your UNKNOWN SOURCES in which case you don't have to go to the UNKNOWN SOURCES menu. Official apps are able to be pinned to the bottom menu, making it even more convienent to launch an UNKNOWN SOURCES app directly from the main menu! In the video example below, I create a shortcut for the app **"File Manager +"** that's in UNKNOWN SOURCES using an official app, which allows me to launch **"File Manager +"** simply by launching the official app I set as it's shortcut. Now obviously you cannot run the app you are using as the shortcut while this is in effect. To remove this shortcut just use the Manage Saved Profile feature and find the saved profile in the Default Profiles folder, load it and select DELETE, then you will be able to run the original program again. I recommend using this with apps you have no interest in running. I personally use this to launch this exact app, The Ocular Migraine. I have set the ESPN app as the shortcut. When I click on it, it runs The Ocular Migraine instead.
+
+https://github.com/petermg/TheOcularMigraineMCP/assets/20764493/ef3d2702-df86-4937-af4b-5b7ed06d4f81
+##
+# Create Startup App
+
+![image](https://github.com/petermg/TheOcularMigraineMCP/assets/20764493/9cab6f4b-e83c-4a6d-95ac-e335497347c6)
+
+This allows you to set an application to launch upon start up. Useful for an alternate launcher for example.
+##
+
+# Disable Startup App
+
+![image](https://github.com/petermg/TheOcularMigraineMCP/assets/20764493/c8ad61da-a7b4-490a-ac30-f7e2340e2787)
+
+Disables the auto startup of the previously selected application.
+##
+# Tools Screen Bottom Section
+
+![image](https://github.com/petermg/TheOcularMigraineMCP/assets/20764493/fb99e977-2aa5-4272-b885-53a9d94e5bf0)
+##
+# Access Lists
+Here you can create access lists.
+NOTE: If you enable the white list, the black list is disabled. If you enable the black list, the white list gets disabled.
+
+# Create White List
+
+![image](https://github.com/petermg/TheOcularMigraineMCP/assets/20764493/33c945cf-b8d1-4fa4-82b5-5e7b1b5fb2a1)
+
+This will prompt you to select applications to be white-listed. After which if you try to launch any other application other than those on the white list, they will be immediately shut down.
+
+# Create Black List
+
+![image](https://github.com/petermg/TheOcularMigraineMCP/assets/20764493/bef1cd10-e871-42ef-b9cc-43f1b683f491)
+
+This will prompt you to select applications to be black-listed. If you try to run any application on the black list it will be immediately shut down. You can alternatively use the built in "lock" function for applications that Meta has now enabled in the menu for each app.
+##
+
+# Disable Access Lists
+
+![image](https://github.com/petermg/TheOcularMigraineMCP/assets/20764493/2eba98f5-37da-4473-8d05-9d5bf00e61f4)
+
+This disables the access lists without deleting them. The purpose of this is so that when you create the list again, it will reload your previously created list with your previously select applications to which you can add or remove applications from that list. It's useful if you just want to add or remove another application or two and not have to create your list all over from scratch.
+##
+# Delete Access Lists
+
+![image](https://github.com/petermg/TheOcularMigraineMCP/assets/20764493/80eb2131-1eb4-43cc-b709-75646baa627a)
+
+This will actually DELETE the access lists files, both white list and black list. This is useful if you want to create another list from scratch without having anything from before selected.
+
+##
+# Access List Enforcement Method
+
+![image](https://github.com/petermg/TheOcularMigraineMCP/assets/20764493/24940b54-4302-4068-b67f-1b83a586d60e)
+
+Switches between two different modes of enforcing the access lists. Depending on what Meta will do with it's firmware in the future, certain features might break so I tried a couple of different methods. If you find one doesn't work, try switching to the other.
+
+##
+
+
 
 # Misc Screen:
 
-![image](https://github.com/petermg/TheOcularMigraineMCP/assets/20764493/267ac2dd-a3e3-49ba-b6cb-df8bc2cb3d86)
+![image](https://github.com/petermg/TheOcularMigraineMCP/assets/20764493/8c36cae0-fd69-4790-880d-36066dbcf0d7)
+
+
+
 ##
 
 ### Misc Screen Top Section
-![image](https://github.com/petermg/TheOcularMigraineMCP/assets/20764493/1403b31b-7c9b-483a-ab18-ab37a5db382e)
+![image](https://github.com/petermg/TheOcularMigraineMCP/assets/20764493/27176fde-7fd2-4f36-8a1c-02d74dd17890)
+
 ##
 ### Switch App Launch Detection Method
-![image](https://github.com/petermg/TheOcularMigraineMCP/assets/20764493/5eda6d0b-401c-4507-8d7c-97de01901225)
+
+![image](https://github.com/petermg/TheOcularMigraineMCP/assets/20764493/5bbf70e3-0331-4912-8d48-eb6d3c7bf360)
+
 
 Clicking on this will toggle between two different app launch detection methods. The default is Logcat. The other is App Usage.
 ##
 ### Disable Battery Optimization
+
+![image](https://github.com/petermg/TheOcularMigraineMCP/assets/20764493/d6302893-2400-4faa-ae3f-454c0bf2e0b7)
+
 This is required to prevent the Quest from killing The Ocular Migraine when running in the background which is required for it to detect when apps are launched so that it can enable the resolution presets for that app. Also for the Kiosk mode and access lists to work.
 
 https://github.com/petermg/TheOcularMigraineMCP/assets/20764493/ae12b7ab-07ae-4a4a-9a7c-4ef3bfac6f79
 ##
 
 ### Enable All File Access
+
+![image](https://github.com/petermg/TheOcularMigraineMCP/assets/20764493/d4037ac8-7a53-4863-b4f6-06dc54debbdd)
+
 The purpose of granting this special permission to The Ocular Migraine is so that it can access OTG storage for the purpose of restoring any backups you might have copied to a thumb drive. Yes, you can connect a thumb drive to your Quest via an OTG cable and copy game backups onto it using a file manager that supports OTG storage, such as "File Manager +" which you can install using the menu on The Ocular Migraine. To enable this option, click on "Android Settings", then "Apps", then "Special app access", then "All files access", then scroll to find The Ocular Migraine from the list of apps. Click on it to select it, then click on the toggle "Allow access to manage all files".
 
 https://github.com/petermg/TheOcularMigraineMCP/assets/20764493/e84dc6d6-f2e3-413b-92a1-91ef5048ba88
 ##
 ### Disable Notifications
 
+![image](https://github.com/petermg/TheOcularMigraineMCP/assets/20764493/0a18f7ff-a6ff-443a-bf00-e7c91e678733)
+
 This is NOT a requirement but a recommendation. If you want to do it, this is how:
 
 https://github.com/petermg/TheOcularMigraineMCP/assets/20764493/ad4c4d3f-7f98-416a-8ea7-db4c07d522cc
 ##
 ### Misc Screen Middle Section
-![image](https://github.com/petermg/TheOcularMigraineMCP/assets/20764493/40ec6811-88a4-4e40-9abd-029062e3c93e)
+![image](https://github.com/petermg/TheOcularMigraineMCP/assets/20764493/19501e1a-1690-4694-a17f-42b69942f1b9)
+
 ##
 Right now the only thing in this section are three customizable buttons. If you LONG PRESS on one, it will prompt you to enter an adb shell command. When you press OK, it will save that command as a preset for that button. So now in order to run that command just do a short single click on the button and it will then run the command and show a pop up of the output after the command is finished running. I don't know how useful this is, I may make more of these buttons, or remove them all together.
 ##
 
 ### Misc Screen Bottom Section
-![image](https://github.com/petermg/TheOcularMigraineMCP/assets/20764493/f466d697-67ac-4ea4-ad97-85c6806049eb)
+![image](https://github.com/petermg/TheOcularMigraineMCP/assets/20764493/41556a10-6f79-44a3-bc36-f7feddde7ffa)
+
+
 ##
 ### Restart Home Environment
-![image](https://github.com/petermg/TheOcularMigraineMCP/assets/20764493/c02cd736-b48f-41dc-bbd7-c509c7ba9f71)
+
+![image](https://github.com/petermg/TheOcularMigraineMCP/assets/20764493/2c931077-c858-4346-b7cc-d68e62ea7dc2)
+
 
 Clicking this will restart your home environment. This is for the purpose of applying resolution changes to it. If you want to change the resolution in your home environment, you must select this option after making the settings changes on the Main Screen.
 ##
 ### Check Enabled Profiles
-This is mainly for troubleshooting. I will probably remove this button or make it able to be toggled on by a "debug" option.
 
-![image](https://github.com/petermg/TheOcularMigraineMCP/assets/20764493/118b87b2-3f4f-41c5-a861-3cc1ecc9d93d)
+![image](https://github.com/petermg/TheOcularMigraineMCP/assets/20764493/72a082f3-1b8c-43fe-a30d-7300926719c8)
+
+This is mainly for troubleshooting. I will probably remove this button or make it able to be toggled on by a "debug" option.
+##
 ### Devices
 This is also good for troubleshooting. It runs the "adb devices" command and then shows the output. I also may only make this show up in a debug mode.
 
-![image](https://github.com/petermg/TheOcularMigraineMCP/assets/20764493/5de28c4d-b292-4937-a69b-07f9687b005c)
+![image](https://github.com/petermg/TheOcularMigraineMCP/assets/20764493/ac2dae1c-fbf2-4212-ac3b-c68886af0fde)
+
 ##
 ### Restart ADB Server
 Restarts the ADB server on the device, for troubleshooting.
 
-![image](https://github.com/petermg/TheOcularMigraineMCP/assets/20764493/1787d1b2-a1c4-4a46-a98d-e7af21c74f5a)
+![image](https://github.com/petermg/TheOcularMigraineMCP/assets/20764493/1cc55ea1-ac5a-43ae-b81f-3e38af5f4fc0)
+
 ##
 ### Reboot
 This will INSTANTLY reboot the headset. Sometimes however the ADB server seems to go stale. So if pressing this once doesn't immediately reboot your headset, pressing it again will.
 
-![image](https://github.com/petermg/TheOcularMigraineMCP/assets/20764493/4fd996f4-3ec4-4a49-8066-ea009de3296c)
+![image](https://github.com/petermg/TheOcularMigraineMCP/assets/20764493/c5e7b5f2-e4c4-47d7-b344-23bd82bcdbda)
+
 ##
 ### Dynamic Clock
 There used to be a dynamic clock property that could be set via ADB on the Oculus / Meta headsets. This command doesn't seem to do anything anymore so I put it here and will probably remove it.
 
-![image](https://github.com/petermg/TheOcularMigraineMCP/assets/20764493/5b597fb5-b1ad-439c-8d14-abd987cf7345)
+![image](https://github.com/petermg/TheOcularMigraineMCP/assets/20764493/05de5cd7-ac90-401b-93ac-df2ec82ce8da)
+
 ##
+### Delete BlazeRush Config
+
+![image](https://github.com/petermg/TheOcularMigraineMCP/assets/20764493/a66c146b-9503-4d8a-a337-510b4e8230b6)
+
+"Delete BlazeRush config" will delete the config settings file for the game "BlazeRush". This is required if you want to run that game at a different resolution. This is because upon first run BlazeRush will get the device resolution and create a config file telling the game to run at that resolution. Once this config file is created, it will no longer look to see if the device has a different display resolution than what is stored in the config file. Therefore, if you want to run BlazeRush at a different resolution you MUST first delete the config file so that it will create a new config file based on the resolution you have set the device to.
+##
+
+### Apps I Worked On
+
+![image](https://github.com/petermg/TheOcularMigraineMCP/assets/20764493/20fda1a4-6d29-49e4-8486-b6913bfe1aa9)
+
+This opens a page with links to other applications I've worked on.
+##
+
+
 
 
 
