@@ -149,7 +149,8 @@ Clicking on "About" will take you to a screen showing the current version number
 
 Below "About" you will see "Font Size". If you click on this you will have the option to change the scale of the font for the application.
 
-![image](https://github.com/petermg/TheOcularMigraineMCP/assets/20764493/93a0fce5-0be6-4d1c-ac46-295604aa8141)
+![image](https://github.com/petermg/TheOcularMigraineMCP/assets/20764493/d05daafa-0d83-4cf5-bb09-6f3ec71ff7d2)
+
 
 ## 
 ## Resolution Slider
