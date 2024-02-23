@@ -114,104 +114,101 @@ Each screen has 3 sub-sections, top, middle, bottom.
 
 # Main Screen:
 
-![image](https://github.com/petermg/TheOcularMigraineMCP/assets/20764493/d98a3d0c-6a24-4b98-9d66-01ca2f148327)
+![image](https://github.com/petermg/TheOcularMigraineMCP/assets/20764493/50953447-0d97-4da5-80ae-1534ed3ee19e)
+
 
 ## 
 ## Main screen TOP section:
-![image](https://github.com/petermg/TheOcularMigraineMCP/assets/20764493/4434c847-89c4-490c-a82b-c298bb66871d)
+![image](https://github.com/petermg/TheOcularMigraineMCP/assets/20764493/b4078f82-86f8-4325-93cd-4217b2d3323e)
+
+
+
 
 ## 
 ## Statistics
-![image](https://github.com/petermg/TheOcularMigraineMCP/assets/20764493/079550a3-e1c0-426e-950b-18017fb9806a)
+![image](https://github.com/petermg/TheOcularMigraineMCP/assets/20764493/6440d44c-a965-471a-857c-a56d85220c8f)
+
+
 
 From this section you will find a statistics read-out showing things like your device name, IP address, SSID name and signal strength, free space, and battery level and currently enabled display resolution. If you click on this it will update.
 ## 
 ## About
-![image](https://github.com/petermg/TheOcularMigraineMCP/assets/20764493/1ed8def8-24d1-4df5-ac2c-0e79355048fe)
+![image](https://github.com/petermg/TheOcularMigraineMCP/assets/20764493/d12e7d62-be91-47c3-b920-56801a2600a9)
+
+
 
 Clicking on "About" will take you to a screen showing the current version number of the app, credits, and an UPDATE button that will update the app. Currently it does not have version checking enabled so it just downloads the latest apk and installs it, regardless of if it's newer or not. Version checking implimentation is on the TO-DO list. You will also find a link to this online help document if you click on "Help! How do I use this thing?!".
 
-![image](https://github.com/petermg/TheOcularMigraineMCP/assets/20764493/b6ecc39e-1e12-4316-b7de-7a2e81c0cca0)
+![image](https://github.com/petermg/TheOcularMigraineMCP/assets/20764493/4c22f64c-4d92-416a-86b2-9cfd2a3669f5)
+
 
 ## 
 ## Font Size Adjustment
-![image](https://github.com/petermg/TheOcularMigraineMCP/assets/20764493/b571075c-0803-4023-bcdd-aa9688c1ab20)
+![image](https://github.com/petermg/TheOcularMigraineMCP/assets/20764493/bf893290-3935-4216-a2a4-9d53092cb7c2)
 
-Below the "About" button you will see the name of your device, for exmaple on the Quest 3 it will say "eureka", Quest 2 will say "hollywood". If you click on this you will have the option to change the scale of the font for the application.
+
+Below "About" you will see "Font Size". If you click on this you will have the option to change the scale of the font for the application.
 
 ![image](https://github.com/petermg/TheOcularMigraineMCP/assets/20764493/93a0fce5-0be6-4d1c-ac46-295604aa8141)
 
 ## 
 ## Resolution Slider
 
-![image](https://github.com/petermg/TheOcularMigraineMCP/assets/20764493/f87abc03-1854-4d92-9d3e-a7f0b926089c)
+![image](https://github.com/petermg/TheOcularMigraineMCP/assets/20764493/21f02aee-d31d-4f88-aab5-6885019223f1)
+
 
 "Resolution Slider" is a slider where you can slide the cross-hair to the left and right. Left REDUCES the resolution and right INCREASES the resolution. However you must click on "Set Resolution" to apply your resolution setting. The slider also has the options "AR 1:1.1" and "x32". The first is the aspect multiplier of the slider, for example, if the height was set to 1000, the width is set to 1100. You can change this "AR" by simply clicking on it and it will change the mathematical function of the slider. Also there is the "x32" option. This is the number by which the notch of the cross-hair is multiplied by. The cross-hair starts on the left at 32 and all the way on the right goes to 130. Changing the default "x32" to another number changes what each notch on the slider is multiplied by.
 ## 
 ## FFR Level
-![image](https://github.com/petermg/TheOcularMigraineMCP/assets/20764493/68cc9cc8-43b1-402c-851a-5c442235693f)
+![image](https://github.com/petermg/TheOcularMigraineMCP/assets/20764493/82963da4-45fb-4bd5-9ac1-551a5b0accf0)
+
 
 "FFR Level" allows you to set the Fixed Foveated Rendering amount. For best performance set this to 4 and keep "dynamic" enabled.
 ![image](https://github.com/petermg/TheOcularMigraineMCP/assets/20764493/0f6e74c3-29b9-4819-bb38-30c9d19829a6)
 ## 
 ## CPU Level
-![image](https://github.com/petermg/TheOcularMigraineMCP/assets/20764493/ad320f08-0169-4993-acaf-317d65e2f8f0)
+![image](https://github.com/petermg/TheOcularMigraineMCP/assets/20764493/36d23c55-5ae6-43e8-811b-1d7b6d799750)
+
 
 "CPU Level" allows you to change the CPU to a set clock level. This is NOT recommended however as the device is set to dynamically do this. Setting this will result in more battery useage and more heat. This will NOT "unlock" any performance as the headset is DESIGNED to automatically scale the CPU up when needed to it's maximum clock rate.
 ![image](https://github.com/petermg/TheOcularMigraineMCP/assets/20764493/f1202bb1-88a5-462a-b811-2872c00c29f5)
 ## 
 ## GPU Level
-![image](https://github.com/petermg/TheOcularMigraineMCP/assets/20764493/6a7d2360-94e7-4c46-b766-a03eb1e51cb9)
+![image](https://github.com/petermg/TheOcularMigraineMCP/assets/20764493/bc184c15-e7ac-4ea3-b497-e43e29a1e1fe)
+
 
 "GPU Level" allows you to change the GPU to a set clock level. This is NOT recommended however as the device is set to dynamically do this. Setting this will result in more battery useage and more heat. This will NOT "unlock" any performance as the headset is DESIGNED to automatically scale the GPU up when needed to it's maximum clock rate.
 ![image](https://github.com/petermg/TheOcularMigraineMCP/assets/20764493/2ae5cda2-e7c3-4d98-892f-47ede3b798f9)
 ## 
-## All Levels
-![image](https://github.com/petermg/TheOcularMigraineMCP/assets/20764493/f4114b93-7097-4956-aee1-2117d15854f5)
-
-"All Levels" simply has the 3 former options on their own menu screen (FFR Level/CPU Level/GPU Level). So this is redundant and later will be depricated itself or the other options will be, I've not decided yet.
-
-![image](https://github.com/petermg/TheOcularMigraineMCP/assets/20764493/a264a9ea-8516-42f8-9041-0cc421251519)
-## 
-
 ## Main screen MIDDLE section:
 
-![image](https://github.com/petermg/TheOcularMigraineMCP/assets/20764493/c9964974-dc0f-4679-a83f-62d2ab47a6c7)
-
-
-
+![image](https://github.com/petermg/TheOcularMigraineMCP/assets/20764493/48a74bea-f620-4d90-90f4-4eaae07806b1)
 
 ## 
  
 ### Display Frequency
-![image](https://github.com/petermg/TheOcularMigraineMCP/assets/20764493/54142827-008d-4840-b034-a35b1ca1bec0)
+![image](https://github.com/petermg/TheOcularMigraineMCP/assets/20764493/db2f6214-b298-4e8b-9e51-45ff436df0c6)
+
 
 "Display Frequency:" The options are 60hz, 72hz, 90hz, 120hz. Only the Quest 2 headset supports all 4 frequencies. The Quest 1 cannot go past 72hz. The Quest Pro cannot go past 90hz, nor can it do 60hz. The Quest 3 cannot do 60hz. Click on the frequency you want to set and it will be set if supported for your device.
 ##
  
 ### Default Display Settings
-![image](https://github.com/petermg/TheOcularMigraineMCP/assets/20764493/42eb76b2-af6f-472a-8545-97bce3e4a286)
+![image](https://github.com/petermg/TheOcularMigraineMCP/assets/20764493/0b840ec1-2bb3-407e-b790-ef0c152f3ad8)
+
 
 If you click on "Default Display Settings" any custom display settings you enabled will be cleared, thus setting the device back to default settings.
 ##
-### Reset These Settings To Default
-![image](https://github.com/petermg/TheOcularMigraineMCP/assets/20764493/d7b58b55-329d-4690-a929-b6d12a4dc19c)
-
-"Reset These Settings To Default" will reset the display settings to defaul - redundant and will probably be removed in an update.
-##
  
 ### Reset ALL settings to default 
-![image](https://github.com/petermg/TheOcularMigraineMCP/assets/20764493/d8cdd52b-7ad1-42fe-8895-1e0f5cd791d1)
+![image](https://github.com/petermg/TheOcularMigraineMCP/assets/20764493/9e8d6ca3-d1b3-4a37-9b1d-fb2cb3452d6e)
+
 
 "Reset ALL settings to default" will clear any settings changes you made on the headset. This will NOT remove any custom profiles nor will it erase any files on the device nor anything you saved to the device. It only clears any "setprop" commands that were sent to the headset, thus restoring the default settings.
 ##
-### Delete BlazeRush config
-![image](https://github.com/petermg/TheOcularMigraineMCP/assets/20764493/001623b3-84a9-4b5c-8cfe-e3f362e2ae6f)
-
-"Delete BlazeRush config" will delete the config settings file for the game "BlazeRush". This is required if you want to run that game at a different resolution. This is because upon first run BlazeRush will get the device resolution and create a config file telling the game to run at that resolution. Once this config file is created, it will no longer look to see if the device has a different display resolution than what is stored in the config file. Therefore, if you want to run BlazeRush at a different resolution you MUST first delete the config file so that it will create a new config file based on the resolution you have set the device to.
-##
 ### Manage Game Profiles
-![image](https://github.com/petermg/TheOcularMigraineMCP/assets/20764493/74ac3dcf-96bb-4b22-b305-f88ceff3b6a6)
+![image](https://github.com/petermg/TheOcularMigraineMCP/assets/20764493/af50682c-cf0c-4e40-adc6-cc2e631f03c5)
+
 
 Manage Game Profiles allows you to load any saved profiles you have. Select from any of the 3 folders, **DefaultProfiles**, **RecordingProfiles**, or **GameProfiles**. It will read the selected profile and open a window showing the details of the profile. You then have the following options:
 1. Delete - Deletes the saved profile.
@@ -222,15 +219,7 @@ Manage Game Profiles allows you to load any saved profiles you have. Select from
 
 https://github.com/petermg/TheOcularMigraineMCP/assets/20764493/40e12818-ce48-4621-afd6-12e6479f64d0
 
-
 ## 
-### Create Shortcut App
-![image](https://github.com/petermg/TheOcularMigraineMCP/assets/20764493/2a1a8cdf-489b-45dd-8f51-8c271849eab1)
-
-The Create Shortcut App feature allows you to redirect one app to another. This is useful especially for apps that are in the UNKNOWN SOURCES menu. You can substitute an offical app for one that's in your UNKNOWN SOURCES in which case you don't have to go to the UNKNOWN SOURCES menu. Official apps are able to be pinned to the bottom menu, making it even more convienent to launch an UNKNOWN SOURCES app directly from the main menu! In the video example below, I create a shortcut for the app **"File Manager +"** that's in UNKNOWN SOURCES using an official app, which allows me to launch **"File Manager +"** simply by launching the official app I set as it's shortcut. Now obviously you cannot run the app you are using as the shortcut while this is in effect. To remove this shortcut just use the Manage Saved Profile feature and find the saved profile in the Default Profiles folder, load it and select DELETE, then you will be able to run the original program again. I recommend using this with apps you have no interest in running. I personally use this to launch this exact app, The Ocular Migraine. I have set the ESPN app as the shortcut. When I click on it, it runs The Ocular Migraine instead.
-
-https://github.com/petermg/TheOcularMigraineMCP/assets/20764493/ef3d2702-df86-4937-af4b-5b7ed06d4f81
-##
 ### Save Game Profile 
 
 https://github.com/petermg/TheOcularMigraineMCP/assets/20764493/3c85d9f7-503c-44a0-b0c2-ac10f90198a5
@@ -240,34 +229,26 @@ In order to create a custom game profile, do the following:
 1. Move the Resolution Slider to your desired game resolution.
 2. Press Set Resolution.
 3. Click on Save Game Profile.
-   ![image](https://github.com/petermg/TheOcularMigraineMCP/assets/20764493/78d89a82-adf7-4c68-a474-fc6165f062f3)
+   ![image](https://github.com/petermg/TheOcularMigraineMCP/assets/20764493/682bde0a-cb3a-45e7-bcfc-9c0039570116)
+
 5. Select the game you want to save the profile for.
 6. Make your selection of "Yes" (creates loadable non-default profile), "Make Kiosk App" (sets the game as the Kiosk App), "Set as Default" (saves the profile AND makes it the default profile to load when you launch the game), or "No", which cancels the action without saving the profile.
 
 ![image](https://github.com/petermg/TheOcularMigraineMCP/assets/20764493/17908281-5af8-4ed8-af07-c266d71cc45e)
 
-
 6. Run your game from the normal game selection menu and it will automatically load it's default profile if you saved one for it. Otherwise you can go to "Manage Game Profiles" on the Tools page and load different profiles you have saved for your games, you can have multiple profiles per game, and run ones from that menu without invoking the default profile being loaded. This is good for testing different profiles or just switching between different profiles for different reasons, like recording vs just gameplay.
 
 ## 
 
-
-
-
-### Run Game
-"Run Game" is for running a game while BYPASSING it's DEFAULT GAMING PROFILE that you saved for it. This is useful for testing other settings on a game when it ALREADY has a default gaming profile. This way you can launch the game with the current device settings that you set WITHOUT the app loading the custom default gaming profile settings, so you can test other settings to create other profiles without having to first DELETE the default gaming profile for that game.
-1. Click on "Run Game". ![image](https://github.com/petermg/TheOcularMigraineMCP/assets/20764493/2ee96f56-8dce-4d57-9549-c3649a69fead)
-2. Select the game you wish to run.
-3. The game will now launch without loading it's default profile, thus enabling you to test different settings on the game without it changing them by loading the default profile if it has one. If a game does NOT have a default profile, you can just launch it normally from the games menu.
-
-## 
 ## Game Backup
 "Game Backup" will open a menu to back up (or restore a backup of) the game of your choice. This will give you the option to backup the entire game, (i.e. APK, obb and data folders from /sdcard/Android/), or to just back up the data files (from /sdcard/Android/data/yourgame). This can only back up the data folders that are stored in "/sdcard/Android/" From this same menu you can RESTORE your game backups with the option to restore the ENTIRE game, (APK, OBB, Data files), or JUST the data folders. Again, this only applies to data folders in "/sdcard/Android/" All backups will be made in /sdcard/MCP/Backups/name-of-your-game. Along with the backup files there will be additional files, a Windows binary of adb and a bat file. This will allow you to restore your backups directly from a Windows PC without the need to copy the backup files back to your headset before restoring them. Just copy the backup folders to your Windows PC, then run the bat file for the game you wish to restore and select your restore options. It will restore your game directly from your PC. (**HINT**: If you use a file manager that has OTG support, such as File Manager +, you can move the backups from your headset to the OTG drive. If you want to restore them you must first copy them back onto the headset.) To get started, click on 
 
-![image](https://github.com/petermg/TheOcularMigraineMCP/assets/20764493/38f73240-5ba1-4878-9099-da8e951c54b6)
+![image](https://github.com/petermg/TheOcularMigraineMCP/assets/20764493/aa4f2015-dc1c-4430-ba46-61081127edae)
+
 
 You will be presented with the following menu:
-![image](https://github.com/petermg/TheOcularMigraineMCP/assets/20764493/02199091-4404-4ab5-924c-d2c0ef002899)
+![image](https://github.com/petermg/TheOcularMigraineMCP/assets/20764493/8f4372f5-1478-4f3f-bf4e-25d8f598bd42)
+
 BACKUP OPTIONS: 
 
 ### Full Game Backup
@@ -300,12 +281,14 @@ Game Data (just copies the data folder back to /sdcard/Android). You can restore
 
 ## Main Screen Bottom Section
 Currently some of what's on this section is up in the air right now. I originally had this as multiple global resolution presets you could set. This was a feature from very early development and I may get rid of it and just clean up this page a bit with the added space. Not sure yet. What do you think? On the bottom you have three page options, [Recording,](#recording-screen), Misc, and Tools. Clicking either of those will take you to those pages.
-![image](https://github.com/petermg/TheOcularMigraineMCP/assets/20764493/8786d5d7-e176-43bd-b1a4-a29ff804613a)
+![image](https://github.com/petermg/TheOcularMigraineMCP/assets/20764493/03f1f3ff-d546-4d08-99a5-480f3af4bb23)
+
 
 
 ##
 ### Disable
-![image](https://github.com/petermg/TheOcularMigraineMCP/assets/20764493/d759d381-834a-46a2-8653-3bf8498b819d)
+![image](https://github.com/petermg/TheOcularMigraineMCP/assets/20764493/8b5f6aad-174b-4be8-bb2f-a488bcbce0cc)
+
 
 Clicking on Disable will disable The Ocular Migraine from monitoring app launches. This will prevent the gaming profiles from working. If you disable it, it will close the app. Just run The Ocular Migraine again and it will be re-enabled.
 ##
@@ -313,14 +296,17 @@ Clicking on Disable will disable The Ocular Migraine from monitoring app launche
 
 # Recording Screen:
 
-![image](https://github.com/petermg/TheOcularMigraineMCP/assets/20764493/baf19839-23f3-47b9-9542-2ab687cd6112)
+![image](https://github.com/petermg/TheOcularMigraineMCP/assets/20764493/2a2c53a6-ac1c-41be-8cf5-4deca609c35f)
+
 
 ##
 ### Recording Screen Top Section
-![image](https://github.com/petermg/TheOcularMigraineMCP/assets/20764493/d22322b4-3b9e-47f5-b3b9-bd924e79d7d6)
+![image](https://github.com/petermg/TheOcularMigraineMCP/assets/20764493/6e43d036-14f3-4f5b-af92-4285e624c863)
+
 ##
 ### Resolution Presets
-![image](https://github.com/petermg/TheOcularMigraineMCP/assets/20764493/fd68f709-b140-4a84-af74-41b10de389e6)
+![image](https://github.com/petermg/TheOcularMigraineMCP/assets/20764493/6f5722eb-c637-4541-aa49-a26a3e4bcf55)
+
 
 
 On the top section of the Recording Screen you can set different recording resolutions. There are custom resolution presets and the option to set your own custom resolution. The presets are as follows:
@@ -331,21 +317,23 @@ On the top section of the Recording Screen you can set different recording resol
 
 1280X720(16:9) - "HD" resolution.
 
-3840X1080(3D) - I created this preset thinking that the device would record both eyes in a 16:9 aspect ratio. However when telling the device to record both eyes, it records each eye in a 1 by 1 aspect ration. This seems not to be able to be changed. However you can still use this when recording in 3D if you want, but this does NOT set the device to record in 3D, it only sets the resolution, you will need to click on [Both(3D)] in the Middle Section under Recording Eye to record in 3D.
+3840X1080(32:9) - I created this preset thinking that the device would record both eyes in a 16:9 aspect ratio. However when telling the device to record both eyes, it records each eye in a 1 by 1 aspect ration. This seems not to be able to be changed. However you can still use this when recording in 3D if you want, but this does NOT set the device to record in 3D, it only sets the resolution, you will need to click on [Both(3D)] in the Middle Section under Recording Eye to record in 3D.
 
-2560X720(3D) - see notes from previous preset.
+2560X720(32:9) - see notes from previous preset.
 
 1080X1920(9:16) - makes a vertical recording like for YouTube Shorts, tiktok, etc..
 
 720X1280(9:16) - makes a vertical recording like for YouTube Shorts, tiktok, etc..
 ##
 ### Custom Resolution
-![image](https://github.com/petermg/TheOcularMigraineMCP/assets/20764493/dbc3d68f-ac10-4f5c-a3b6-62925cf2da90)
+![image](https://github.com/petermg/TheOcularMigraineMCP/assets/20764493/519c6c9c-9d87-4a5d-b29d-9e3d31cf0402)
+
 
 Here you can enter in your own recording Width and Height.
 ##
 ### Recording Screen Middle Section
-![image](https://github.com/petermg/TheOcularMigraineMCP/assets/20764493/caecbe54-75c5-40c6-9cdf-3d0b0e1c4978)
+![image](https://github.com/petermg/TheOcularMigraineMCP/assets/20764493/e12df625-316a-4c10-9f8b-e9d751ec653c)
+
 ##
 ### Recording FrameRate
 The following options are:
@@ -355,12 +343,14 @@ The following options are:
 * 90hz/fps
 * 120hz/fps
 
-![image](https://github.com/petermg/TheOcularMigraineMCP/assets/20764493/afc32c5a-d0cb-489e-94ba-8d21c48647fc)
+![image](https://github.com/petermg/TheOcularMigraineMCP/assets/20764493/a01fe4ac-ccd4-4580-b24a-4ec61e3dde95)
+
 
 Please note, the Quest 1 cannot go above 72hz, the Quest Pro can only do 72hz and 90hz, and the Quest 3 can not do 60hz. Only the Quest 2 can do all 4 options. Also the 60fps@120hz option is NOT recommended as it makes your experience jerky, even though the recording may look fine. This was more of an exeprimental feature to get the Quest Pro and Quest 3 to record at 60fps.
 ##
 ### Recording Eye
-![image](https://github.com/petermg/TheOcularMigraineMCP/assets/20764493/29463ba8-a5f0-4fca-9a4a-29cc2a03b189)
+![image](https://github.com/petermg/TheOcularMigraineMCP/assets/20764493/e292a61c-3083-441e-94c6-816e5cce0dbc)
+
 
 The following options are:
 * Left Eye - Records from the left eye.
@@ -368,16 +358,19 @@ The following options are:
 * Right Eye - Records from the right eye.
 ##
 ### Recording Screen Bottom Section
-![image](https://github.com/petermg/TheOcularMigraineMCP/assets/20764493/552eb29a-8bd8-4829-aa23-ca8e74e97bf6)
+![image](https://github.com/petermg/TheOcularMigraineMCP/assets/20764493/8038ccbf-3504-49e4-bcde-dc330ba510ed)
+
 
 ##
 ### Recording Bitrate
-![image](https://github.com/petermg/TheOcularMigraineMCP/assets/20764493/94bc0e28-8220-46ed-aee1-3f701be1190a)
+![image](https://github.com/petermg/TheOcularMigraineMCP/assets/20764493/eba6e46a-4c72-4fd5-a179-9c1af8a15b83)
+
 
 Select this to set your recording bitrate. I have made the default selection 45Mbps.
 ##
 ### FOV Crop
-![image](https://github.com/petermg/TheOcularMigraineMCP/assets/20764493/039a40de-debf-4738-bc81-30b5fee89229)
+![image](https://github.com/petermg/TheOcularMigraineMCP/assets/20764493/4da04a65-3f07-48a1-aacf-8867beead84b)
+
 
 This seems to be a little known feature that allows you to crop the rendered areas of your screen. This concentrats whatever your set resolution is into this cropped area, thus making the image much clearer. This is beneficial for gameplay recordings, it improves the visual quality of them greatly. Here are the following options:
 * Up - crops the top part of the render area.
@@ -388,14 +381,16 @@ This seems to be a little known feature that allows you to crop the rendered are
 * Optimal Crop - enables a preset crop that should correctly match up with the rendering area for recording.
 ##
 ### Save Recording Profile
-![image](https://github.com/petermg/TheOcularMigraineMCP/assets/20764493/6c1611cd-8329-4e0f-ba3f-908aededc8ff)
+![image](https://github.com/petermg/TheOcularMigraineMCP/assets/20764493/cfc3c93c-ceb3-4641-8d0d-9bde33292028)
+
 
 Saving a Recording Profile creates a recording profile that stores all of your current disiplay information, such as resolution, GPU/CPU levels, FFR level, Refresh Rate and also your recording settings such as recording bitrate, recording eye, recording resolution, screen crop and saves it to a recording profile which you can load for the game you have selected or even load it for use with any game. You can even save it as a default profile using the Manage Default Profiles option on the Tools Screen. In order to create a Recording Profile, just set whatever resolution you want from the Main Screen, set the recording resolution and framerate and bitrate and eye recording selection then click on Save Recording Profile. It will propmt you to select which game you wish to save it for, but this does NOT make it a default profile for that game. The game selected will still be run with it's default profile unless you load it's recording profile from the Load Recording Profile screen and select RUN.
 
 https://github.com/petermg/TheOcularMigraineMCP/assets/20764493/52f6b17d-b7ce-4039-9c19-b74b02ce06a4
 ##
 ### Load Recording Profile
-![image](https://github.com/petermg/TheOcularMigraineMCP/assets/20764493/8ecf5c16-4bf7-462a-bf0d-f0f15ef96f8d)
+![image](https://github.com/petermg/TheOcularMigraineMCP/assets/20764493/0db28724-95c9-4238-a286-568975627c8b)
+
 
 Clicking on Load Recording Profile you will be able to load any saved recording profiles. After selecting your recording profile you are presented with the following options:
 * Load Only - This will load the settings in the selected Recording Profile onto the headset.
@@ -410,7 +405,8 @@ https://github.com/petermg/TheOcularMigraineMCP/assets/20764493/34e7da94-53b9-49
 This is used to inject 3D metadata into the videos you've recorded after selecting "Both(3D)" for eye recording, for upload to YouTube. This will allow your video to be played back in 3D from YouTube in YouTube VR for sharing with friends.
 1. Click on Inject 3D Metadata
 
-![image](https://github.com/petermg/TheOcularMigraineMCP/assets/20764493/30f98d44-638b-4dab-b0ee-81ffba91a847)
+![image](https://github.com/petermg/TheOcularMigraineMCP/assets/20764493/a1af21af-ec10-49b0-af5c-b0c5f2aeff87)
+
 
 2. You will be prompted to select your video file:
 
@@ -432,12 +428,10 @@ This is used to inject 3D metadata into the videos you've recorded after selecti
 ##
 ### Swap Interval
 
-![image](https://github.com/petermg/TheOcularMigraineMCP/assets/20764493/59c902bf-d1d8-4af7-9602-64a5517a36fa)
+![image](https://github.com/petermg/TheOcularMigraineMCP/assets/20764493/d219c57b-e7f1-4407-8b8f-2c2bdb7c0f1a)
+
 
 The Swap Interval settings is a bit hard to explain. [THIS PAGE](https://github.com/MortimerGoro/ovr-mobile-sys/blob/master/VrApi/Include/VrApi.h) seems to explain it in a very technical manner, under "Frame Timing". In practice this is what it seems to do, if your refresh rate is 90hz and you have the Swap Interval set to 1, when you record the framerate will be 90fps. However if you set the Swap Interval to 2, it will halve the recorded framerate. This is automatically applied in my framerate recording presets, specifically the 60fps/120hz setting. That one sets the display frequency to 120hz and the swap interval to 2, thus making the recording be 60fps. However the gameplay will have juttering, although this will not appear in the recorded video. There is another setting that is built into those recording framerate presets, namely debug.oculus.fullRateCapture, which gets set to 1, as by default it's set to 0. This seems to possibly toggle between variable framerate capture and full, else it is full and half respectively. Nevertheless to have this as an independent option isn't really useful by itself and I already have it in preset where it would be required so I may end up just removing this option all together.
-
-
-
 
 # Tools Screen:
 
