@@ -1,4 +1,7 @@
 # The Ocular Migraine: {Dev Mode} Master Control Program.
+<img alt="GitHub Downloads (all assets, all releases)" src="https://img.shields.io/github/downloads/petermg/TheOcularMigraineMCP/total">
+
+
 
 ### This is an applicaiton for use with the Oculus / Meta Quest mobile VR headsets, including the original Oculus Quest, Oculus / Meta Quest 2, Meta Quest Pro, Meta Quest 3.
 
