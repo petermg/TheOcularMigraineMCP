@@ -1,5 +1,5 @@
 # The Ocular Migraine: {Dev Mode} Master Control Program.
-<img alt="GitHub Downloads (all assets, all releases)" src="https://img.shields.io/github/downloads/petermg/TheOcularMigraineMCP/total?color=b3f117">
+<img alt="GitHub Downloads (all assets, all releases)" src="https://img.shields.io/github/downloads/petermg/TheOcularMigraineMCP/total?style=for-the-badge&color=b3f117">
 
 
 
