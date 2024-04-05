@@ -1,7 +1,7 @@
 # The Ocular Migraine: {Dev Mode} Master Control Program.
  <img alt="GitHub Downloads (specific asset, all releases)" src="https://img.shields.io/github/downloads/petermg/TheOcularMigraineMCP/version?style=social&label=visits&color=2417f1">
  
-[<img alt="GitHub Downloads (all assets, all releases)" src="https://img.shields.io/github/downloads/petermg/TheOcularMigraineMCP/total?style=for-the-badge&color=b3f117">](https://github.com/petermg/TheOcularMigraineMCP/releases/latest/download/TheOcularMigraine.apk)
+[<img alt="GitHub Downloads (all assets, all releases)" src="https://img.shields.io/github/downloads/petermg/TheOcularMigraineMCP/total?style=for-the-badge&color=b3f117">](https://github.com/petermg/TheOcularMigraineMCP/releases)
 
 [<img alt="GitHub Downloads (specific asset, all releases)" src="https://img.shields.io/github/downloads/petermg/TheOcularMigraineMCP/TheOcularMigraine.apk?style=for-the-badge&labelColor=000000&color=00d9f2">](https://github.com/petermg/TheOcularMigraineMCP/releases/latest/download/TheOcularMigraine.apk)
 
