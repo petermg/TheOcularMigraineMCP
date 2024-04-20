@@ -474,12 +474,14 @@ The Swap Interval settings is a bit hard to explain. [THIS PAGE](https://github.
 
 # Tools Screen:
 
-![image](https://github.com/petermg/TheOcularMigraineMCP/assets/20764493/0f37d68c-1a09-4ea4-bd18-0548333a5361)
+![image](https://github.com/petermg/TheOcularMigraineMCP/assets/20764493/08f4257f-0452-4081-987c-f0e3c73799e6)
+
 ##
 
 # Tools Screen Top Section
 
-![image](https://github.com/petermg/TheOcularMigraineMCP/assets/20764493/2fea58d2-a040-48e0-adcb-772a85d28974)
+![image](https://github.com/petermg/TheOcularMigraineMCP/assets/20764493/85f9db54-883b-4535-955a-d53bf5218d48)
+
 ##
 ### Install APK via ADB
 
@@ -499,7 +501,7 @@ Runs a command after "ADB shell".
 ##
 # Tools Screen Middle Section
 
-![image](https://github.com/petermg/TheOcularMigraineMCP/assets/20764493/5dd1e2c4-62a1-4ce1-aff3-2073fb323605)
+![image](https://github.com/petermg/TheOcularMigraineMCP/assets/20764493/aeded760-e197-476d-aba2-4f10a1b886be)
 ##
 ### Enable OVR Metrics Tool Overlay
 
@@ -507,21 +509,17 @@ Runs a command after "ADB shell".
 
 This will cause the OVR Metrics Tool to display an overlay consisting of statistics to monitor the performance of your game. This is useful when testing out new gaming profiles.
 ##
-### Open File Manager
+### File Manager
 
-![image](https://github.com/petermg/TheOcularMigraineMCP/assets/20764493/5a0e702d-80ab-4317-b414-90d220035786)
+![image](https://github.com/petermg/TheOcularMigraineMCP/assets/20764493/99153a63-09d4-404a-be7a-212fc482c070)
+
 
 This will open File Manager +. If it is not installed, it will download it and install it then open it.
 ##
-### Open QAVS
+### SideQuest
 
-![image](https://github.com/petermg/TheOcularMigraineMCP/assets/20764493/8af1e8c8-de12-4146-982a-3e487c7e5e6d)
+![image](https://github.com/petermg/TheOcularMigraineMCP/assets/20764493/2f0a9484-cef3-41f4-843b-3673722d5e55)
 
-This will open [Quest App Version Switcher](https://sidequestvr.com/app/5333/questappversionswitcher-qavs). If it is not installed, it will download it and install it, then open it.
-##
-### Open SideQuest
-
-![image](https://github.com/petermg/TheOcularMigraineMCP/assets/20764493/28bcc7e0-1dd8-484f-97b8-dd575c212fba)
 
 This will open the Android version of SideQuest. If it is not installed, it will download it and install it.
 ##
@@ -571,7 +569,8 @@ Disables the auto startup of the previously selected application.
 ##
 # Tools Screen Bottom Section
 
-![image](https://github.com/petermg/TheOcularMigraineMCP/assets/20764493/fb99e977-2aa5-4272-b885-53a9d94e5bf0)
+![image](https://github.com/petermg/TheOcularMigraineMCP/assets/20764493/fb215d8a-03f0-4874-ba46-bf9c2e2033f7)
+
 ##
 ## Access Lists
 Here you can create access lists.
@@ -615,14 +614,14 @@ Switches between two different modes of enforcing the access lists. Depending on
 
 # Misc Screen:
 
-![image](https://github.com/petermg/TheOcularMigraineMCP/assets/20764493/8c36cae0-fd69-4790-880d-36066dbcf0d7)
-
+![image](https://github.com/petermg/TheOcularMigraineMCP/assets/20764493/59514696-a46c-4cb6-844d-7f8e9f8e33c4)
 
 
 ##
 
 ### Misc Screen Top Section
-![image](https://github.com/petermg/TheOcularMigraineMCP/assets/20764493/27176fde-7fd2-4f36-8a1c-02d74dd17890)
+![image](https://github.com/petermg/TheOcularMigraineMCP/assets/20764493/841646db-849e-4c89-a797-ea16ee9fb781)
+
 
 ##
 ### Switch App Launch Detection Method
@@ -658,15 +657,15 @@ This is NOT a requirement but a recommendation. If you want to do it, this is ho
 https://github.com/petermg/TheOcularMigraineMCP/assets/20764493/ad4c4d3f-7f98-416a-8ea7-db4c07d522cc
 ##
 ### Misc Screen Middle Section
-![image](https://github.com/petermg/TheOcularMigraineMCP/assets/20764493/19501e1a-1690-4694-a17f-42b69942f1b9)
+![image](https://github.com/petermg/TheOcularMigraineMCP/assets/20764493/ac2e70fa-7274-41e2-9568-2ebef079ed00)
+
 
 ##
 Right now the only thing in this section are three customizable buttons. If you LONG PRESS on one, it will prompt you to enter an adb shell command. When you press OK, it will save that command as a preset for that button. So now in order to run that command just do a short single click on the button and it will then run the command and show a pop up of the output after the command is finished running. I don't know how useful this is, I may make more of these buttons, or remove them all together.
 ##
 
 ### Misc Screen Bottom Section
-![image](https://github.com/petermg/TheOcularMigraineMCP/assets/20764493/41556a10-6f79-44a3-bc36-f7feddde7ffa)
-
+![image](https://github.com/petermg/TheOcularMigraineMCP/assets/20764493/56cfca18-9356-4e44-bcac-58aeaf3351c6)
 
 ##
 ### Restart Home Environment
