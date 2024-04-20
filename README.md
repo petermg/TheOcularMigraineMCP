@@ -357,6 +357,12 @@ On the top section of the Recording Screen you can set different recording resol
 
 Here you can enter in your own recording Width and Height.
 ##
+### Recording Bitrate
+![image](https://github.com/petermg/TheOcularMigraineMCP/assets/20764493/eba6e46a-4c72-4fd5-a179-9c1af8a15b83)
+
+
+Select this to set your recording bitrate. I have made the default selection 45Mbps.
+##
 ### Recording Screen Middle Section
 ![image](https://github.com/petermg/TheOcularMigraineMCP/assets/20764493/587c3b27-d24c-4d84-a0eb-b6301ac43549)
 
@@ -395,16 +401,12 @@ If you start recording using this method, you must also STOP recording using the
 ##
 
 ### Recording Screen Bottom Section
-![image](https://github.com/petermg/TheOcularMigraineMCP/assets/20764493/8038ccbf-3504-49e4-bcde-dc330ba510ed)
+![image](https://github.com/petermg/TheOcularMigraineMCP/assets/20764493/6ea7c9ea-e674-4acf-a6a2-a135702e6b81)
+
 
 
 ##
-### Recording Bitrate
-![image](https://github.com/petermg/TheOcularMigraineMCP/assets/20764493/eba6e46a-4c72-4fd5-a179-9c1af8a15b83)
 
-
-Select this to set your recording bitrate. I have made the default selection 45Mbps.
-##
 ### FOV Crop
 ![image](https://github.com/petermg/TheOcularMigraineMCP/assets/20764493/4da04a65-3f07-48a1-aacf-8867beead84b)
 
