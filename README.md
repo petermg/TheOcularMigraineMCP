@@ -319,16 +319,19 @@ Clicking on Disable will disable The Ocular Migraine from monitoring app launche
 
 # Recording Screen:
 
-![image](https://github.com/petermg/TheOcularMigraineMCP/assets/20764493/2a2c53a6-ac1c-41be-8cf5-4deca609c35f)
+![image](https://github.com/petermg/TheOcularMigraineMCP/assets/20764493/25dc8074-ffeb-4627-a433-99fcb9af42e8)
+
 
 
 ##
 ### Recording Screen Top Section
-![image](https://github.com/petermg/TheOcularMigraineMCP/assets/20764493/6e43d036-14f3-4f5b-af92-4285e624c863)
+![image](https://github.com/petermg/TheOcularMigraineMCP/assets/20764493/c6f65489-134d-4086-aa92-0fd2c3fc55f0)
+
 
 ##
 ### Resolution Presets
-![image](https://github.com/petermg/TheOcularMigraineMCP/assets/20764493/6f5722eb-c637-4541-aa49-a26a3e4bcf55)
+![image](https://github.com/petermg/TheOcularMigraineMCP/assets/20764493/1331f5de-dee2-4ce8-906d-143a8d3aabed)
+
 
 
 
@@ -355,7 +358,8 @@ On the top section of the Recording Screen you can set different recording resol
 Here you can enter in your own recording Width and Height.
 ##
 ### Recording Screen Middle Section
-![image](https://github.com/petermg/TheOcularMigraineMCP/assets/20764493/e12df625-316a-4c10-9f8b-e9d751ec653c)
+![image](https://github.com/petermg/TheOcularMigraineMCP/assets/20764493/587c3b27-d24c-4d84-a0eb-b6301ac43549)
+
 
 ##
 ### Recording FrameRate
@@ -366,7 +370,8 @@ The following options are:
 * 90hz/fps
 * 120hz/fps
 
-![image](https://github.com/petermg/TheOcularMigraineMCP/assets/20764493/a01fe4ac-ccd4-4580-b24a-4ec61e3dde95)
+![image](https://github.com/petermg/TheOcularMigraineMCP/assets/20764493/e3e2d1f0-6189-4b1e-ad9f-43a70ba74973)
+
 
 
 Please note, the Quest 1 cannot go above 72hz, the Quest Pro can only do 72hz and 90hz, and the Quest 3 can not do 60hz. Only the Quest 2 can do all 4 options. Also the 60fps@120hz option is NOT recommended as it makes your experience jerky, even though the recording may look fine. This was more of an exeprimental feature to get the Quest Pro and Quest 3 to record at 60fps.
@@ -380,6 +385,15 @@ The following options are:
 * Both(3D) - Records BOTH eyes, for 3D.
 * Right Eye - Records from the right eye.
 ##
+
+### Start Recording and Stop Recording
+![image](https://github.com/petermg/TheOcularMigraineMCP/assets/20764493/29900e85-3bca-41dc-b948-aac9041d9051)
+These options do NOT appear on the Quest 2 as currently it does NOT support this method of recording. I don't know if this works on the Quest Pro or not. Let me know!
+This uses a different method of recording than the normal user activated recording method. On the Quest 3, it records in stereo. On the Quest 1 it records in mono. This uses "metacam" for recording, a built-in method that is used by the Meta Quest Developer Hub.
+This method is useful if you want to record in stereo on your Quest 3 (again not sure if this works on the Quest Pro yet, waiting for user feedback). This method does record on the Quest 1 but it's not in stereo.
+If you start recording using this method, you must also STOP recording using the STOP RECORDING button, otherwise the recording will continue.
+##
+
 ### Recording Screen Bottom Section
 ![image](https://github.com/petermg/TheOcularMigraineMCP/assets/20764493/8038ccbf-3504-49e4-bcde-dc330ba510ed)
 
