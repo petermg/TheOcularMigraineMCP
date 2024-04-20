@@ -120,12 +120,14 @@ Each screen has 3 sub-sections, top, middle, bottom.
 
 # Main Screen:
 
-![image](https://github.com/petermg/TheOcularMigraineMCP/assets/20764493/50953447-0d97-4da5-80ae-1534ed3ee19e)
+![image](https://github.com/petermg/TheOcularMigraineMCP/assets/20764493/5c61be3a-959e-491c-a342-0c7b180a3c6f)
+
 
 
 ## 
 ## Main screen TOP section:
-![image](https://github.com/petermg/TheOcularMigraineMCP/assets/20764493/b4078f82-86f8-4325-93cd-4217b2d3323e)
+![image](https://github.com/petermg/TheOcularMigraineMCP/assets/20764493/ad6842ea-2928-4fbc-b757-24f2f6a9eb5d)
+
 
 
 
@@ -182,7 +184,8 @@ Below "About" you will see "Font Size". If you click on this you will have the o
 
 "CPU Level" allows you to change the CPU to a set clock level. This is NOT recommended however as the device is set to dynamically do this. Setting this will result in more battery useage and more heat. This will NOT "unlock" any performance as the headset is DESIGNED to automatically scale the CPU up when needed to it's maximum clock rate.
 
-![image](https://github.com/petermg/TheOcularMigraineMCP/assets/20764493/db2d14e3-0fe8-4958-b537-38b442c435c9)
+![image](https://github.com/petermg/TheOcularMigraineMCP/assets/20764493/1dea2490-c777-49a6-a753-b0cf40ae8eb8)
+
 
 ## 
 ## GPU Level
@@ -192,18 +195,21 @@ Below "About" you will see "Font Size". If you click on this you will have the o
 
 "GPU Level" allows you to change the GPU to a set clock level. This is NOT recommended however as the device is set to dynamically do this. Setting this will result in more battery useage and more heat. This will NOT "unlock" any performance as the headset is DESIGNED to automatically scale the GPU up when needed to it's maximum clock rate.
 
-![image](https://github.com/petermg/TheOcularMigraineMCP/assets/20764493/6cbab271-627e-4efc-bccb-328ab83fb20f)
+![image](https://github.com/petermg/TheOcularMigraineMCP/assets/20764493/7448e905-2ca7-4a10-8ca0-841d980b6377)
+
 
 ## 
 ## Main screen MIDDLE section:
 
-![image](https://github.com/petermg/TheOcularMigraineMCP/assets/20764493/48a74bea-f620-4d90-90f4-4eaae07806b1)
+![image](https://github.com/petermg/TheOcularMigraineMCP/assets/20764493/f0c3b17d-23dd-46de-afd8-cd967a35262b)
+
 
 ## 
  
 ### Display Frequency
 
-![image](https://github.com/petermg/TheOcularMigraineMCP/assets/20764493/db2f6214-b298-4e8b-9e51-45ff436df0c6)
+![image](https://github.com/petermg/TheOcularMigraineMCP/assets/20764493/9ce50bc5-2f93-475f-8fe8-3f39c231abf3)
+
 
 
 "Display Frequency:" The options are 60hz, 72hz, 90hz, 120hz. Only the Quest 2 headset supports all 4 frequencies. The Quest 1 cannot go past 72hz. The Quest Pro cannot go past 90hz, nor can it do 60hz. The Quest 3 cannot do 60hz. Click on the frequency you want to set and it will be set if supported for your device.
