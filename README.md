@@ -629,8 +629,13 @@ Switches between two different modes of enforcing the access lists. Depending on
 
 ![image](https://github.com/petermg/TheOcularMigraineMCP/assets/20764493/5bbf70e3-0331-4912-8d48-eb6d3c7bf360)
 
+![image](https://github.com/petermg/TheOcularMigraineMCP/assets/20764493/f09ec6c9-e591-4603-8cda-5f281c256aa3)
 
-Clicking on this will toggle between two different app launch detection methods. The default is Logcat. The other is App Usage.
+
+
+
+Clicking on this will toggle between two different app launch detection methods. The default WAS Logcat. Currently the default is set to App Usage.
+App Usage is pretty fool proof overall but is slightly slower than the Logcat method. The Logcat method is very fast but doesn't detect already running apps being brought to the foreground as clicking on them, whereas App Usage does detect this. However this issue only applies to 2D apps, not VR 3D applications.
 ##
 ### Disable Battery Optimization
 
