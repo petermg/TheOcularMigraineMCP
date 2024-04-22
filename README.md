@@ -183,7 +183,7 @@ Below "About" you will see "Font Size". If you click on this you will have the o
 ![image](https://github.com/petermg/TheOcularMigraineMCP/assets/20764493/36d23c55-5ae6-43e8-811b-1d7b6d799750)
 
 
-"CPU Level" allows you to change the CPU to a set clock level. This is NOT recommended however as the device is set to dynamically do this. Setting this will result in more battery useage and more heat. This will NOT "unlock" any performance as the headset is DESIGNED to automatically scale the CPU up when needed to it's maximum clock rate.
+"CPU Level" allows you to change the CPU to a set clock level. Do this if you are confident you know what you are doing. Setting this to 5 will improve performance at the cost of battery life.
 
 ![image](https://github.com/petermg/TheOcularMigraineMCP/assets/20764493/1dea2490-c777-49a6-a753-b0cf40ae8eb8)
 
@@ -194,7 +194,7 @@ Below "About" you will see "Font Size". If you click on this you will have the o
 ![image](https://github.com/petermg/TheOcularMigraineMCP/assets/20764493/bc184c15-e7ac-4ea3-b497-e43e29a1e1fe)
 
 
-"GPU Level" allows you to change the GPU to a set clock level. This is NOT recommended however as the device is set to dynamically do this. Setting this will result in more battery useage and more heat. This will NOT "unlock" any performance as the headset is DESIGNED to automatically scale the GPU up when needed to it's maximum clock rate.
+"GPU Level" allows you to change the GPU to a set clock level. Setting this to 5 will improve performance at the cost of battery life.
 
 ![image](https://github.com/petermg/TheOcularMigraineMCP/assets/20764493/7448e905-2ca7-4a10-8ca0-841d980b6377)
 
