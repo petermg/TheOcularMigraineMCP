@@ -303,7 +303,7 @@ Game Data (just copies the data folder back to /sdcard/Android). You can restore
 ##
 
 ## Main Screen Bottom Section
-Here you can create your own global resolution presets. Currently this will read all of your device's current settings and create a profile for them. HOWEVER, it will NOT read the current device resolution that is set but rather it will read what the resolution SLIDER is set to and save THAT to the global preset. I might change this later on based on user feedback.
+Here you can create your own global resolution presets. Currently this will read all of your device's current display settings and create a profile for them. HOWEVER, it will NOT read the current device resolution that is set but rather it will read what the resolution SLIDER is set to and save THAT to the global preset. I might change this later on based on user feedback.
 On the bottom you have three page options, [Recording,](#recording-screen), Misc, and Tools. Clicking either of those will take you to those pages.
 ![image](https://github.com/petermg/TheOcularMigraineMCP/assets/20764493/03f1f3ff-d546-4d08-99a5-480f3af4bb23)
 
@@ -348,9 +348,9 @@ On the top section of the Recording Screen you can set different recording resol
 
 2560X720(32:9) - see notes from previous preset.
 
-1080X1920(9:16) - makes a vertical recording like for YouTube Shorts, tiktok, etc..
+1080X1920(9:16) - makes a vertical recording resolution like for YouTube Shorts, tiktok, etc..
 
-720X1280(9:16) - makes a vertical recording like for YouTube Shorts, tiktok, etc..
+720X1280(9:16) - makes a vertical recording resolution like for YouTube Shorts, tiktok, etc..
 ##
 ### Custom Resolution
 ![image](https://github.com/petermg/TheOcularMigraineMCP/assets/20764493/519c6c9c-9d87-4a5d-b29d-9e3d31cf0402)
@@ -362,7 +362,7 @@ Here you can enter in your own recording Width and Height.
 ![image](https://github.com/petermg/TheOcularMigraineMCP/assets/20764493/eba6e46a-4c72-4fd5-a179-9c1af8a15b83)
 
 
-Select this to set your recording bitrate. I have made the default selection 45Mbps.
+Select this to set your recording bitrate.
 ##
 ### Recording Screen Middle Section
 ![image](https://github.com/petermg/TheOcularMigraineMCP/assets/20764493/587c3b27-d24c-4d84-a0eb-b6301ac43549)
@@ -371,17 +371,21 @@ Select this to set your recording bitrate. I have made the default selection 45M
 ##
 ### Recording FrameRate
 The following options are:
-* 60hz/fps
-* 60fps@120hz
-* 72hz/fps
-* 90hz/fps
-* 120hz/fps
-
+* 60fps
+* 72fps
+* 90fps
+* 120fps
+* Manual
+* Hertz
+  
 ![image](https://github.com/petermg/TheOcularMigraineMCP/assets/20764493/e3e2d1f0-6189-4b1e-ad9f-43a70ba74973)
 
 
 
 Please note, the Quest 1 cannot go above 72hz, the Quest Pro can only do 72hz and 90hz, and the Quest 3 can not do 60hz. Only the Quest 2 can do all 4 options. Also the 60fps@120hz option is NOT recommended as it makes your experience jerky, even though the recording may look fine. This was more of an exeprimental feature to get the Quest Pro and Quest 3 to record at 60fps.
+Manual: Selecting this option will set your device to record at a custom framerate. This doesn't always work as intended so test this by making a test recording after setting it to verify.
+Hertz: This sets the device to record at the framerate of the display frequency.
+
 ##
 ### Recording Eye
 ![image](https://github.com/petermg/TheOcularMigraineMCP/assets/20764493/e292a61c-3083-441e-94c6-816e5cce0dbc)
@@ -424,7 +428,7 @@ This seems to be a little known feature that allows you to crop the rendered are
 ![image](https://github.com/petermg/TheOcularMigraineMCP/assets/20764493/cfc3c93c-ceb3-4641-8d0d-9bde33292028)
 
 
-Saving a Recording Profile creates a recording profile that stores all of your current disiplay information, such as resolution, GPU/CPU levels, FFR level, Refresh Rate and also your recording settings such as recording bitrate, recording eye, recording resolution, screen crop and saves it to a recording profile which you can load for the game you have selected or even load it for use with any game. You can even save it as a default profile using the Manage Default Profiles option on the Tools Screen. In order to create a Recording Profile, just set whatever resolution you want from the Main Screen, set the recording resolution and framerate and bitrate and eye recording selection then click on Save Recording Profile. It will propmt you to select which game you wish to save it for, but this does NOT make it a default profile for that game. The game selected will still be run with it's default profile unless you load it's recording profile from the Load Recording Profile screen and select RUN.
+Saving a Recording Profile creates a recording profile that stores all of your current disiplay information, such as resolution, GPU/CPU levels, FFR level, Refresh Rate and also your recording settings such as recording bitrate, recording eye, recording resolution, screen crop and saves it to a recording profile which you can load for the game you have selected or even load it for use with any game. You can even save it as a default profile using the Manage Game Profiles option on the Main Screen. In order to create a Recording Profile, just set whatever resolution you want from the Main Screen (if you want anything other than the default device resolution), along with any FFR Level, CPU Level and GPU Level selections, set the recording resolution and framerate and bitrate and eye recording selection then click on Save Recording Profile. It will propmt you to select which game you wish to save it for, but this does NOT make it a default profile for that game. The game selected will still be run with it's default profile unless you load it's recording profile from the Load Recording Profile screen and select RUN.
 
 https://github.com/petermg/TheOcularMigraineMCP/assets/20764493/52f6b17d-b7ce-4039-9c19-b74b02ce06a4
 ##
