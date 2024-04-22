@@ -504,8 +504,13 @@ This feature seems to be the Adaptive Clocking feature, which scales the perform
 
 ![image](https://github.com/petermg/TheOcularMigraineMCP/assets/20764493/d219c57b-e7f1-4407-8b8f-2c2bdb7c0f1a)
 
-
 The Swap Interval settings is a bit hard to explain. [THIS PAGE](https://github.com/MortimerGoro/ovr-mobile-sys/blob/master/VrApi/Include/VrApi.h) seems to explain it in a very technical manner, under "Frame Timing". In practice this is what it seems to do, if your refresh rate is 90hz and you have the Swap Interval set to 1, when you record the framerate will be 90fps. However if you set the Swap Interval to 2, it will halve the recorded framerate. This is automatically set to "1" in my framerate recording presets.
+##
+### Reset Recording to default
+![image](https://github.com/petermg/TheOcularMigraineMCP/assets/20764493/284fe4f4-3088-4233-86be-06df1b6dd945)
+
+Resets all recording options back to system defaults.
+
 
 # Tools Screen:
 
@@ -521,11 +526,15 @@ The Swap Interval settings is a bit hard to explain. [THIS PAGE](https://github.
 ### Install APK via ADB
 
 ![image](https://github.com/petermg/TheOcularMigraineMCP/assets/20764493/c56a08e2-052e-426a-babb-1822d175657c)
+
+
 Clicking on this will prompt you to select an APK to install. It will then be installed via the internal adb binary.
 ##
 ### Input ADB command
 
 ![image](https://github.com/petermg/TheOcularMigraineMCP/assets/20764493/8946a9f7-31c8-4817-b7a9-869c6cbd2919)
+
+
 For anyone who wants to play with the internal ADB binary.
 ##
 ### ADB Shell command
@@ -534,6 +543,14 @@ For anyone who wants to play with the internal ADB binary.
 
 Runs a command after "ADB shell".
 ##
+### Console Output Screen
+
+![image](https://github.com/petermg/TheOcularMigraineMCP/assets/20764493/c15d207a-c788-4c4c-b67e-02b5d205fe85)
+
+This is where you will see the output of "ADB command", "Shell command", and "ADB Shell Command" options.
+##
+
+
 # Tools Screen Middle Section
 
 ![image](https://github.com/petermg/TheOcularMigraineMCP/assets/20764493/aeded760-e197-476d-aba2-4f10a1b886be)
@@ -542,7 +559,7 @@ Runs a command after "ADB shell".
 
 ![image](https://github.com/petermg/TheOcularMigraineMCP/assets/20764493/bff210dc-5ebd-4c63-9fff-e54f81ac40d2)
 
-This will cause the OVR Metrics Tool to display an overlay consisting of statistics to monitor the performance of your game. This is useful when testing out new gaming profiles.
+This will cause the OVR Metrics Tool to display an overlay consisting of statistics to monitor the performance of your game. This is useful when testing out new gaming profiles. If the OVR Metrics Tool is not installed, this will install it for you automatically.
 ##
 ### File Manager
 
@@ -569,7 +586,7 @@ This is how Kiosk Mode works:
 3. When you are running your Kiosk mode app, hold the volume up for a few seconds until you are prompted to enter the Kiosk Mode password.
 4. Kiosk mode will be enabled if you entered the password correctly.
 5. In order to get out of Kiosk Mode you must restart your headset and open The Ocular Migraine and input the correct Kiosk Mode password to disable it.
-6. If you enter the wrong password at this point, the Kiosk Mode app will launch again and you will need to reboot your headset to try again to reset it.
+6. If you enter the wrong password at this point, the Kiosk Mode app will launch again and you will need to reboot your headset to try again to re-enter it.
 7. The only time you do NOT need to reboot your headset is in cases where the application you are running has an "EXIT" button allowing you to quit the application.
 8. Kiosk Mode effectively "disables" the Oculus / Meta home button on the right controller. You can still however hold it down to recenter yourself.
 
@@ -578,7 +595,7 @@ This is how Kiosk Mode works:
 
 ![image](https://github.com/petermg/TheOcularMigraineMCP/assets/20764493/1793ee1d-1fba-4492-af3b-58ed3fcadd96)
 
-This will propmt you for the Kiosk Mode password and then it will entirely disable Kiosk Mode. This is here so that pressing the Volume Up button for an extended amount of time no longer triggers the Kiosk Mode enable password prompt.
+This will prompt you for the Kiosk Mode password and then it will entirely disable Kiosk Mode. This is here so that pressing the Volume Up button for an extended amount of time no longer triggers the Kiosk Mode enable password prompt.
 ##
 
 ### Create Shortcut App
@@ -696,6 +713,20 @@ This is NOT a requirement but a recommendation. If you want to do it, this is ho
 
 https://github.com/petermg/TheOcularMigraineMCP/assets/20764493/ad4c4d3f-7f98-416a-8ea7-db4c07d522cc
 ##
+### Android Settings
+![image](https://github.com/petermg/TheOcularMigraineMCP/assets/20764493/ac8cce95-ead9-4edd-9e42-622d46910019)
+
+This opens the general Android Settings of your Quest. Be careful with this. I put this in here just for fun for those who want to poke around, but again, be careful with this. Not all settings are documented or necessarily work as expected here.
+##
+
+### User Defined ADB Commands
+![image](https://github.com/petermg/TheOcularMigraineMCP/assets/20764493/2601116f-ec85-4aa8-9dee-db75efd8a83c)
+
+Long press to ender an adb shell command you wish to save. This will create a script text file that will be run each time you click on it. The script is stored in /sdcard/MCP/Scripts/. You can manually modify each script if you would like it to run multiple commands, just put a semicolon between the commands, for example "echo this is a test;echo test completed". Those are two commands on a single line. If you put multiple lines in the script, it probably will not run correctly. 
+
+##
+
+
 ### Misc Screen Middle Section
 ![image](https://github.com/petermg/TheOcularMigraineMCP/assets/20764493/ac2e70fa-7274-41e2-9568-2ebef079ed00)
 
