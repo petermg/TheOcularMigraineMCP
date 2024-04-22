@@ -213,7 +213,7 @@ Below "About" you will see "Font Size". If you click on this you will have the o
 
 
 
-"Display Frequency:" The options are 60hz, 72hz, 90hz, 120hz, Adaptive and Manual. Only the Quest 2 headset supports all 4 preset frequencies. The Quest 1 cannot go past 72hz. The Quest Pro cannot go past 90hz, nor can it do 60hz. The Quest 3 cannot do 60hz. Click on the frequency you want to set and it will be set if supported for your device. The Quest 3 supports adaptive refresh rates in incriments of 5hz whereas the Quest 2 does it in incriments of 1. I am not sure about the Quest Pro. You can use the OVR Metrics Tool overlay to see these changes in real time. You can activate it from the Tools page.
+"Display Frequency:" The options are 60hz, 72hz, 90hz, 120hz, Adaptive and Manual. Only the Quest 2 headset supports all 4 preset frequencies. The Quest 1 cannot go past 72hz. The Quest Pro cannot go past 90hz, nor can it do 60hz. The Quest 3 cannot do 60hz. Click on the frequency you want to set and it will be set if supported for your device. The Quest 3 supports adaptive refresh rates in incriments of 5hz whereas the Quest 2 does it in incriments of 1. I am not sure about the Quest Pro. You can use the OVR Metrics Tool overlay to see these changes in real time, which can be enabled from the Tools page.
 ##
  
 ### Default Display Settings
@@ -387,7 +387,9 @@ The Quest 1 probably cannot record any higher than 72fps.
 The Quest Pro probably cannot record any higher than 90fps.
 The Quest Pro and the Quest 3 even though they cannot do 60hz refresh rate are still able to record at 60fps.
 The Quest 2 can record at all listed framerates.
+
 Manual: Selecting this option will set your device to record at a custom framerate. This doesn't always work as intended so test this by making a test recording after setting it to verify.
+
 Hertz: This sets the device to record at the framerate of the display frequency.
 
 ##
