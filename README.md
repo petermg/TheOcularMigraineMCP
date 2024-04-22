@@ -477,7 +477,7 @@ This is used to inject 3D metadata into the videos you've recorded after selecti
 11. Wait while your video file is being processed. This might take a bit depending on your file size and length. The audio will be recompressed, but the video is not being recompressed.
 12. After it is finished it will show you the command output results: 
 ![image](https://github.com/petermg/TheOcularMigraineMCP/assets/20764493/07acbad9-e925-4cc3-9d23-cf749fdfafb7)
-13. Your video file is now ready to be uploaded to YouTube for 3D processing. You will find it in the same directory from the video you selected with the end of the file name saying "3D_AR_1x1" before the file extension.
+13. Your video file is now ready to be uploaded to YouTube for 3D processing. You will find it in /Oculus/VideoShots/3D.
 ##
 ### Swap Interval
 
