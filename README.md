@@ -136,7 +136,7 @@ Each screen has 3 sub-sections, top, middle, bottom.
 
 
 
-From this section you will find a statistics read-out showing things like your device name, IP address, SSID name and signal strength, free space, and battery level and currently enabled display resolution. If you click on this it will update.
+From this section you will find a statistics read-out showing things like your device name, IP address, SSID name and signal strength, free space, and battery level and currently enabled display resolution. If you click on this it will update. It does not update the statistics in realtime.
 ## 
 ## About
 ![image](https://github.com/petermg/TheOcularMigraineMCP/assets/20764493/d12e7d62-be91-47c3-b920-56801a2600a9)
