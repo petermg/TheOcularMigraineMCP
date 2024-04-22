@@ -173,7 +173,7 @@ Below "About" you will see "Font Size". If you click on this you will have the o
 ![image](https://github.com/petermg/TheOcularMigraineMCP/assets/20764493/82963da4-45fb-4bd5-9ac1-551a5b0accf0)
 
 
-"FFR Level" allows you to set the Fixed Foveated Rendering amount. For best performance set this to 4 and keep "dynamic" enabled.
+"FFR Level" allows you to set the Fixed Foveated Rendering amount. For best performance set this to 4 and keep "dynamic" unchecked.
 
 ![image](https://github.com/petermg/TheOcularMigraineMCP/assets/20764493/98b50167-df30-4527-b652-04ec418b2875)
 
