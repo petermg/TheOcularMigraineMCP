@@ -69,12 +69,10 @@
     * [Devices](#devices)
     * [Restart ADB Server](#restart-adb-server)
     * [Reboot](#reboot)
-    * [Dynamic Clock](#dynamic-clock)
 
 
 
 ##
-[Dynamic Clock](#dynamic-clock)
 [The Main Screen (About)](#about)
 [The Main Screen (About)](#about)
 [The Main Screen (About)](#about)
@@ -703,12 +701,6 @@ Restarts the ADB server on the device, for troubleshooting.
 This will INSTANTLY reboot the headset. Sometimes however the ADB server seems to go stale. So if pressing this once doesn't immediately reboot your headset, pressing it again will.
 
 ![image](https://github.com/petermg/TheOcularMigraineMCP/assets/20764493/c5e7b5f2-e4c4-47d7-b344-23bd82bcdbda)
-
-##
-### Dynamic Clock
-There used to be a dynamic clock property that could be set via ADB on the Oculus / Meta headsets. This command doesn't seem to do anything anymore so I put it here and will probably remove it.
-
-![image](https://github.com/petermg/TheOcularMigraineMCP/assets/20764493/05de5cd7-ac90-401b-93ac-df2ec82ce8da)
 
 ##
 ### Delete BlazeRush Config
