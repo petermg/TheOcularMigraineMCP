@@ -143,7 +143,8 @@ From this section you will find a statistics read-out showing things like your d
 
 
 
-Clicking on "About" will take you to a screen showing the current version number of the app, credits, and an UPDATE button that will update the app. Currently it does not have version checking enabled so it just downloads the latest apk and installs it, regardless of if it's newer or not. Version checking implimentation is on the TO-DO list. You will also find a link to this online help document if you click on "Help".
+Clicking on "About" will take you to a screen showing the current version number of the app, credits, and IF an update is avialable, an UPDATE button that will update the app (this will ONLY be shown if an update is available). NOTE: A check will be run to see if there is an available update whenever you click on ABOUT.
+You will also find a link to this online help document if you click on "Help".
 
 ![image](https://github.com/petermg/TheOcularMigraineMCP/assets/20764493/94199140-0010-49cf-8484-141de9e91589)
 
