@@ -213,7 +213,7 @@ Below "About" you will see "Font Size". If you click on this you will have the o
 
 
 
-"Display Frequency:" The options are 60hz, 72hz, 90hz, 120hz, Adaptive and Manual. Only the Quest 2 headset supports all 4 preset frequencies. The Quest 1 cannot go past 72hz. The Quest Pro cannot go past 90hz, nor can it do 60hz. The Quest 3 cannot do 60hz. Click on the frequency you want to set and it will be set if supported for your device. The Quest 3 supports adaptive refresh rates in incriments of 5hz whereas the Quest 2 does it in incriments of 1. You can use the OVR Metrics Tool overlay to see these changes in real time. You can activate it from the Tools page.
+"Display Frequency:" The options are 60hz, 72hz, 90hz, 120hz, Adaptive and Manual. Only the Quest 2 headset supports all 4 preset frequencies. The Quest 1 cannot go past 72hz. The Quest Pro cannot go past 90hz, nor can it do 60hz. The Quest 3 cannot do 60hz. Click on the frequency you want to set and it will be set if supported for your device. The Quest 3 supports adaptive refresh rates in incriments of 5hz whereas the Quest 2 does it in incriments of 1. I am not sure about the Quest Pro. You can use the OVR Metrics Tool overlay to see these changes in real time. You can activate it from the Tools page.
 ##
  
 ### Default Display Settings
@@ -236,7 +236,7 @@ If you click on "Default Display Settings" any custom display settings you enabl
 Manage Game Profiles allows you to load any saved profiles you have. Select from any of the 3 folders, **DefaultProfiles**, **RecordingProfiles**, or **GameProfiles**. It will read the selected profile and open a window showing the details of the profile. You then have the following options:
 1. Delete - Deletes the saved profile.
 2. Cancel - Closes this screen without doing anything else.
-3. Delete Default - This will delete the default profile for the game.
+3. Delete Default - This will delete the default profile for the game. This option will ONLY be shown if a default profile exists for the selected game.
 4. Set Default - This will set the currently shown profile as default for the selected game.
 5. Run - This will run the game with the profile listed, BYPASSING any default profiles.
 
@@ -249,8 +249,8 @@ https://github.com/petermg/TheOcularMigraineMCP/assets/20764493/3c85d9f7-503c-44
 
 "Save Game Profile" will save your custom display settings, (resolution, refresh rate, FFR amount, etc.) to a text file for whichever game you choose. You can also set these profiles to **AUTOMATICALLY** run by DEFAULT whenever you run the game you specify for it. When you click "Save Game Profile" you will be prompted to select the game you want to save the profile for. You will also then be prompted with a summary of the profile you are about to save.
 In order to create a custom game profile, do the following:
-1. Move the Resolution Slider to your desired game resolution.
-2. Press Set Resolution.
+1. Move the Resolution Slider to your desired game resolution and press Set Resolution.
+2. If desired, set your Display Frequency, CPU Level, GPU Level and FFR Level.
 3. Click on Save Game Profile.
    ![image](https://github.com/petermg/TheOcularMigraineMCP/assets/20764493/682bde0a-cb3a-45e7-bcfc-9c0039570116)
 
