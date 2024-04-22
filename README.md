@@ -303,7 +303,8 @@ Game Data (just copies the data folder back to /sdcard/Android). You can restore
 ##
 
 ## Main Screen Bottom Section
-Currently some of what's on this section is up in the air right now. I originally had this as multiple global resolution presets you could set. This was a feature from very early development and I may get rid of it and just clean up this page a bit with the added space. Not sure yet. What do you think? On the bottom you have three page options, [Recording,](#recording-screen), Misc, and Tools. Clicking either of those will take you to those pages.
+Here you can create your own global resolution presets. Currently this will read all of your device's current settings and create a profile for them. HOWEVER, it will NOT read the current device resolution that is set but rather it will read what the resolution SLIDER is set to and save THAT to the global preset. I might change this later on based on user feedback.
+On the bottom you have three page options, [Recording,](#recording-screen), Misc, and Tools. Clicking either of those will take you to those pages.
 ![image](https://github.com/petermg/TheOcularMigraineMCP/assets/20764493/03f1f3ff-d546-4d08-99a5-480f3af4bb23)
 
 
