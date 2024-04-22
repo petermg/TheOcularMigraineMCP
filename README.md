@@ -213,7 +213,7 @@ Below "About" you will see "Font Size". If you click on this you will have the o
 
 
 
-"Display Frequency:" The options are 60hz, 72hz, 90hz, 120hz. Only the Quest 2 headset supports all 4 frequencies. The Quest 1 cannot go past 72hz. The Quest Pro cannot go past 90hz, nor can it do 60hz. The Quest 3 cannot do 60hz. Click on the frequency you want to set and it will be set if supported for your device.
+"Display Frequency:" The options are 60hz, 72hz, 90hz, 120hz, Adaptive and Manual. Only the Quest 2 headset supports all 4 preset frequencies. The Quest 1 cannot go past 72hz. The Quest Pro cannot go past 90hz, nor can it do 60hz. The Quest 3 cannot do 60hz. Click on the frequency you want to set and it will be set if supported for your device. The Quest 3 supports adaptive refresh rates in incriments of 5hz whereas the Quest 2 does it in incriments of 1. You can use the OVR Metrics Tool overlay to see these changes in real time. You can activate it from the Tools page.
 ##
  
 ### Default Display Settings
@@ -227,7 +227,7 @@ If you click on "Default Display Settings" any custom display settings you enabl
 ![image](https://github.com/petermg/TheOcularMigraineMCP/assets/20764493/9e8d6ca3-d1b3-4a37-9b1d-fb2cb3452d6e)
 
 
-"Reset ALL settings to default" will clear any settings changes you made on the headset. This will NOT remove any custom profiles nor will it erase any files on the device nor anything you saved to the device. It only clears any "setprop" commands that were sent to the headset, thus restoring the default settings.
+"Reset ALL settings to default" will clear any settings changes you made on the headset. (Actually this will clear ALL "oculus.debug" setprop settings). This will NOT remove any custom profiles nor will it erase any files on the device nor anything you saved to the device.
 ##
 ### Manage Game Profiles
 ![image](https://github.com/petermg/TheOcularMigraineMCP/assets/20764493/af50682c-cf0c-4e40-adc6-cc2e631f03c5)
