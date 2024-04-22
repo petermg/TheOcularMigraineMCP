@@ -483,6 +483,8 @@ This is used to inject 3D metadata into the videos you've recorded after selecti
 
 
 ![image](https://github.com/petermg/TheOcularMigraineMCP/assets/20764493/203253ef-f49e-4b98-b3a0-630ac401f993)
+
+
 This option does the EXACT SAME THING as the INJECT 3D METADATA option except that it does NOT inject 3D metadata. It does all the other options however, such as set the audio offset, tempo, start and end trim points.
 ##
 
