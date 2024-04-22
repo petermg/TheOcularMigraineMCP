@@ -382,7 +382,11 @@ The following options are:
 
 
 
-Please note, the Quest 1 cannot go above 72hz, the Quest Pro can only do 72hz and 90hz, and the Quest 3 can not do 60hz. Only the Quest 2 can do all 4 options. Also the 60fps@120hz option is NOT recommended as it makes your experience jerky, even though the recording may look fine. This was more of an exeprimental feature to get the Quest Pro and Quest 3 to record at 60fps.
+Please note that if you select a framerate to record that is above your display refresh rate, the display refresh rate will be raised to the framerate selected. If you select a recording framerate that is lower than your display refresh rate, the refresh rate will remain unchanged.
+The Quest 1 probably cannot record any higher than 72fps.
+The Quest Pro probably cannot record any higher than 90fps.
+The Quest Pro and the Quest 3 even though they cannot do 60hz refresh rate are still able to record at 60fps.
+The Quest 2 can record at all listed framerates.
 Manual: Selecting this option will set your device to record at a custom framerate. This doesn't always work as intended so test this by making a test recording after setting it to verify.
 Hertz: This sets the device to record at the framerate of the display frequency.
 
