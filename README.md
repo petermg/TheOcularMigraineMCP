@@ -275,7 +275,7 @@ You will be presented with the following menu:
 BACKUP OPTIONS: 
 
 ### Full Game Backup
- "Game + Data" (backs up the APK file of the game, plus any obb and data folders contained in /sdcard/Android)
+ "Game + Data" (backs up the APK file of the game, plus any obb and data folders contained in /sdcard/Android) Please note, larger games will take longer to create backup files.
  
  https://github.com/petermg/TheOcularMigraineMCP/assets/20764493/7ff9378e-28b5-4ad1-a2f0-d8604ed88d0a
  
