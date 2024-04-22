@@ -736,6 +736,8 @@ Once the web server is enabled you will see the web server URL in green along wi
 
 "Toggle Remote Uploading" is useful to allow you to upload files to your Quest from your phone or computer. When enabled it will show you the web address to go to for uploading. In the example above the address I could go to on my phone or computer would be http://192.168.1.248:1987/upload. This will bring me to a webpage that will allow me to select a file from my device and upload it to the Quest. It will ALSO allow me to specify a directory to upload it to. If the directory does not exist, it will be created. If a directory is not specified, it will be uploaded to "/sdcard/Uploaded" by default.
 
+Currently this seems to work well on the Quest 2, but on the Quest 3 it seems that when it goes to sleep, the web server becomes unresponsive. Sometimes when it's plugged into USB-C it stays responsive to YMMV on the Quest 3. HOWEVER, when downloading a very large video file on the Qeust 3 it will finish the download, it will not cut it off.
+
 ##
 
 ### Misc Screen Bottom Section
