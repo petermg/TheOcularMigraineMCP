@@ -458,17 +458,26 @@ This is used to inject 3D metadata into the videos you've recorded after selecti
 
 3. You will be propmted to CONFIRM your video file in a different window showing the entire listing with full names: 
 ![image](https://github.com/petermg/TheOcularMigraineMCP/assets/20764493/ec243a43-cfa5-4c06-a9cf-0628dd3a6078)
-4. You will be prompted to accept or change the aspect ratio if needed. This should NEVER be needed unless the Quest 3 no longer records 3D in a 1:1 aspect ratio. So just click on the green arrow to accept. 
-![image](https://github.com/petermg/TheOcularMigraineMCP/assets/20764493/556c58d6-a643-4ccc-971c-c08583ee8b6a)
-5. You will be shown the ffmpeg command about to be run. You can modify this commend from here before pressing OK, if you know what you're doing. Otherwise don't touch this: 
+4. You will be prompted to set the Audio Offset. This is in case your audio is out of sync. You can play with this to try and fix that. This will shift the audio forward or backward depending on your input. Positive values makes the audio delayed by that amount and negative values plays the audio earlier by that amount.
+![image](https://github.com/petermg/TheOcularMigraineMCP/assets/20764493/37800374-0825-4ed9-81f9-fcef2a64df41)
+
+5. You will be prompted to set the Audio Tempo. This is useful for when your audio is not just out of sync but because gradually out of sync over time. This will stretch your audio to play slower/longer or faster/shorter based on your input here. A value of 1.0 keeps the audio rate untouched. A value of 1.5 makes the audio play faster, at a rate of 1.5x. A value of 0.5 makes the audio play slower, at half speed.
+![image](https://github.com/petermg/TheOcularMigraineMCP/assets/20764493/4c1623c3-2932-40aa-8fd6-f143a66de7f9)
+6. You will be prompted to set a start time. If you leave this unchanged, it will not trim the beginning of your video.
+![image](https://github.com/petermg/TheOcularMigraineMCP/assets/20764493/b6ce75a1-7be2-4413-b167-931893925e92)
+7. You will then be prompted to set a Trim End Point. The default is set to 9 hours so if you don't touch this the end of your video will remain trimmed since there's not gonna be any recordings this long.
+![image](https://github.com/petermg/TheOcularMigraineMCP/assets/20764493/b928f648-31a1-412a-9171-39138c6c7116)
+
+8. You will be prompted to accept or change the aspect ratio if needed. This should NEVER be needed unless the Quest 3 no longer records 3D in a 1:1 aspect ratio. So just click on the green arrow to accept. 
+![image](https://github.com/petermg/TheOcularMigraineMCP/assets/20764493/a95369be-cdf1-4896-9682-546fd02a8cd8)
+
+9. You will be shown the ffmpeg command about to be run. You can modify this commend from here before pressing OK, if you know what you're doing. Otherwise don't touch this: 
 ![image](https://github.com/petermg/TheOcularMigraineMCP/assets/20764493/c034fe4a-31c2-4486-9496-ac01f1fe0b7c)
-6. After it is finished it will show you the command output results: 
+10. You will then be shown a summary of the options you have selected before continuing to proceed with processing your video file.
+11. Wait while your video file is being processed. This might take a bit depending on your file size and length. The audio will be recompressed, but the video is not being recompressed.
+12. After it is finished it will show you the command output results: 
 ![image](https://github.com/petermg/TheOcularMigraineMCP/assets/20764493/07acbad9-e925-4cc3-9d23-cf749fdfafb7)
-7. Your video file is now ready to be uploaded to YouTube for 3D processing. You will find it in the same directory from the video you selected with the end of the file name saying "3D_AR_1x1" before the file extension.
-
-**NOTICE**: For some reason things seem to have changed somewhat with how YouTube processes these 3D files. While this currently still works for the YouTube app on mobile devices like Android/iOS, and the Quest via YouTubeVR, on the desktop browser it no longer appears in anaglyph 3D but just as side-by-side video.
-
-**NOTICE #2**: For some reason there is an issue with the Quest recording for long recordings, the audio goes out of sync and trails BEHIND the video. I have confirmed this is an issue with the audio only and NOT the video length. As of now I have not come up with a solution for correcting this in processing. If anyone has any ideas, please let me know. I've tried a lot to figure this out and so far no answer.
+13. Your video file is now ready to be uploaded to YouTube for 3D processing. You will find it in the same directory from the video you selected with the end of the file name saying "3D_AR_1x1" before the file extension.
 ##
 ### Swap Interval
 
