@@ -730,9 +730,12 @@ Long press to ender an adb shell command you wish to save. This will create a sc
 ### Misc Screen Middle Section
 ![image](https://github.com/petermg/TheOcularMigraineMCP/assets/20764493/ac2e70fa-7274-41e2-9568-2ebef079ed00)
 
+Here you can configure the web server of your Quest. The top option allows you to turn web server file sharing on and off using "Toggle Server". 
+"Set Server Directory" allows you to specify which directory you would like to share.
+Once the web server is enabled you will see the web server URL in green along with the shared folder in green. So in the screen shot above on my phone or computer I would go to http://192.168.1.248:1987 which would then show me all my files in the shared directory which in this example is /storage/emulated/0, which is the root of the sdcard partition. You will then be able to access the files and subfolders here.
 
-##
-Right now the only thing in this section are three customizable buttons. If you LONG PRESS on one, it will prompt you to enter an adb shell command. When you press OK, it will save that command as a preset for that button. So now in order to run that command just do a short single click on the button and it will then run the command and show a pop up of the output after the command is finished running. I don't know how useful this is, I may make more of these buttons, or remove them all together.
+"Toggle Remote Uploading" is useful to allow you to upload files to your Quest from your phone or computer. When enabled it will show you the web address to go to for uploading. In the example above the address I could go to on my phone or computer would be http://192.168.1.248:1987/upload. This will bring me to a webpage that will allow me to select a file from my device and upload it to the Quest. It will ALSO allow me to specify a directory to upload it to. If the directory does not exist, it will be created. If a directory is not specified, it will be uploaded to "/sdcard/Uploaded" by default.
+
 ##
 
 ### Misc Screen Bottom Section
