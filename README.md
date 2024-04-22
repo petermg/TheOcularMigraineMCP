@@ -487,6 +487,12 @@ This is used to inject 3D metadata into the videos you've recorded after selecti
 
 This option does the EXACT SAME THING as the INJECT 3D METADATA option except that it does NOT inject 3D metadata. It does all the other options however, such as set the audio offset, tempo, start and end trim points.
 ##
+### adaclocks
+![image](https://github.com/petermg/TheOcularMigraineMCP/assets/20764493/4e30978d-b9d5-4f63-96f3-7fb87e350a89)
+
+This option enables or disables adaclocks. This seems to have something to do with audio clocks and maybe affect recording sycn one way or another. Sometimes it seems to help, other times it seems to make no difference.
+This feature seems to be the Adaptive Clocking feature, which scales the performance of the system based on need. Setting this to 0 disables this.
+
 
 ### Swap Interval
 
