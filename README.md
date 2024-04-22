@@ -770,11 +770,33 @@ Restarts the ADB server on the device, for troubleshooting.
 
 ##
 ### Reboot
-This will INSTANTLY reboot the headset. Sometimes however the ADB server seems to go stale. So if pressing this once doesn't immediately reboot your headset, pressing it again will.
+This will INSTANTLY reboot the headset. Instantly.
 
 ![image](https://github.com/petermg/TheOcularMigraineMCP/assets/20764493/c5e7b5f2-e4c4-47d7-b344-23bd82bcdbda)
 
 ##
+### Current Settings
+![image](https://github.com/petermg/TheOcularMigraineMCP/assets/20764493/0688834b-3424-44a7-9053-404c321a2f27)
+
+This will query the headset for all it's "oculus.debug" set flags and display them.
+##
+### Load System Defaults
+![image](https://github.com/petermg/TheOcularMigraineMCP/assets/20764493/bad8b228-873c-45b6-8fcd-8631354d3774)
+
+This will clear ALL "oculus.debug" flags. Usually this sets the headset back to "default" however some firmwares have some of these flags already set to certain specific settings for some reason. This will clear all of that. Just reboot your headset to get it back.
+##
+### Save Settings to file
+![image](https://github.com/petermg/TheOcularMigraineMCP/assets/20764493/b5b3342b-1e3d-4e53-a922-9ab1c5e12ef8)
+
+This is a VERY cool feature. This reads all of the "oculus.debug" flags that are currently set and saves them to a text file which you are prompted to name. This is to be used with the next option...
+##
+### Load Settings from file
+![image](https://github.com/petermg/TheOcularMigraineMCP/assets/20764493/eed9a7ce-1040-4fbb-9a20-d9df2e702662)
+
+You can use this feature to load settings onto the headset that you saved from the last option. This is useful to test a different array of settings. This is kind of like saving a profile but these are not able to be automatically loaded. You have to load these manually. This is gererally for testing or if you have some things on your headset working exactly as you like but aren't sure which settings you changed to get there, the Save Settings to file and Load Settings from file is a great way to save the overall settings.
+##
+
+
 ### Delete BlazeRush Config
 
 ![image](https://github.com/petermg/TheOcularMigraineMCP/assets/20764493/a66c146b-9503-4d8a-a337-510b4e8230b6)
