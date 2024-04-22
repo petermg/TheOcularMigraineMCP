@@ -479,6 +479,13 @@ This is used to inject 3D metadata into the videos you've recorded after selecti
 ![image](https://github.com/petermg/TheOcularMigraineMCP/assets/20764493/07acbad9-e925-4cc3-9d23-cf749fdfafb7)
 13. Your video file is now ready to be uploaded to YouTube for 3D processing. You will find it in /Oculus/VideoShots/3D.
 ##
+### Process 2D Video
+
+
+![image](https://github.com/petermg/TheOcularMigraineMCP/assets/20764493/203253ef-f49e-4b98-b3a0-630ac401f993)
+This option does the EXACT SAME THING as the INJECT 3D METADATA option except that it does NOT inject 3D metadata. It does all the other options however, such as set the audio offset, tempo, start and end trim points.
+##
+
 ### Swap Interval
 
 ![image](https://github.com/petermg/TheOcularMigraineMCP/assets/20764493/d219c57b-e7f1-4407-8b8f-2c2bdb7c0f1a)
