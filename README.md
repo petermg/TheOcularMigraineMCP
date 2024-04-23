@@ -12,8 +12,10 @@
 
 - ## [Installing](#installation)
 
+<details><summary>
 
-* # [The Main Screen](#main-screen)
+# [The Main Screen](#main-screen)</summary>
+
   * ## [Top Section](#main-screen-top-section)
     * [Statistics Readout](#statistics)
     * [About](#about)
@@ -39,7 +41,10 @@
   * ## [Bottom Section](#main-screen-bottom-section)
     * [User Defined Resolution Presets](#user-defined-resolution-presets)
     * [Disable](#disable)
-* # [The Recording Screen](#recording-screen)
+</details>
+<details><summary>
+ 
+# [The Recording Screen](#recording-screen)</summary>
   * ## [Top Section](#recording-screen-top-section)
     * [Resolution Presets](#resolution-presets)
     * [Custom Resolution](#custom-resolution)
@@ -57,7 +62,10 @@
     * [adaclocks](#adaclocks)
     * [Swap Interval](#swap-interval)
     * [Reset Recording to default](#reset-recording-to-default)
-* # [The Tools Screen](#tools-screen)
+</details>
+<details><summary>
+
+# [The Tools Screen](#tools-screen)</summary>
   * ## [Top Section](#tools-screen-top-section)
     * [Install APK via ADB](#install-apk-via-adb)
     * [Input ADB command](#input-adb-command)
@@ -79,7 +87,10 @@
       * [Disable Access Lists](#disable-access-lists)
       * [Delete Access Lists](#delete-access-lists)
       * [Access List Enforcement Method](#access-list-enforcement-method)
-* # [The Misc Screen](#misc-screen)
+</details>
+<details><summary>
+
+# [The Misc Screen](#misc-screen)</summary>
   * ## [Top Section](#misc-screen-top-section)
     * [Switch App Launch Detection Method](#switch-app-launch-detection-method)
     * [Disable Battery Optimization](#disable-battery-optimization)
@@ -100,7 +111,7 @@
     * [Load Settings from file](#load-settings-from-file)
     * [Delete BlazeRush Config](#delete-blazerush-config)
     * [Apps I Worked On](#apps-i-worked-on)
-
+</details>
 
 
 ##
