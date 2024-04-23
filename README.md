@@ -94,14 +94,16 @@
     * [Devices](#devices)
     * [Restart ADB Server](#restart-adb-server)
     * [Reboot](#reboot)
+    * [Current Settings](#current-settings)
+    * [Load System Defaults](#load-system-defaults)
+    * [Save Settings to file](#save-settings-to-file)
+    * [Load Settings from file](#load-settings-from-file)
+    * [Delete BlazeRush Config](#delete-blazerush-config)
+    * [Apps I Worked On](#apps-i-worked-on)
 
 
 
 ##
-[The Main Screen (About)](#about)
-[The Main Screen (About)](#about)
-[The Main Screen (About)](#about)
-
 
 
 
