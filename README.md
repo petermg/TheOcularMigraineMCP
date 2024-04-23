@@ -85,6 +85,9 @@
     * [Disable Battery Optimization](#disable-battery-optimization)
     * [Enable All File Access](#enable-all-file-access)
     * [Disable Notifications](#disable-notifications)
+    * [Android Settings](#android-settings)
+  * ## [Middle Section](#misc-screen-middle-section)
+  * 
   * ## [Bottom Section](#misc-screen-bottom-section)
     * [Restart the Home Environment](#restart-home-environment)
     * [Check Enabled Profiles](#check-enabled-profiles)
@@ -768,6 +771,13 @@ Long press to ender an adb shell command you wish to save. This will create a sc
 
 ### Misc Screen Middle Section
 ![image](https://github.com/petermg/TheOcularMigraineMCP/assets/20764493/ac2e70fa-7274-41e2-9568-2ebef079ed00)
+
+##
+
+### Web Server File Sharing and Remote Uploading
+
+![image](https://github.com/petermg/TheOcularMigraineMCP/assets/20764493/2389b27d-af04-4b1d-8d08-5bb1deee13ee)
+
 
 Here you can configure the web server of your Quest. The top option allows you to turn web server file sharing on and off using "Toggle Server". 
 "Set Server Directory" allows you to specify which directory you would like to share.
