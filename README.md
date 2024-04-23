@@ -95,7 +95,10 @@
 
 6. Go to UNKNOWN SOURCES.
 
-7. Click on "The Ocular Migraine".
+7. Click on "The Ocular Migraine". You will see the following screen:
+![image](https://github.com/petermg/TheOcularMigraineMCP/assets/20764493/b14f0a4a-854f-4edb-8a4b-8c6a84f20fb8)
+
+
 
 8. After it begins to load, you will be prompted a total of 3 different times with a prompt that says "Allow USB debugging?". Each time you must select the option at the bottom which says "Always allow from this computer". After you select this option the first time, the applicaiton will close. Launch it again by clicking on it from UNKNOWN SOURCES and you will be propmted 2 more times to "Allow USB debugging?" Again select "Always allow from this computer".
 
