@@ -288,7 +288,7 @@ https://github.com/petermg/TheOcularMigraineMCP/assets/20764493/6febea84-bbf5-40
 ### Save Game Profile 
 ![image](https://github.com/petermg/TheOcularMigraineMCP/assets/20764493/682bde0a-cb3a-45e7-bcfc-9c0039570116)
 
-https://github.com/petermg/TheOcularMigraineMCP/assets/20764493/3c85d9f7-503c-44a0-b0c2-ac10f90198a5
+https://github.com/petermg/TheOcularMigraineMCP/assets/20764493/bdc26a13-e98d-4103-b805-c9419da9661d 
 
 "Save Game Profile" will save your custom display settings, (resolution, refresh rate, FFR amount, etc.) to a text file for whichever game you choose. You can also set these profiles to **AUTOMATICALLY** run by DEFAULT whenever you run the game you specify for it. When you click "Save Game Profile" you will be prompted to select the game you want to save the profile for. You will also then be prompted with a summary of the profile you are about to save.
 In order to create a custom game profile, do the following:
