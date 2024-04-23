@@ -43,11 +43,11 @@
   * ## [Top Section](#recording-screen-top-section)
     * [Resolution Presets](#resolution-presets)
     * [Custom Resolution](#custom-resolution)
+    * [Recording Bitrate](#recording-bitrate)
   * ## [Middle Section](#recording-screen-middle-section)
     * [Recording FrameRate](#recording-framerate)
     * [Recording Eye](#recording-eye)
   * ## [Bottom Section](#recording-screen-bottom-section)
-    * [Recording Bitrate](#recording-bitrate)
     * [FOV Crop](#fov-crop)
     * [Save Recording Profile](#save-recording-profile)
     * [Load Recording Profile](#load-recording-profile)
@@ -311,7 +311,7 @@ Game Data (just copies the data folder back to /sdcard/Android). You can restore
 
 
 ### User Defined Resolution Presets
-Here you can create your own global resolution presets. Currently this will read all of your device's current display settings and create a profile for them. HOWEVER, it will NOT read the current device resolution that is set but rather it will read what the resolution SLIDER is set to and save THAT to the global preset. I might change this later on based on user feedback.
+Here you can create your own global resolution presets. This fisrt reads all of your device's display settings and then creates a profile with them. HOWEVER, it will NOT read the current device resolution that is set but rather it will read what the resolution SLIDER is set to and save THAT to the global preset. I might change this later on based on user feedback.
 On the bottom you have three page options, [Recording,](#recording-screen), Misc, and Tools. Clicking either of those will take you to those pages.
 
 ![image](https://github.com/petermg/TheOcularMigraineMCP/assets/20764493/d2ee82eb-faac-4761-85a1-136cde6d5b2a)
