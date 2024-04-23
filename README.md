@@ -19,7 +19,7 @@
     * [About](#about)
     * [Font Size Adjustment](#font-size-adjustment)
     * [Resolution Slider](#resolution-slider)
-    * [Fixed Foveated Rendering (FFR)](#ffr-level)
+    * [Fixed Foveated Rendering (FFR) Level](#ffr-level)
     * [CPU Level](#cpu-level)
     * [GPU Level](#gpu-level)
   * ## [Middle Section](#main-screen-middle-section)
@@ -244,6 +244,7 @@ https://github.com/petermg/TheOcularMigraineMCP/assets/20764493/40e12818-ce48-46
 
 ## 
 ### Save Game Profile 
+![image](https://github.com/petermg/TheOcularMigraineMCP/assets/20764493/682bde0a-cb3a-45e7-bcfc-9c0039570116)
 
 https://github.com/petermg/TheOcularMigraineMCP/assets/20764493/3c85d9f7-503c-44a0-b0c2-ac10f90198a5
 
@@ -304,10 +305,17 @@ Game Data (just copies the data folder back to /sdcard/Android). You can restore
 
 ## Main Screen Bottom Section
 
+![image](https://github.com/petermg/TheOcularMigraineMCP/assets/20764493/baa7a214-e924-441e-8b57-a6ba4f9a5fa2)
+
+##
+
+
 ### User Defined Resolution Presets
 Here you can create your own global resolution presets. Currently this will read all of your device's current display settings and create a profile for them. HOWEVER, it will NOT read the current device resolution that is set but rather it will read what the resolution SLIDER is set to and save THAT to the global preset. I might change this later on based on user feedback.
 On the bottom you have three page options, [Recording,](#recording-screen), Misc, and Tools. Clicking either of those will take you to those pages.
-![image](https://github.com/petermg/TheOcularMigraineMCP/assets/20764493/03f1f3ff-d546-4d08-99a5-480f3af4bb23)
+
+![image](https://github.com/petermg/TheOcularMigraineMCP/assets/20764493/d2ee82eb-faac-4761-85a1-136cde6d5b2a)
+
 
 
 
@@ -318,8 +326,12 @@ On the bottom you have three page options, [Recording,](#recording-screen), Misc
 
 Clicking on Disable will disable The Ocular Migraine from monitoring app launches. This will prevent the gaming profiles from working. If you disable it, it will close the app. Just run The Ocular Migraine again and it will be re-enabled.
 ##
+### Screen Navigation
 
+![image](https://github.com/petermg/TheOcularMigraineMCP/assets/20764493/2ab9bb2b-7ae5-44e7-8e65-b89fb7e4044f)
 
+This is how you navigate between pages, or "Screens". Your options are "Main", "Recording", "Tools", and "Misc".
+##
 # Recording Screen:
 
 ![image](https://github.com/petermg/TheOcularMigraineMCP/assets/20764493/25dc8074-ffeb-4627-a433-99fcb9af42e8)
