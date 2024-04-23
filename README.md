@@ -47,6 +47,7 @@
   * ## [Middle Section](#recording-screen-middle-section)
     * [Recording FrameRate](#recording-framerate)
     * [Recording Eye](#recording-eye)
+    * [Start and Stop Recording](#start-recording-and-stop-recording)
   * ## [Bottom Section](#recording-screen-bottom-section)
     * [FOV Crop](#fov-crop)
     * [Save Recording Profile](#save-recording-profile)
