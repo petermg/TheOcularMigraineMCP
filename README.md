@@ -87,7 +87,7 @@
     * [Disable Notifications](#disable-notifications)
     * [Android Settings](#android-settings)
   * ## [Middle Section](#misc-screen-middle-section)
-  * 
+    * [Web Server File Sharing and Remote Uploading](#web-server-file-sharing-and-remote-uploading)
   * ## [Bottom Section](#misc-screen-bottom-section)
     * [Restart the Home Environment](#restart-home-environment)
     * [Check Enabled Profiles](#check-enabled-profiles)
