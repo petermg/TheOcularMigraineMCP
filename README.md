@@ -282,10 +282,12 @@ Manage Game Profiles allows you to load any saved profiles you have. Select from
 4. Set Default - This will set the currently shown profile as default for the selected game.
 5. Run - This will run the game with the profile listed, BYPASSING any default profiles.
 
-https://github.com/petermg/TheOcularMigraineMCP/assets/20764493/6febea84-bbf5-40f7-9a9b-fc3c3ae3b878
+https://github.com/petermg/TheOcularMigraineMCP/assets/20764493/3e8c52cf-aa3a-43dd-9769-2181ea11ec92
 
 ## 
 ### Save Game Profile 
+
+
 ![image](https://github.com/petermg/TheOcularMigraineMCP/assets/20764493/682bde0a-cb3a-45e7-bcfc-9c0039570116)
 
 https://github.com/petermg/TheOcularMigraineMCP/assets/20764493/bdc26a13-e98d-4103-b805-c9419da9661d 
