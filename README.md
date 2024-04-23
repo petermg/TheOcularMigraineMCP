@@ -16,23 +16,18 @@
 * # [The Main Screen](#main-screen)
   * ## [Top Section](#main-screen-top-section)
     * [Statistics Readout](#statistics)
-    * [Font Size Adjustment](#font-size-adjustment)
     * [About](#about)
+    * [Font Size Adjustment](#font-size-adjustment)
     * [Resolution Slider](#resolution-slider)
     * [Fixed Foveated Rendering (FFR)](#ffr-level)
     * [CPU Level](#cpu-level)
     * [GPU Level](#gpu-level)
-    * [All Levels](#all-levels)
   * ## [Middle Section](#main-screen-middle-section)
     * [Display Frequency](#display-frequency)
     * [Default Display Settings](#default-display-settings)
-    * [Reset These Settings To Default](#reset-these-settings-to-default)
     * [Reset ALL settings to default](#reset-all-settings-to-default)
-    * [Delete BlazeRush config](#delete-blazerush-config)
-    * [Save Game Profile](#save-game-profile)
-    * [Run Game](#run-game)
     * [Manage Game Profiles](#manage-game-profiles)
-    * [Create Shortcut App](#create-shortcut-app)
+    * [Save Game Profile](#save-game-profile)
     * ### [Game Backup Menu](#game-backup)
       * Backup Options
         * [Game + Data (Full Game Backup)](#full-game-backup)
@@ -42,6 +37,8 @@
         * [Game ONLY](#game-only)
         * [Game Data](#game-data)
   * ## [Bottom Section](#main-screen-bottom-section)
+    * [User Defined Resolution Presets](#user-defined-resolution-presets)
+    * [Disable](#disable)
 * # [The Recording Screen](#recording-screen)
   * ## [Top Section](#recording-screen-top-section)
     * [Resolution Presets](#resolution-presets)
@@ -303,6 +300,8 @@ Game Data (just copies the data folder back to /sdcard/Android). You can restore
 ##
 
 ## Main Screen Bottom Section
+
+### User Defined Resolution Presets
 Here you can create your own global resolution presets. Currently this will read all of your device's current display settings and create a profile for them. HOWEVER, it will NOT read the current device resolution that is set but rather it will read what the resolution SLIDER is set to and save THAT to the global preset. I might change this later on based on user feedback.
 On the bottom you have three page options, [Recording,](#recording-screen), Misc, and Tools. Clicking either of those will take you to those pages.
 ![image](https://github.com/petermg/TheOcularMigraineMCP/assets/20764493/03f1f3ff-d546-4d08-99a5-480f3af4bb23)
