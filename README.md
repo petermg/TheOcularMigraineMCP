@@ -53,7 +53,10 @@
     * [Save Recording Profile](#save-recording-profile)
     * [Load Recording Profile](#load-recording-profile)
     * [Inject 3D Metadata](#inject-3d-metadata)
+    * [Process 2D Video](#process-2d-video)
+    * [adaclocks](#adaclocks)
     * [Swap Interval](#swap-interval)
+    * [Reset Recording to default](#reset-recording-to-default)
 * # [The Tools Screen](#tools-screen)
 * # [The Misc Screen](#misc-screen)
   * ## [Top Section](#misc-screen-top-section)
@@ -526,7 +529,7 @@ The Swap Interval settings is a bit hard to explain. [THIS PAGE](https://github.
 
 Resets all recording options back to system defaults.
 
-
+##
 # Tools Screen:
 
 ![image](https://github.com/petermg/TheOcularMigraineMCP/assets/20764493/08f4257f-0452-4081-987c-f0e3c73799e6)
