@@ -16,7 +16,7 @@
 <details><summary>
 
 # The Main Screen</summary>
-# [Main Screen](#main-screen)
+# [Main Screen Page](#main-screen)
   * ## [Top Section](#main-screen-top-section)
     * [Statistics Readout](#statistics)
     * [About](#about)
@@ -45,7 +45,8 @@
 </details>
 <details><summary>
  
-# [The Recording Screen](#recording-screen)</summary>
+# The Recording Screen</summary>
+# [Recording Screen Page](#recording-screen)
   * ## [Top Section](#recording-screen-top-section)
     * [Resolution Presets](#resolution-presets)
     * [Custom Resolution](#custom-resolution)
@@ -66,7 +67,8 @@
 </details>
 <details><summary>
 
-# [The Tools Screen](#tools-screen)</summary>
+# The Tools Screen</summary>
+# [Tools Screen Page](#tools-screen)
   * ## [Top Section](#tools-screen-top-section)
     * [Install APK via ADB](#install-apk-via-adb)
     * [Input ADB command](#input-adb-command)
@@ -91,7 +93,8 @@
 </details>
 <details><summary>
 
-# [The Misc Screen](#misc-screen)</summary>
+# The Misc Screen</summary>
+# [Misc Screen Page](#misc-screen)
   * ## [Top Section](#misc-screen-top-section)
     * [Switch App Launch Detection Method](#switch-app-launch-detection-method)
     * [Disable Battery Optimization](#disable-battery-optimization)
