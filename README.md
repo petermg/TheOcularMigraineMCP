@@ -15,8 +15,8 @@
 
 <details><summary>
 
-# [The Main Screen](#main-screen)</summary>
-
+# The Main Screen</summary>
+# [Main Screen](#main-screen)
   * ## [Top Section](#main-screen-top-section)
     * [Statistics Readout](#statistics)
     * [About](#about)
