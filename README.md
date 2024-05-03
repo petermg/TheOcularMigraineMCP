@@ -14,18 +14,19 @@
 * Change Headset Resolution.
 * Changing GPU and CPU levels.
 * Changing Fixed Foveated Rendering levels.
-* Creating custom resolution presets for games which can be selected to be *AUTOMATICALLY* applied to that application or game upon launching that application or game (like Quest Games Optimizer does).
+* Create custom resolution presets for games which can be selected to be *AUTOMATICALLY* applied to that application or game upon launching that application or game (like Quest Games Optimizer does).
 * Backing up games, which includes the APK, OBB files if any, and data files and folders located in /sdcard/Android/data/.
-* Game backups can be moved to your PC from which you can restore them using the included bat file in the backup folder.
-* Modify Detailed Recording settings such as recording bitrate, resolution, frame rate, rendering area with the option to save them to a custom recording profile which can be loaded for recording different applications and games.
+* Restore game backups after moving them to your PC by using the included bat file in the backup folder.
+* Restore game backups directly from the headset backup folder.
+* Modify detailed recording settings such as bitrate, resolution, frame rate, rendering area, recording eye, with the option to save them to a custom recording profile which can be loaded for recording different applications and games.
 * Invoke recording with STEREO AUDIO on the Quest 3!
-* Video Editing! Because the Quest notoriously has problems with out of sync audio in it's recordings, you can adjust the audio offset and speed/tempo (streching or compressiong the audio) and the start and end sections of your video for trimming.
+* Video Editing! Because the Quest notoriously has problems with out of sync audio in it's recordings, you can adjust the audio offset and speed/tempo (streching or compressiong the audio) and the start and end trimming of your video.
 * Inject 3D metadata into your 3D recorded video making it ready to upload to YouTube.
 * Set redirect/shortcut apps to launch apps from UNKNOWN SOURCES via the main menu so you don't have to go into the UNKNOWN SOURCES section.
 * Set Start Up application, for example to launch a third party launcher upon reboot. On my Quest 3 I have my start up app set to Lightning Launcher.
 * KIOSK MODE: Set an application to be the only application that can be launched and PREVENT the user from EXITING that applicaiton. This mode is password protected.
 * Access Control Lists: Creat a black list or a white list. Enabling one list disables the other.
-* Web Server: for file sharing and uploading via http. You can select which folder you want to share over HTTP. You can also enable UPLOADING to your headset over HTTP. Both of these options are independent of the other.
+* Web Server: for file sharing and uploading via http. You can select which folder you want to share over HTTP. You can also enable UPLOADING to your headset over HTTP. Both of these options are independent of each other.
 * and more...
 
 # Table Of Contents:
