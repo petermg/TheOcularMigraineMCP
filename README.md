@@ -11,7 +11,7 @@
 # Summary of Features:
 
 * ADB permissions SURVIVE a REBOOT! PC is ONLY required ONCE, for the installation.
-* Changing detailed resolution settings such as VRApi Texture Width and Height.
+* Change Headset Resolution.
 * Changing GPU and CPU levels.
 * Changing Fixed Foveated Rendering levels.
 * Creating custom resolution presets for games which can be selected to be *AUTOMATICALLY* applied to that application or game upon launching that application or game (like Quest Games Optimizer does).
