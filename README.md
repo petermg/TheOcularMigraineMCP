@@ -493,8 +493,7 @@ The following options are:
 ![image](https://github.com/petermg/TheOcularMigraineMCP/assets/20764493/29900e85-3bca-41dc-b948-aac9041d9051)
 I don't know if this works on the Quest Pro or not. Let me know!
 This uses a different method of recording than the normal user activated recording method. On the Quest 3, it records in stereo. On the Quest 1 it records in mono. This uses "metacam" for recording, a built-in method that is used by the Meta Quest Developer Hub.
-This method is useful if you want to record in stereo on your Quest 3 (again not sure if this works on the Quest Pro yet, waiting for user feedback). This method does record on the Quest 1 but it's not in stereo.
-If you start recording using this method, you must also STOP recording using the STOP RECORDING button, otherwise the recording will continue.
+This method is useful if you want to record in stereo on your Quest 2 or Quest 3 (again not sure if this works on the Quest Pro yet, waiting for user feedback). This method does record on the Quest 1 but it's not in stereo.
 ##
 
 ### Recording Screen Bottom Section
