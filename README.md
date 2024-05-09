@@ -15,9 +15,9 @@
 
 * ADB permissions SURVIVE a REBOOT. PC is only required for the initial installation.
 * Change Headset Resolution.
-* Change CPU level.
-* Change GPU level.
-* Change Fixed Foveated Rendering level.
+* Change CPU level (0-5), set as static or dynamic.
+* Change GPU level (0-5), set as static or dynamic.
+* Change Fixed Foveated Rendering level (0-4), set as static or dynamic.
 * Create custom resolution presets for games which can be selected to be *AUTOMATICALLY* applied to that application or game upon launching that application or game (like Quest Games Optimizer does).
 * Backing up games, which includes the APK, OBB files if any, and data files and folders located in /sdcard/Android/data/.
 * Restore game backups after moving them to your PC by using the included bat file in the backup folder.
