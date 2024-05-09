@@ -906,7 +906,10 @@ You can use this feature to load settings onto the headset that you saved from t
 
 This opens a page with links to other applications I've worked on.
 ##
-
+### TO-DO LIST
+* Make an alternate Web GUI for better display compatibilitiy and a cleaner look.
+* Add Quest Pro option to toggle local dimming.
+##
 
 
 
