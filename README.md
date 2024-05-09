@@ -1,3 +1,6 @@
+![image](https://github.com/petermg/TheOcularMigraineMCP/assets/20764493/9af50a0a-4d88-4e67-bc2f-447988505dfb)
+
+
 # The Ocular Migraine: {Dev Mode} Master Control Program.
  <img alt="GitHub Downloads (specific asset, all releases)" src="https://img.shields.io/github/downloads/petermg/TheOcularMigraineMCP/version?style=social&label=visits&color=2417f1">
  
