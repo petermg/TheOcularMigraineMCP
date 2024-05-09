@@ -10,10 +10,10 @@
 
 # Summary of Features:
 
-* ADB permissions SURVIVE a REBOOT! PC is ONLY required ONCE, for the installation.
+* ADB permissions SURVIVE a REBOOT. PC is only required for the initial installation.
 * Change Headset Resolution.
-* Changing GPU and CPU levels.
-* Changing Fixed Foveated Rendering levels.
+* Change GPU and CPU levels.
+* Change Fixed Foveated Rendering levels.
 * Create custom resolution presets for games which can be selected to be *AUTOMATICALLY* applied to that application or game upon launching that application or game (like Quest Games Optimizer does).
 * Backing up games, which includes the APK, OBB files if any, and data files and folders located in /sdcard/Android/data/.
 * Restore game backups after moving them to your PC by using the included bat file in the backup folder.
