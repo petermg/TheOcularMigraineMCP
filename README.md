@@ -31,7 +31,7 @@
 * KIOSK MODE: Set an application to be the only application that can be launched and PREVENT the user from EXITING that applicaiton. This mode is password protected.
 * Access Control Lists: Creat a black list or a white list. Enabling one list disables the other.
 * Web Server: for file sharing and uploading via http. You can select which folder you want to share over HTTP. You can also enable UPLOADING to your headset over HTTP. Both of these options are independent of each other.
-* Install OVR Metrics Tool and display overlay performance statistics for performance evaluation of Game and Recording presets.
+* Install OVR Metrics Tool and display overlay performance statistics for performance evaluation of Game and Recording profiles.
 * Install and launch SideQuest
 * Install and launch F-Droid
 * Install and launch File Manager +
