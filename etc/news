@@ -1,3 +1,17 @@
-Message to my testers, I'm hoping to make this public
-by or before Monday May 13th. I'm working out some issues
-with the update notification... 
+Message to my testers:
+Ok, I think I'm almost ready for releasing
+this application publicly.
+HOWEVER, I think the version you have has a
+broken update task. You can try to see if it updates
+or not by going to ABOUT then
+UPDATE AVAILABLE. The latest version code
+is 966. If the updating doesn't work in your
+version you can download the apk file 
+from the github page just click on HELP
+then it will take you to the GitHub page. You
+can download the latest version from the RELEASES
+section. I have ALSO uploaded this same version
+to the Google Drive share I sent you as well.
+Then you can go to TOOLS and select
+INSTALL APK via ADB and select the apk file
+to update. Looking foward to your feedback!
