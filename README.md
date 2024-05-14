@@ -150,8 +150,8 @@
     * [Apps I Worked On](#apps-i-worked-on)
 </details>
 
-# [Troubleshooting FAQ](#troubleshooting-faq)
 
+# [Troubleshooting and FAQ](#troubleshooting-faq)
 
 ## Installation [YouTube Version](https://www.youtube.com/watch?v=ystP0EeDLag&t=345s)
 
