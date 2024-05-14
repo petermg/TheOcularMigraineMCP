@@ -151,7 +151,7 @@
 </details>
 
 
-# [Troubleshooting and FAQ](#troubleshooting-faq)
+# [Troubleshooting and FAQs](#troubleshooting-faq)
 
 ## Installation [YouTube Version](https://www.youtube.com/watch?v=ystP0EeDLag&t=345s)
 
