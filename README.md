@@ -153,7 +153,7 @@
 # [Troubleshooting FAQ](#troubleshooting-faq)
 
 
-## Installation
+## Installation [YouTube Version](https://www.youtube.com/watch?v=ystP0EeDLag&t=345s)
 
 
 1. Make sure your device is in developer mode. If it isn't, watch this 60 second video here which shows you how: https://youtu.be/jB1gwgSpU3E
