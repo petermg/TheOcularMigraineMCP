@@ -150,10 +150,7 @@
     * [Apps I Worked On](#apps-i-worked-on)
 </details>
 
-
-##
-
-
+# [Troubleshooting FAQ](#troubleshooting-faq)
 
 
 ## Installation
@@ -913,6 +910,17 @@ This opens a page with links to other applications I've worked on.
 ### TO-DO LIST
 * Make an alternate Web GUI for better display compatibilitiy and a cleaner look.
 * Add Quest Pro option to toggle local dimming.
+##
+### Troubleshooting FAQ
+
+### BLACK SCREEN: 
+You might see a BLACK SCREEN during the installation or after a reboot of the headset. PRESS THE OCULUS/META Home button on the right controller and then you will see the propmt to ALWAYS ALLOW USB Debugging.
+
+### Question:
+Do I really need my PC for this?
+
+### Answer:
+Yes. Please follow the installation instructions exactly as listed here. Otherwise the application will not function correctly if at all. If you have a failed installation, you should uninstall the app, reboot the headset, then start the installation proceedure from the very beginning in order for the application to properly function.
 ##
 
 
