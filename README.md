@@ -921,6 +921,12 @@ Do I really need my PC for this?
 
 ### Answer:
 Yes. Please follow the installation instructions exactly as listed [here](#installation). Otherwise the application will not function correctly if at all. If you have a failed installation, you should uninstall the app, reboot the headset, then start the installation proceedure from the very beginning in order for the application to properly function.
+
+### Question:
+It worked until I rebooted my headset and now it doesn't work.
+
+### Answer:
+This happens when the application has not been installed correctly and thus not having the proper permissions granted each of the 3 times it should have been. The solution is the UNINSTALL the application, REBOOT your headset then carefully following the [installation instructions](#installation) exactly.
 ##
 
 
