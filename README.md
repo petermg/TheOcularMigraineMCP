@@ -24,12 +24,12 @@
 * Restore game backups directly from the headset backup folder.
 * Modify detailed recording settings such as bitrate, resolution, frame rate, rendering area, recording eye, with the option to save them to a custom recording profile which can be loaded for recording different applications and games.
 * Invoke recording with STEREO AUDIO on the Quest 2 and Quest 3 (maybe Quest Pro?)!
-* Video Editing. Because the Quest notoriously has problems with out of sync audio in it's recordings, you can adjust the audio offset and speed/tempo (streching or compressiong the audio) along with the start and end trimming of your video.
+* Video Editing. Because the Quest notoriously has problems with out of sync audio in it's recordings, you can adjust the audio offset and speed/tempo (stretching or compressing the audio) along with the start and end trimming of your video.
 * Inject 3D metadata into your 3D recorded video making it ready to upload to YouTube.
 * Set redirect/shortcut apps to launch apps from UNKNOWN SOURCES via the main menu so you don't have to go into the UNKNOWN SOURCES section.
 * Set Start Up application, for example to launch a third party launcher upon reboot. On my Quest 3 I have my start up app set to Lightning Launcher.
-* KIOSK MODE: Set an application to be the only application that can be launched and PREVENT the user from EXITING that applicaiton. This mode is password protected.
-* Access Control Lists: Creat a black list or a white list. Enabling one list disables the other.
+* KIOSK MODE: Set an application to be the only application that can be launched and PREVENT the user from EXITING that application. This mode is password protected.
+* Access Control Lists: Create a black list or a white list. Enabling one list disables the other.
 * Web Server: for file sharing and uploading via http. You can select which folder you want to share over HTTP. You can also enable UPLOADING to your headset over HTTP. Both of these options are independent of each other.
 * Install OVR Metrics Tool and display overlay performance statistics for performance evaluation of Game and Recording profiles.
 * Install and launch SideQuest
