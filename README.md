@@ -37,6 +37,10 @@
 * Install and launch File Manager +
 * and more...
 
+# YouTube Guide Version:
+
+[<img src="https://github.com/petermg/TheOcularMigraineMCP/assets/20764493/0f059c9b-4429-44f8-ac4e-06bf861da064">](https://youtu.be/ystP0EeDLag)
+
 # Table Of Contents:
 (click on the arrows for each screen to open the Table Of Contents for that section)
 
