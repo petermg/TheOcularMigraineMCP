@@ -190,7 +190,7 @@
 
 13. Find The Ocular Migraine, if it's not already showing, you can select ALL APPS from the dropdown menu. Click on the toggle to DISABLE notificaitons for The Ocular Migraine. This is NOT required but recommended.
 
-### NOTE: From now on, after each reboot of your device, the **FIRST** time you launch The Ocular Migraine, it will prompt you to "Allow USB debugging?". Select "Always allow from this computer" each time. This only happens on the initial launch of the applicaiton after a reboot of your device. It will not ask this question again until the next device reboot on it's inital launch.
+### NOTE: From now on, after each reboot of your device, after about 10 to 15 seconds you will see a BLACK SCREEN, press the OCULUS/META button then you will see the prompt to "Allow USB debugging?". Select "Always allow from this computer" each time. This happens after a reboot of your device. It will not ask this question again until the next device reboot.
 
 Each screen has 3 sub-sections, top, middle, bottom.
 
