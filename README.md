@@ -150,6 +150,17 @@
     * [Apps I Worked On](#apps-i-worked-on)
 </details>
 
+<details><summary>
+ 
+# Support</summary>
+
+[GitHub](https://github.com/petermg/TheOcularMigraineMCP/issues)
+
+[Discord](https://discord.gg/PPgbApG)
+
+[Reddit](https://www.reddit.com/r/TheOcularMigraine/)
+
+</details>
 
 # [Troubleshooting and FAQs](#troubleshooting-faq)
 
@@ -927,6 +938,12 @@ It worked until I rebooted my headset and now it doesn't work.
 
 ### Answer:
 This happens when the application has not been installed correctly and thus not having the proper permissions granted each of the 3 times it should have been. The solution is the UNINSTALL the application, REBOOT your headset then carefully following the [installation instructions](#installation) exactly.
+
+### Question:
+Where can I find support?
+
+### Answer:
+You can find support Support on my [Discord Server](https://discord.gg/PPgbApG), or on [The Ocular Migraine sub on Reddit](https://www.reddit.com/r/TheOcularMigraine/), or better yet post an issue here on [GitHub](https://github.com/petermg/TheOcularMigraineMCP/issues).
 ##
 
 
