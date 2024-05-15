@@ -44,7 +44,7 @@
 # Table Of Contents:
 (click on the arrows for each screen to open the Table Of Contents for that section)
 
-- # [Proper Installation](#installation)
+- # [Proper Installation](#installation-youtube-version)
 
 <details><summary>
 
