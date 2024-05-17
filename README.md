@@ -164,6 +164,10 @@
 
 # [Troubleshooting and FAQs](#troubleshooting-faq)
 
+
+# [Source](#source-files)
+
+
 ## Installation [YouTube Version](https://www.youtube.com/watch?v=ystP0EeDLag&t=345s)
 
 
@@ -945,6 +949,10 @@ Where can I find support?
 ### Answer:
 You can find support on my [Discord Server](https://discord.gg/PPgbApG), or on [The Ocular Migraine sub on Reddit](https://www.reddit.com/r/TheOcularMigraine/), or better yet post an issue here on [GitHub](https://github.com/petermg/TheOcularMigraineMCP/issues).
 ##
+
+## Source Files
+The source file is the xml file posted in the releases section. You must import it into Tasker as a project. You can then take it from there.
+#
 
 
 
