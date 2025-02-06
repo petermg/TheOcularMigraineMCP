@@ -134,6 +134,7 @@
     * [Enable All File Access](#enable-all-file-access)
     * [Disable Notifications](#disable-notifications)
     * [Android Settings](#android-settings)
+    * [User Defined ADB Commands](#user-defined-adb-commands)
   * ## [Middle Section](#misc-screen-middle-section)
     * [Web Server File Sharing and Remote Uploading](#web-server-file-sharing-and-remote-uploading)
   * ## [Bottom Section](#misc-screen-bottom-section)
