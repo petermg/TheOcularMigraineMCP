@@ -174,7 +174,7 @@
 STAND ALONE INSTALLTION (NEW METHOD)
 
 1. Go to https://www.meta.com/experiences/mobile-vr-station/3887008398005125/ or search the Quest store for "Mobile VR Station", in your headset and install this application.
-2. Download [the latest apk of The Ocular Migraine.](https://github.com/petermg/TheOcularMigraineMCP/releases/latest)
+2. Download [the latest apk of The Ocular Migraine.](https://github.com/petermg/TheOcularMigraineMCP/releases/latest/download/TheOcularMigraine.apk)
 3. Now launch the VR app Mobile VR Station.
 4. It will be prompted with "Allow Permissions". Click on ALLOW.
 5. Click on the Red button that says "Look HERE to Continue.
