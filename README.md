@@ -173,17 +173,17 @@
 
 ## STANDALONE INSTALLATION METHOD (NEW) ##
 
-1. Make sure your device is in developer mode. If it isn't, watch this 60 second video here which shows you how: https://youtu.be/jB1gwgSpU3E
+1. ~~Make sure your device is in developer mode. If it isn't, watch this 60 second video here which shows you how: https://youtu.be/jB1gwgSpU3E~~ DEVELOPER MODE IS NOT LONGER REQUIRED USING THIS METHOD.
 2. Download [the latest apk of The Ocular Migraine.](https://github.com/petermg/TheOcularMigraineMCP/releases/latest/download/TheOcularMigraine.apk)
 3. Go to https://www.meta.com/experiences/mobile-vr-station/3887008398005125/ or search the Quest store for "Mobile VR Station", in your headset and install this application.
 4. Now launch the VR app Mobile VR Station.
 5. It will prompt you with "Allow Permissions". Click on ALLOW.
 6. Click on the Red button that says "Look HERE to Continue."
-7. Click on "Android Fixes... Configureation Wizard" (at the bottom).
-8. Click on "I'm here to Mod".
-9. Click on "Configure Scoped Storage".
-10. Click on "Configure Scoped Storage" this time at the bottom.
-11. Click on "Step 1: Request Access"
+7. Click on "Android Fixes... Configuration Wizard" (at the bottom).
+8. At the top click on "I'm here to Mod".
+9. Second from the top click on "Configure Scoped Storage".
+10. At the bottom click on "Configure Scoped Storage".
+11. At the top click on "Step 1: Request Access"
 12. You will be prompted with a Files and folder dialogue.
 13. Navigate to the folder where you saved The Ocular Migrain apk file, (this should be your Download folder).
 14. In the Files prompt, click on Quest3 (or whatever the name of your device is), then click on Download, then scroll down and find TheOcularMigraine.apk.
@@ -194,29 +194,33 @@
 19. It will then prompt you to install -The Ocular Migraine-.
 20. Click on INSTALL.
 21. It will then begin installing The Ocular Migraine.
-22. After it is finished you can click on OPEN
+22. After it is finished installing, click on **"OPEN"**.
 23. Close ALL OTHER 2D WINDOWS, such as the FILES window, etc. (as the pop up message tells you to do).
 24. Then click on the message to continue.
-25. It will open the ANDROID SETTINGS window on the left, whcih looks transparent, and the INSTALLTION INSTRUCTIONS on the right.
-26. In Android Settings, scroll down to SYSTEM and click on it.
-27. Then click on DEVELOPER OPTIONS.
-28. Then scroll down to WIRELESS DEBUGGING and click on the WORDS: "WIRELESS DEBUGGING" to open the Wireless Debugging menu.
-29. Click on the toggle switch in the upper right hand area of the Wireless Debugging screen, if it's already on, toggle it off, then back on.
-30. You will be prompted to "Allow Wireless Debugging on this network?"
-31. Click on ALWAYS ALLOW ON THIS NETWORK (at the bottom of the prompt).
-32. In the wireless debugging menu, click on PAIR DEVICE WITH PAIRING CODE.
-33. A prompt will appear that says "PAIR WITH DEVICE".
-34. It will show you a WiFi PAIRING CODE, an IP ADDRESS and PORT number.
-35. Click on START PAIRING on the bottom of the Installation Instructions screen on the right.
-36. Enter in the Pairing code and click OK.
-37. Enter in the PORT and click OK.
-38. If it fails just toggle the USE WIRELESS DEBUGGING switch off and on a couple of times then try the pairing method again.
-39. When successful you will be prompted to "Allow Wireless Debugging on this network?"
-40. Click on "ALWAYS ALLOW ON THIS NETWORK".
-41. The program will now close.
-42. Go to UNKNOWN SOURCES and click on -THE OCULAR MIGRAINE-.
-43. The Ocular Migraine will now open.
-44. Enjoy using THe Ocular Migraine!
+25. It will open the ANDROID SETTINGS window on the left, which looks transparent, and the Start Up Installation Instructions window on the right.
+26. If you are already in DEVELOPER MODE, go to step **30**.
+27. In Android Settings scroll down to the bottom and click on **About headset**.
+28. From the About headset page, scroll down to the bottom and click on **Build number** multiple times until you see a notification that says *You are now a developer!*
+29. Click back and you will be in the Android Settings screen.
+30. In Android Settings, scroll down to SYSTEM and click on it.
+31. Then click on DEVELOPER OPTIONS.
+32. Then scroll down to WIRELESS DEBUGGING and click on the **words*: **"WIRELESS DEBUGGING"** to open the *Wireless Debugging* menu.
+33. Click on the toggle switch in the upper right hand area of the Wireless Debugging screen, if it's already on, toggle it off, then back on.
+34. You will be prompted to "Allow Wireless Debugging on this network?"
+35. Click on **ALWAYS ALLOW ON THIS NETWORK** (at the bottom of the prompt).
+36. In the wireless debugging menu, click on **PAIR DEVICE WITH PAIRING CODE**.
+37. A prompt will appear that says *PAIR WITH DEVICE*.
+38. It will show you a **WiFi PAIRING CODE**, an IP ADDRESS and **PORT** number. We only care about the *code* and the *port number*.
+39. Click on *START PAIRING* on the bottom of the Installation Instructions screen on the right.
+40. Enter in the *Pairing code* and click OK.
+41. Enter in the *PORT* and click OK.
+42. If it fails just toggle the USE WIRELESS DEBUGGING switch off and on a couple of times then try the pairing method again.
+43. When successful you will be prompted to **Allow Wireless Debugging on this network?**
+44. Click on **ALWAYS ALLOW ON THIS NETWORK**.
+45. The program will now close.
+46. Go to UNKNOWN SOURCES and click on **-THE OCULAR MIGRAINE-**.
+47. The Ocular Migraine will now open.
+48. Enjoy using THe Ocular Migraine!
    
 
 ## PC INSTALLATION METHOD: ##
