@@ -13,7 +13,7 @@
 
 # Summary of Features:
 
-* ADB permissions SURVIVE a REBOOT. PC is only required for the initial installation.
+* ADB permissions SURVIVE a REBOOT.
 * Change Headset Resolution.
 * Change CPU level (0-5), set as static or dynamic.
 * Change GPU level (0-5), set as static or dynamic.
