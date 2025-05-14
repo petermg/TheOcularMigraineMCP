@@ -1,3 +1,5 @@
+[![MseeP.ai Security Assessment Badge](https://mseep.net/pr/petermg-theocularmigrainemcp-badge.png)](https://mseep.ai/app/petermg-theocularmigrainemcp)
+
 ![image](https://github.com/petermg/TheOcularMigraineMCP/assets/20764493/9af50a0a-4d88-4e67-bc2f-447988505dfb)
 
 
