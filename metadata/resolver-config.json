@@ -1,0 +1,23 @@
+{
+  "schema": 1,
+  "updated": "2026-08-24",
+  "oculusGraphqlEndpoint": "https://graph.oculus.com/graphql",
+  "metaGraphqlEndpoint": "https://www.meta.com/ocapi/graphql",
+  "oculusDbUrl": "https://oculusdb.rui2015.me/api/v1/allapps",
+  "sideQuestUrl": "https://api.sidequestvr.com/search-apps",
+  "experienceUrlTemplate": "https://www.meta.com/experiences/{id}/",
+  "storeDetailsDocId": "8571881679548867",
+  "storeAccessToken": "OC|1076686279105243|",
+  "appDetailsDocId": "3828663700542720",
+  "appDetailsAccessToken": "OC|1076686279105243|",
+  "appBinaryAccessToken": "OC|1317831034909742|",
+  "metaStoreSectionDocId": "28462698003329119",
+  "metaStoreLsd": "AVqMsnyvi0U",
+  "metaStoreSectionIds": [
+    "1888816384764129",
+    "174868819587665",
+    "967735875395912",
+    "391914765228253",
+    "3955297897903802"
+  ]
+}
