@@ -31,25 +31,71 @@ META_DIR = ROOT / "metadata"
 APPS_DIR = META_DIR / "apps"
 CONFIG_PATH = META_DIR / "resolver-config.json"
 INDEX_PATH = META_DIR / "tom-app-index.json"
+DIAGNOSTICS_PATH = META_DIR / "collector-diagnostics.json"
 USER_AGENT = "TheOcularMigraineNative-metadata-collector/1"
 MAX_WORKERS = 8
+SIDEQUEST_ORIGIN = "https://sidequestvr.com"
 
 
 def now_iso() -> str:
     return dt.datetime.now(dt.timezone.utc).replace(microsecond=0).isoformat().replace("+00:00", "Z")
 
 
-def request(url: str, *, data: bytes | None = None, headers: dict[str, str] | None = None, timeout: int = 20) -> bytes:
+def _response_content_type(headers) -> str | None:
+    if headers is None:
+        return None
+    try:
+        return headers.get_content_type()
+    except AttributeError:
+        raw = headers.get("Content-Type") if hasattr(headers, "get") else None
+        return clean(raw.split(";", 1)[0]) if isinstance(raw, str) else None
+
+
+def _body_preview(raw: bytes, limit: int = 240) -> str:
+    text = raw[:limit].decode("utf-8", errors="replace")
+    return " ".join(text.split())
+
+
+def request_response(
+    url: str,
+    *,
+    data: bytes | None = None,
+    headers: dict[str, str] | None = None,
+    timeout: int = 20,
+) -> tuple[bytes, int, str | None]:
     merged = {"User-Agent": USER_AGENT, "Accept": "application/json,text/html;q=0.8,*/*;q=0.5"}
     if headers:
         merged.update(headers)
     req = urllib.request.Request(url, data=data, headers=merged, method="POST" if data is not None else "GET")
-    with urllib.request.urlopen(req, timeout=timeout) as resp:
-        return resp.read()
+    try:
+        with urllib.request.urlopen(req, timeout=timeout) as resp:
+            raw = resp.read()
+            status = int(getattr(resp, "status", 200) or 200)
+            return raw, status, _response_content_type(resp.headers)
+    except urllib.error.HTTPError as exc:
+        raw = exc.read(512)
+        content_type = _response_content_type(exc.headers)
+        preview = _body_preview(raw)
+        raise RuntimeError(
+            f"HTTP {exc.code} {exc.reason}; content-type={content_type or 'unknown'}; body={preview!r}"
+        ) from exc
 
 
-def get_json(url: str) -> object:
-    return json.loads(request(url).decode("utf-8"))
+def request(url: str, *, data: bytes | None = None, headers: dict[str, str] | None = None, timeout: int = 20) -> bytes:
+    raw, _, _ = request_response(url, data=data, headers=headers, timeout=timeout)
+    return raw
+
+
+def get_json(url: str, *, headers: dict[str, str] | None = None, provider: str = "JSON endpoint") -> object:
+    raw, status, content_type = request_response(url, headers=headers)
+    text = raw.decode("utf-8", errors="replace")
+    try:
+        return json.loads(text)
+    except json.JSONDecodeError as exc:
+        raise RuntimeError(
+            f"{provider} returned non-JSON response; status={status}; "
+            f"content-type={content_type or 'unknown'}; body={_body_preview(raw)!r}"
+        ) from exc
 
 
 def post_form_json(url: str, fields: dict[str, object], headers: dict[str, str] | None = None) -> dict:
@@ -108,9 +154,9 @@ def merge_record(dst: dict, src: dict, source: str, seen: str):
             dst[key] = value
 
 
-def fetch_oculusdb(cfg: dict, records: dict, seen: str):
+def fetch_oculusdb(cfg: dict, records: dict, seen: str) -> int:
     print("Fetching OculusDB…")
-    data = get_json(cfg["oculusDbUrl"])
+    data = get_json(cfg["oculusDbUrl"], provider="OculusDB")
     if not isinstance(data, list):
         raise RuntimeError("OculusDB allapps response was not a list")
     for item in data:
@@ -122,9 +168,10 @@ def fetch_oculusdb(cfg: dict, records: dict, seen: str):
         rec = records.setdefault(package, {})
         merge_record(rec, {"name": item.get("appName"), "metaAppId": str(item.get("id") or "")}, "oculusdb", seen)
     print(f"OculusDB contributed {len(data)} records")
+    return len(data)
 
 
-def fetch_sidequest(cfg: dict, records: dict, seen: str) -> set[str]:
+def fetch_sidequest(cfg: dict, records: dict, seen: str) -> tuple[set[str], dict]:
     print("Fetching SideQuest…")
     page = 0
     meta_ids: set[str] = set()
@@ -135,7 +182,11 @@ def fetch_sidequest(cfg: dict, records: dict, seen: str) -> set[str]:
             "app_categories_id": 1, "limit": 100, "device_filter": "all",
             "license_filter": "all", "download_filter": "all",
         })
-        root = get_json(cfg["sideQuestUrl"] + "?" + params)
+        root = get_json(
+            cfg["sideQuestUrl"] + "?" + params,
+            headers={"Origin": SIDEQUEST_ORIGIN, "Accept": "application/json"},
+            provider=f"SideQuest page {page}",
+        )
         items = root.get("data") if isinstance(root, dict) else None
         if not items:
             break
@@ -161,8 +212,10 @@ def fetch_sidequest(cfg: dict, records: dict, seen: str) -> set[str]:
         page += 1
         if page > 250:
             raise RuntimeError("SideQuest pagination safety limit reached")
-    print(f"SideQuest contributed {total} records")
-    return meta_ids
+    if total == 0:
+        raise RuntimeError("SideQuest returned zero app records")
+    print(f"SideQuest contributed {total} records across {page} pages ({len(meta_ids)} Meta IDs)")
+    return meta_ids, {"status": "ok", "records": total, "pages": page, "metaIds": len(meta_ids)}
 
 
 def fetch_meta_section_ids(cfg: dict) -> set[str]:
@@ -273,23 +326,43 @@ def fetch_public_experience(cfg: dict, app_id: str) -> dict:
     return {"name": payload.get("name"), "landscape": first_https(image), "metaAppId": app_id}
 
 
-def enrich_meta(cfg: dict, records: dict, meta_ids: set[str], seen: str):
+def enrich_meta(cfg: dict, records: dict, meta_ids: set[str], seen: str) -> dict:
     id_to_package = {clean(v.get("metaAppId")): k for k, v in records.items() if clean(v.get("metaAppId"))}
-    unresolved = [app_id for app_id in meta_ids if app_id not in id_to_package]
+    known_before = len(id_to_package)
+    unresolved = sorted(app_id for app_id in meta_ids if app_id not in id_to_package)
     print(f"Resolving {len(unresolved)} Meta IDs that lack a known package mapping…")
+    no_package_ids: list[str] = []
+    mapping_errors: list[dict[str, str]] = []
 
     def map_one(app_id):
         try:
-            return app_id, resolve_package_from_meta_id(cfg, app_id)
+            return app_id, resolve_package_from_meta_id(cfg, app_id), None
         except Exception as exc:
-            print(f"WARN package mapping failed for {app_id}: {exc}", file=sys.stderr)
-            return app_id, None
+            return app_id, None, str(exc)
 
     with concurrent.futures.ThreadPoolExecutor(max_workers=MAX_WORKERS) as pool:
-        for app_id, package in pool.map(map_one, unresolved):
+        for app_id, package, error in pool.map(map_one, unresolved):
             if package:
                 id_to_package[app_id] = package
                 merge_record(records.setdefault(package, {}), {"metaAppId": app_id}, "meta", seen)
+            elif error:
+                print(f"WARN package mapping failed for {app_id}: {error}", file=sys.stderr)
+                mapping_errors.append({"appId": app_id, "error": error})
+            else:
+                no_package_ids.append(app_id)
+
+    if no_package_ids:
+        print(
+            f"WARN Meta package mapping returned no package for {len(no_package_ids)} IDs; "
+            f"see metadata/{DIAGNOSTICS_PATH.name}",
+            file=sys.stderr,
+        )
+    if mapping_errors:
+        print(
+            f"WARN Meta package mapping raised errors for {len(mapping_errors)} IDs; "
+            f"see metadata/{DIAGNOSTICS_PATH.name}",
+            file=sys.stderr,
+        )
 
     targets = [(app_id, package) for app_id, package in id_to_package.items() if package]
     print(f"Fetching official Meta details for {len(targets)} mapped apps…")
@@ -310,8 +383,25 @@ def enrich_meta(cfg: dict, records: dict, meta_ids: set[str], seen: str):
             if details:
                 merge_record(records.setdefault(package, {}), details, source, seen)
 
+    return {
+        "candidateMetaIds": len(meta_ids),
+        "knownPackageMappingsBeforeRun": known_before,
+        "packageMappingAttempts": len(unresolved),
+        "packageMappingNoResultIds": no_package_ids,
+        "packageMappingErrors": mapping_errors,
+        "mappedAppsEnriched": len(targets),
+    }
 
-def write_outputs(records: dict, seen: str):
+
+def write_diagnostics(diagnostics: dict):
+    DIAGNOSTICS_PATH.write_text(
+        json.dumps(diagnostics, ensure_ascii=False, sort_keys=True, indent=2) + "\n",
+        encoding="utf-8",
+    )
+    print(f"Wrote collector diagnostics to metadata/{DIAGNOSTICS_PATH.name}")
+
+
+def write_outputs(records: dict, seen: str) -> int:
     APPS_DIR.mkdir(parents=True, exist_ok=True)
     index_apps = {}
     valid_packages = re.compile(r"^[A-Za-z0-9_]+(?:\.[A-Za-z0-9_]+)+$")
@@ -345,6 +435,7 @@ def write_outputs(records: dict, seen: str):
         )
     INDEX_PATH.write_text(json.dumps({"schema": 1, "generatedAt": seen, "apps": index_apps}, ensure_ascii=False, sort_keys=True, separators=(",", ":")) + "\n", encoding="utf-8")
     print(f"Wrote {len(index_apps)} TOM metadata records")
+    return len(index_apps)
 
 
 def main():
@@ -357,27 +448,48 @@ def main():
     for record in records.values():
         record.setdefault("firstSeen", record.get("lastSeen") or seen)
 
+    diagnostics = {
+        "schema": 1,
+        "generatedAt": seen,
+        "sources": {},
+        "metaDiscovery": {},
+    }
+
     # SideQuest is the preferred third-party discovery/artwork source. OculusDB remains useful for
     # historical/delisted package <-> Meta-ID gaps, but it is intentionally lower priority.
     try:
-        sidequest_ids = fetch_sidequest(cfg, records, seen)
+        sidequest_ids, sidequest_status = fetch_sidequest(cfg, records, seen)
+        diagnostics["sources"]["sideQuest"] = sidequest_status
     except Exception as exc:
         print(f"WARN SideQuest discovery failed: {exc}", file=sys.stderr)
         sidequest_ids = set()
+        diagnostics["sources"]["sideQuest"] = {"status": "failed", "error": str(exc)}
 
     try:
-        fetch_oculusdb(cfg, records, seen)
+        oculusdb_count = fetch_oculusdb(cfg, records, seen)
+        diagnostics["sources"]["oculusDb"] = {"status": "ok", "records": oculusdb_count}
     except Exception as exc:
         print(f"WARN OculusDB discovery failed: {exc}", file=sys.stderr)
+        diagnostics["sources"]["oculusDb"] = {"status": "failed", "error": str(exc)}
 
     try:
         store_ids = fetch_meta_section_ids(cfg)
+        diagnostics["sources"]["metaStore"] = {"status": "ok", "metaIds": len(store_ids)}
     except Exception as exc:
         print(f"WARN current Meta Store enumeration failed: {exc}", file=sys.stderr)
         store_ids = set()
+        diagnostics["sources"]["metaStore"] = {"status": "failed", "error": str(exc)}
     historical_ids = {clean(v.get("metaAppId")) for v in records.values() if clean(v.get("metaAppId"))}
-    enrich_meta(cfg, records, set(x for x in historical_ids | sidequest_ids | store_ids if x), seen)
-    write_outputs(records, seen)
+    candidate_ids = set(x for x in historical_ids | sidequest_ids | store_ids if x)
+    diagnostics["metaDiscovery"] = {
+        "sideQuestMetaIds": sorted(sidequest_ids),
+        "metaStoreIds": sorted(store_ids),
+        "historicalMetaIdCount": len(historical_ids),
+        "candidateMetaIdCount": len(candidate_ids),
+    }
+    diagnostics["metaEnrichment"] = enrich_meta(cfg, records, candidate_ids, seen)
+    diagnostics["outputRecords"] = write_outputs(records, seen)
+    write_diagnostics(diagnostics)
 
 
 if __name__ == "__main__":
