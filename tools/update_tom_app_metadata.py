@@ -3,8 +3,8 @@
 
 The collector deliberately combines independent sources:
   * current Meta Store sections for discovery;
-  * OculusDB for historical/delisted package <-> Meta app-ID mappings;
-  * SideQuest for additional package/ID discovery and third-party fallback artwork;
+  * SideQuest for preferred third-party package/ID discovery and fallback artwork;
+  * OculusDB for lower-priority historical/delisted package <-> Meta app-ID gap filling;
   * Meta GraphQL / public experience pages for official names/artwork when a Meta ID is known;
   * the prior TOM index, which is never discarded merely because an app disappears today.
 
@@ -87,20 +87,24 @@ def first_https(*values):
 
 
 def merge_record(dst: dict, src: dict, source: str, seen: str):
-    hints = set(dst.get("sourceHints") or [])
+    existing_hints = set(dst.get("sourceHints") or [])
+    has_official_history = bool(existing_hints & {"meta", "meta-public"})
+    hints = set(existing_hints)
     hints.add(source)
     dst["sourceHints"] = sorted(hints)
     dst["lastSeen"] = seen
     official = source in {"meta", "meta-public"}
+    sidequest_preferred = source == "sidequest" and not has_official_history
     for key in ("name", "metaAppId", "landscape", "icon", "hero"):
         value = clean(src.get(key))
         if not value:
             continue
         if key in {"landscape", "icon", "hero"} and not value.lower().startswith("https://"):
             continue
-        # Meta is authoritative when available. Discovery/fallback providers fill gaps instead of
-        # replacing previously retained official values during a temporary Meta outage.
-        if official or not clean(dst.get(key)):
+        # Meta is authoritative. Among third-party discovery sources SideQuest is preferred over
+        # OculusDB; OculusDB is historical gap-fill only. This also upgrades old collector records
+        # that previously learned a field from OculusDB when SideQuest now has a usable value.
+        if official or sidequest_preferred or not clean(dst.get(key)):
             dst[key] = value
 
 
@@ -353,16 +357,18 @@ def main():
     for record in records.values():
         record.setdefault("firstSeen", record.get("lastSeen") or seen)
 
-    try:
-        fetch_oculusdb(cfg, records, seen)
-    except Exception as exc:
-        print(f"WARN OculusDB discovery failed: {exc}", file=sys.stderr)
-
+    # SideQuest is the preferred third-party discovery/artwork source. OculusDB remains useful for
+    # historical/delisted package <-> Meta-ID gaps, but it is intentionally lower priority.
     try:
         sidequest_ids = fetch_sidequest(cfg, records, seen)
     except Exception as exc:
         print(f"WARN SideQuest discovery failed: {exc}", file=sys.stderr)
         sidequest_ids = set()
+
+    try:
+        fetch_oculusdb(cfg, records, seen)
+    except Exception as exc:
+        print(f"WARN OculusDB discovery failed: {exc}", file=sys.stderr)
 
     try:
         store_ids = fetch_meta_section_ids(cfg)
