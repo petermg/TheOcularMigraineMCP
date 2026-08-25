@@ -35,6 +35,8 @@ DIAGNOSTICS_PATH = META_DIR / "collector-diagnostics.json"
 USER_AGENT = "TheOcularMigraineNative-metadata-collector/1"
 MAX_WORKERS = 8
 SIDEQUEST_ORIGIN = "https://sidequestvr.com"
+META_STORE_PAGE_RETRIES = 3
+META_STORE_RETRY_BASE_SECONDS = 1.0
 
 
 def now_iso() -> str:
@@ -132,6 +134,12 @@ def first_https(*values):
     return None
 
 
+def note_package_mapping(record: dict, source: str):
+    hints = set(record.get("packageSourceHints") or [])
+    hints.add(source)
+    record["packageSourceHints"] = sorted(hints)
+
+
 def merge_record(dst: dict, src: dict, source: str, seen: str):
     existing_hints = set(dst.get("sourceHints") or [])
     has_official_history = bool(existing_hints & {"meta", "meta-public"})
@@ -154,27 +162,32 @@ def merge_record(dst: dict, src: dict, source: str, seen: str):
             dst[key] = value
 
 
-def fetch_oculusdb(cfg: dict, records: dict, seen: str) -> int:
+def fetch_oculusdb(cfg: dict, records: dict, seen: str) -> tuple[int, dict[str, set[str]]]:
     print("Fetching OculusDB…")
     data = get_json(cfg["oculusDbUrl"], provider="OculusDB")
     if not isinstance(data, list):
         raise RuntimeError("OculusDB allapps response was not a list")
+    package_map: dict[str, set[str]] = {}
     for item in data:
         if not isinstance(item, dict):
             continue
         package = clean(item.get("packageName"))
         if not package or "rift" in package.lower():
             continue
+        app_id = clean(str(item.get("id") or ""))
         rec = records.setdefault(package, {})
-        merge_record(rec, {"name": item.get("appName"), "metaAppId": str(item.get("id") or "")}, "oculusdb", seen)
+        merge_record(rec, {"name": item.get("appName"), "metaAppId": app_id}, "oculusdb", seen)
+        if app_id:
+            note_package_mapping(rec, "oculusdb")
+            package_map.setdefault(app_id, set()).add(package)
     print(f"OculusDB contributed {len(data)} records")
-    return len(data)
+    return len(data), package_map
 
-
-def fetch_sidequest(cfg: dict, records: dict, seen: str) -> tuple[set[str], dict]:
+def fetch_sidequest(cfg: dict, records: dict, seen: str) -> tuple[set[str], dict[str, set[str]], dict]:
     print("Fetching SideQuest…")
     page = 0
     meta_ids: set[str] = set()
+    package_map: dict[str, set[str]] = {}
     total = 0
     while True:
         params = urllib.parse.urlencode({
@@ -201,6 +214,7 @@ def fetch_sidequest(cfg: dict, records: dict, seen: str) -> tuple[set[str], dict
             meta_id = match.group(1) if match else None
             if meta_id:
                 meta_ids.add(meta_id)
+                package_map.setdefault(meta_id, set()).add(package)
             rec = records.setdefault(package, {})
             merge_record(rec, {
                 "name": item.get("name"),
@@ -208,6 +222,8 @@ def fetch_sidequest(cfg: dict, records: dict, seen: str) -> tuple[set[str], dict
                 "landscape": item.get("image_url"),
                 "hero": item.get("app_banner"),
             }, "sidequest", seen)
+            if meta_id:
+                note_package_mapping(rec, "sidequest")
             total += 1
         page += 1
         if page > 250:
@@ -215,18 +231,22 @@ def fetch_sidequest(cfg: dict, records: dict, seen: str) -> tuple[set[str], dict
     if total == 0:
         raise RuntimeError("SideQuest returned zero app records")
     print(f"SideQuest contributed {total} records across {page} pages ({len(meta_ids)} Meta IDs)")
-    return meta_ids, {"status": "ok", "records": total, "pages": page, "metaIds": len(meta_ids)}
+    return meta_ids, package_map, {"status": "ok", "records": total, "pages": page, "metaIds": len(meta_ids)}
 
-
-def fetch_meta_section_ids(cfg: dict) -> set[str]:
+def fetch_meta_section_ids(cfg: dict) -> tuple[set[str], dict]:
     print("Fetching current Meta Store sections…")
     found: set[str] = set()
     endpoint = cfg["metaGraphqlEndpoint"]
     doc_id = cfg["metaStoreSectionDocId"]
     lsd = cfg["metaStoreLsd"]
-    for section in cfg.get("metaStoreSectionIds", []):
+    sections = list(cfg.get("metaStoreSectionIds", []))
+    failures: list[dict[str, object]] = []
+    completed_sections = 0
+
+    for section in sections:
         cursor = "0"
-        pages = 0
+        page_index = 0
+        section_complete = False
         while True:
             variables = {
                 "ageRatingFilter": [], "controllerFilter": [], "cursor": cursor, "first": 100,
@@ -235,7 +255,42 @@ def fetch_meta_section_ids(cfg: dict) -> set[str]:
                 "sortOrder": "release_date", "topicIdFilter": [], "id": section,
                 "__relay_internal__pv__MDCAppStoreShowRatingCountrelayprovider": False,
             }
-            root = post_form_json(endpoint, {"lsd": lsd, "variables": variables, "doc_id": doc_id}, {"X-FB-LSD": lsd})
+            root = None
+            last_error = None
+            for attempt in range(1, META_STORE_PAGE_RETRIES + 1):
+                try:
+                    root = post_form_json(
+                        endpoint,
+                        {"lsd": lsd, "variables": variables, "doc_id": doc_id},
+                        {"X-FB-LSD": lsd},
+                    )
+                    break
+                except Exception as exc:
+                    last_error = str(exc)
+                    if attempt < META_STORE_PAGE_RETRIES:
+                        delay = META_STORE_RETRY_BASE_SECONDS * (2 ** (attempt - 1))
+                        print(
+                            f"WARN Meta Store section={section} page={page_index} attempt={attempt} failed: {exc}; "
+                            f"retrying in {delay:.1f}s",
+                            file=sys.stderr,
+                        )
+                        time.sleep(delay)
+            if root is None:
+                failure = {
+                    "sectionId": str(section),
+                    "page": page_index,
+                    "cursor": cursor,
+                    "attempts": META_STORE_PAGE_RETRIES,
+                    "error": last_error or "unknown Meta Store page failure",
+                }
+                failures.append(failure)
+                print(
+                    f"WARN Meta Store section={section} page={page_index} abandoned after "
+                    f"{META_STORE_PAGE_RETRIES} attempts; preserving {len(found)} IDs already discovered",
+                    file=sys.stderr,
+                )
+                break
+
             all_items = (((root.get("data") or {}).get("node") or {}).get("all_items") or {})
             edges = all_items.get("edges") or []
             for edge in edges:
@@ -244,14 +299,40 @@ def fetch_meta_section_ids(cfg: dict) -> set[str]:
                     found.add(app_id)
             page_info = all_items.get("page_info") or {}
             if not page_info.get("has_next_page"):
+                section_complete = True
                 break
-            cursor = str(page_info.get("end_cursor") or "")
-            pages += 1
-            if not cursor or pages > 20:
+            next_cursor = str(page_info.get("end_cursor") or "")
+            page_index += 1
+            if not next_cursor or page_index > 20:
+                failures.append({
+                    "sectionId": str(section),
+                    "page": page_index,
+                    "cursor": next_cursor,
+                    "attempts": 0,
+                    "error": "invalid cursor or pagination safety limit reached",
+                })
                 break
-    print(f"Meta Store sections exposed {len(found)} unique IDs")
-    return found
+            cursor = next_cursor
 
+        if section_complete:
+            completed_sections += 1
+
+    if failures:
+        status = "partial" if found else "failed"
+    else:
+        status = "ok"
+    summary = {
+        "status": status,
+        "metaIds": len(found),
+        "sectionsConfigured": len(sections),
+        "sectionsCompleted": completed_sections,
+        "pageFailures": failures,
+    }
+    print(
+        f"Meta Store sections exposed {len(found)} unique IDs "
+        f"({completed_sections}/{len(sections)} sections complete, {len(failures)} page failures)"
+    )
+    return found, summary
 
 def resolve_package_from_meta_id(cfg: dict, app_id: str) -> str | None:
     details = post_form_json(cfg["oculusGraphqlEndpoint"], {
@@ -326,13 +407,58 @@ def fetch_public_experience(cfg: dict, app_id: str) -> dict:
     return {"name": payload.get("name"), "landscape": first_https(image), "metaAppId": app_id}
 
 
-def enrich_meta(cfg: dict, records: dict, meta_ids: set[str], seen: str) -> dict:
-    id_to_package = {clean(v.get("metaAppId")): k for k, v in records.items() if clean(v.get("metaAppId"))}
-    known_before = len(id_to_package)
-    unresolved = sorted(app_id for app_id in meta_ids if app_id not in id_to_package)
-    print(f"Resolving {len(unresolved)} Meta IDs that lack a known package mapping…")
-    no_package_ids: list[str] = []
-    mapping_errors: list[dict[str, str]] = []
+def _id_to_packages(records: dict) -> dict[str, set[str]]:
+    result: dict[str, set[str]] = {}
+    for package, record in records.items():
+        app_id = clean(record.get("metaAppId"))
+        if app_id:
+            result.setdefault(app_id, set()).add(package)
+    return result
+
+
+def _verified_packages(records: dict) -> dict[str, set[str]]:
+    result: dict[str, set[str]] = {}
+    for package, record in records.items():
+        app_id = clean(record.get("metaAppId"))
+        if app_id and record.get("metaPackageVerified") is True:
+            result.setdefault(app_id, set()).add(package)
+    return result
+
+
+def enrich_meta(
+    cfg: dict,
+    records: dict,
+    meta_ids: set[str],
+    seen: str,
+    *,
+    current_validation_ids: set[str],
+    sidequest_packages: dict[str, set[str]],
+    oculusdb_packages: dict[str, set[str]],
+) -> dict:
+    id_to_packages = _id_to_packages(records)
+    known_before = len(id_to_packages)
+    verified_before = _verified_packages(records)
+    unmapped_ids = set(meta_ids) - set(id_to_packages)
+
+    # Current Store/SideQuest IDs are worth validating against Meta's own binary package name.
+    # The first run after this feature lands may validate several thousand IDs, but successful
+    # verifications are persisted in the aggregate index and therefore do not repeat every day.
+    unverified_current_ids = {
+        app_id for app_id in current_validation_ids
+        if app_id in meta_ids and not verified_before.get(app_id)
+    }
+    multiply_verified_ids = {app_id for app_id, packages in verified_before.items() if len(packages) > 1}
+    lookup_ids = sorted(unmapped_ids | unverified_current_ids | multiply_verified_ids)
+    print(
+        f"Resolving/validating {len(lookup_ids)} Meta package mappings "
+        f"({len(unmapped_ids)} unmapped, {len(unverified_current_ids)} current IDs unverified)…"
+    )
+
+    no_package_ids: list[dict[str, object]] = []
+    mapping_errors: list[dict[str, object]] = []
+    mapping_conflicts: list[dict[str, object]] = []
+    official_packages_added = 0
+    official_packages_verified = 0
 
     def map_one(app_id):
         try:
@@ -341,15 +467,48 @@ def enrich_meta(cfg: dict, records: dict, meta_ids: set[str], seen: str) -> dict
             return app_id, None, str(exc)
 
     with concurrent.futures.ThreadPoolExecutor(max_workers=MAX_WORKERS) as pool:
-        for app_id, package, error in pool.map(map_one, unresolved):
+        for app_id, package, error in pool.map(map_one, lookup_ids):
+            known_packages = set(id_to_packages.get(app_id, set()))
+            sidequest_known = set(sidequest_packages.get(app_id, set()))
+            oculusdb_known = set(oculusdb_packages.get(app_id, set()))
             if package:
-                id_to_package[app_id] = package
-                merge_record(records.setdefault(package, {}), {"metaAppId": app_id}, "meta", seen)
+                if package not in known_packages:
+                    official_packages_added += 1
+                rec = records.setdefault(package, {})
+                merge_record(rec, {"metaAppId": app_id}, "meta", seen)
+                note_package_mapping(rec, "meta")
+                id_to_packages.setdefault(app_id, set()).add(package)
+
+                # Meta's current Android binary package is canonical. Preserve every historical or
+                # third-party alias for backward compatibility, but mark only the current package as
+                # verified. Official metadata/artwork is later copied to every alias for this app ID.
+                for candidate in id_to_packages[app_id]:
+                    candidate_record = records.setdefault(candidate, {})
+                    candidate_record["metaPackageVerified"] = candidate == package
+                official_packages_verified += 1
+
+                conflicting_packages = sorted((known_packages | sidequest_known | oculusdb_known) - {package})
+                if conflicting_packages:
+                    mapping_conflicts.append({
+                        "appId": app_id,
+                        "officialPackage": package,
+                        "otherPackages": conflicting_packages,
+                        "sideQuestPackages": sorted(sidequest_known),
+                        "oculusDbPackages": sorted(oculusdb_known),
+                        "knownPackagesBeforeValidation": sorted(known_packages),
+                    })
             elif error:
                 print(f"WARN package mapping failed for {app_id}: {error}", file=sys.stderr)
-                mapping_errors.append({"appId": app_id, "error": error})
+                mapping_errors.append({
+                    "appId": app_id,
+                    "knownPackages": sorted(known_packages),
+                    "error": error,
+                })
             else:
-                no_package_ids.append(app_id)
+                no_package_ids.append({
+                    "appId": app_id,
+                    "knownPackages": sorted(known_packages),
+                })
 
     if no_package_ids:
         print(
@@ -363,35 +522,49 @@ def enrich_meta(cfg: dict, records: dict, meta_ids: set[str], seen: str) -> dict
             f"see metadata/{DIAGNOSTICS_PATH.name}",
             file=sys.stderr,
         )
+    if mapping_conflicts:
+        print(
+            f"INFO Meta package validation found {len(mapping_conflicts)} package aliases/conflicts; "
+            f"official packages were made canonical and aliases retained",
+        )
 
-    targets = [(app_id, package) for app_id, package in id_to_package.items() if package]
-    print(f"Fetching official Meta details for {len(targets)} mapped apps…")
+    targets = [(app_id, sorted(packages)) for app_id, packages in id_to_packages.items() if packages]
+    print(f"Fetching official Meta details for {len(targets)} mapped app IDs…")
 
     def details_one(pair):
-        app_id, package = pair
+        app_id, packages = pair
         try:
-            return package, fetch_meta_details(cfg, app_id), "meta"
+            return app_id, packages, fetch_meta_details(cfg, app_id), "meta"
         except Exception:
             try:
-                return package, fetch_public_experience(cfg, app_id), "meta-public"
+                return app_id, packages, fetch_public_experience(cfg, app_id), "meta-public"
             except Exception as exc:
-                print(f"WARN Meta details failed for {package}/{app_id}: {exc}", file=sys.stderr)
-                return package, {}, "meta"
+                print(f"WARN Meta details failed for {app_id}: {exc}", file=sys.stderr)
+                return app_id, packages, {}, "meta"
 
     with concurrent.futures.ThreadPoolExecutor(max_workers=MAX_WORKERS) as pool:
-        for package, details, source in pool.map(details_one, targets):
+        for app_id, packages, details, source in pool.map(details_one, targets):
             if details:
-                merge_record(records.setdefault(package, {}), details, source, seen)
+                for package in packages:
+                    merge_record(records.setdefault(package, {}), details, source, seen)
 
+    verified_after = _verified_packages(records)
     return {
         "candidateMetaIds": len(meta_ids),
         "knownPackageMappingsBeforeRun": known_before,
-        "packageMappingAttempts": len(unresolved),
-        "packageMappingNoResultIds": no_package_ids,
+        "verifiedMetaIdsBeforeRun": len(verified_before),
+        "packageMappingAttempts": len(lookup_ids),
+        "unmappedMetaIdsBeforeLookup": len(unmapped_ids),
+        "currentUnverifiedMetaIdsBeforeLookup": len(unverified_current_ids),
+        "packageMappingNoResults": no_package_ids,
         "packageMappingErrors": mapping_errors,
-        "mappedAppsEnriched": len(targets),
+        "packageMappingConflicts": mapping_conflicts,
+        "officialPackagesAdded": official_packages_added,
+        "officialPackagesVerifiedThisRun": official_packages_verified,
+        "verifiedMetaIdsAfterRun": len(verified_after),
+        "mappedMetaIdsEnriched": len(targets),
+        "mappedPackageAliasesEnriched": sum(len(packages) for _, packages in targets),
     }
-
 
 def write_diagnostics(diagnostics: dict):
     DIAGNOSTICS_PATH.write_text(
@@ -411,7 +584,10 @@ def write_outputs(records: dict, seen: str) -> int:
         record = records[package]
         index_record = {
             k: record[k]
-            for k in ("name", "metaAppId", "landscape", "icon", "hero", "sourceHints", "firstSeen", "lastSeen")
+            for k in (
+                "name", "metaAppId", "landscape", "icon", "hero", "sourceHints",
+                "packageSourceHints", "metaPackageVerified", "firstSeen", "lastSeen",
+            )
             if record.get(k) is not None
         }
         index_record.setdefault("firstSeen", record.get("lastSeen") or seen)
@@ -458,23 +634,25 @@ def main():
     # SideQuest is the preferred third-party discovery/artwork source. OculusDB remains useful for
     # historical/delisted package <-> Meta-ID gaps, but it is intentionally lower priority.
     try:
-        sidequest_ids, sidequest_status = fetch_sidequest(cfg, records, seen)
+        sidequest_ids, sidequest_packages, sidequest_status = fetch_sidequest(cfg, records, seen)
         diagnostics["sources"]["sideQuest"] = sidequest_status
     except Exception as exc:
         print(f"WARN SideQuest discovery failed: {exc}", file=sys.stderr)
         sidequest_ids = set()
+        sidequest_packages = {}
         diagnostics["sources"]["sideQuest"] = {"status": "failed", "error": str(exc)}
 
     try:
-        oculusdb_count = fetch_oculusdb(cfg, records, seen)
+        oculusdb_count, oculusdb_packages = fetch_oculusdb(cfg, records, seen)
         diagnostics["sources"]["oculusDb"] = {"status": "ok", "records": oculusdb_count}
     except Exception as exc:
         print(f"WARN OculusDB discovery failed: {exc}", file=sys.stderr)
+        oculusdb_packages = {}
         diagnostics["sources"]["oculusDb"] = {"status": "failed", "error": str(exc)}
 
     try:
-        store_ids = fetch_meta_section_ids(cfg)
-        diagnostics["sources"]["metaStore"] = {"status": "ok", "metaIds": len(store_ids)}
+        store_ids, meta_store_status = fetch_meta_section_ids(cfg)
+        diagnostics["sources"]["metaStore"] = meta_store_status
     except Exception as exc:
         print(f"WARN current Meta Store enumeration failed: {exc}", file=sys.stderr)
         store_ids = set()
@@ -487,7 +665,15 @@ def main():
         "historicalMetaIdCount": len(historical_ids),
         "candidateMetaIdCount": len(candidate_ids),
     }
-    diagnostics["metaEnrichment"] = enrich_meta(cfg, records, candidate_ids, seen)
+    diagnostics["metaEnrichment"] = enrich_meta(
+        cfg,
+        records,
+        candidate_ids,
+        seen,
+        current_validation_ids=set(sidequest_ids) | set(store_ids),
+        sidequest_packages=sidequest_packages,
+        oculusdb_packages=oculusdb_packages,
+    )
     diagnostics["outputRecords"] = write_outputs(records, seen)
     write_diagnostics(diagnostics)
 
