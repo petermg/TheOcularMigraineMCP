@@ -16,6 +16,16 @@ retained even when an app disappears from today's Store. The workflow writes com
 `apps/<android.package.name>.json` records for runtime use; observation timestamps remain only in the
 aggregate index so routine daily runs do not rewrite every per-package file.
 
+`collector-diagnostics.json` is generated alongside the index on every collector run. It records
+whether SideQuest/OculusDB/Meta Store discovery succeeded, the Meta IDs discovered from SideQuest and
+the configured Meta Store sections, and any Meta IDs for which package-name resolution returned no
+package or raised an error. This file is intended for diagnosing coverage holes such as a current
+Store app that never receives an `apps/<package>.json` record; it is not consumed by the Android app.
+
+The SideQuest collector request deliberately sends `Origin: https://sidequestvr.com`, matching the
+browser-origin requirement of the current SideQuest search endpoint. SideQuest remains the preferred
+third-party source; OculusDB is still retained only as lower-priority historical/delisted gap filling.
+
 The included `.github/workflows/update-tom-app-metadata.yml` runs the collector daily and can also be
 started manually. After this repository is published, point **Settings → App Library & Artwork →
 Advanced resolver updates** at the raw metadata base path, for example:
