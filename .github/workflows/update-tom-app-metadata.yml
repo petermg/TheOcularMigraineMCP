@@ -1,0 +1,32 @@
+name: Update TOM app metadata
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "23 7 * * *"
+
+permissions:
+  contents: write
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Collect Meta/OculusDB/SideQuest metadata
+        run: python tools/update_tom_app_metadata.py
+      - name: Commit changed metadata
+        run: |
+          if git diff --quiet -- metadata; then
+            echo "No metadata changes."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add metadata
+          git commit -m "Update TOM app metadata"
+          git push
