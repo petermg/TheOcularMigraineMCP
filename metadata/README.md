@@ -18,9 +18,24 @@ aggregate index so routine daily runs do not rewrite every per-package file.
 
 `collector-diagnostics.json` is generated alongside the index on every collector run. It records
 whether SideQuest/OculusDB/Meta Store discovery succeeded, the Meta IDs discovered from SideQuest and
-the configured Meta Store sections, and any Meta IDs for which package-name resolution returned no
-package or raised an error. This file is intended for diagnosing coverage holes such as a current
-Store app that never receives an `apps/<package>.json` record; it is not consumed by the Android app.
+the configured Meta Store sections, package-name lookups that returned no result or raised an error,
+and any package aliases/conflicts discovered when a third-party or historical mapping differs from
+Meta's current Android binary package. This file is intended for diagnosing coverage holes such as a
+current Store app that never receives an `apps/<package>.json` record; it is not consumed by the
+Android app.
+
+Current SideQuest and Meta Store IDs are validated against Meta's own Android binary package lookup.
+Successful validations are retained in the aggregate index with `metaPackageVerified: true` and
+`packageSourceHints`; those collector-only fields are omitted from the compact runtime package files.
+If Meta reports a different current package, the official package becomes canonical while historical
+or third-party package aliases are retained and receive the same official metadata/artwork. This
+preserves compatibility with older installed builds without allowing a stale third-party package
+mapping to block the current official package.
+
+Meta Store enumeration is page-resilient: each failed page is retried with backoff, and a persistent
+section/page failure is recorded in diagnostics without discarding IDs already discovered from other
+sections/pages. A transient Meta HTTP failure therefore no longer collapses a partially successful
+Store crawl to zero IDs.
 
 The SideQuest collector request deliberately sends `Origin: https://sidequestvr.com`, matching the
 browser-origin requirement of the current SideQuest search endpoint. SideQuest remains the preferred
