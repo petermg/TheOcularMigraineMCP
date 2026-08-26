@@ -37,6 +37,7 @@ MAX_WORKERS = 8
 SIDEQUEST_ORIGIN = "https://sidequestvr.com"
 META_STORE_PAGE_RETRIES = 3
 META_STORE_RETRY_BASE_SECONDS = 1.0
+SIDEQUEST_PLACEHOLDER_PACKAGE_RE = re.compile(r"^com\.autogen\.\d+$", re.I)
 
 
 def now_iso() -> str:
@@ -134,6 +135,23 @@ def first_https(*values):
     return None
 
 
+def is_sidequest_placeholder_package(package: str | None) -> bool:
+    return bool(package and SIDEQUEST_PLACEHOLDER_PACKAGE_RE.fullmatch(package))
+
+
+def prune_sidequest_placeholder_records(records: dict) -> list[dict[str, str | None]]:
+    removed: list[dict[str, str | None]] = []
+    for package in list(records):
+        if not is_sidequest_placeholder_package(package):
+            continue
+        record = records.pop(package)
+        removed.append({
+            "package": package,
+            "appId": clean(record.get("metaAppId")),
+        })
+    return removed
+
+
 def note_package_mapping(record: dict, source: str):
     hints = set(record.get("packageSourceHints") or [])
     hints.add(source)
@@ -183,11 +201,16 @@ def fetch_oculusdb(cfg: dict, records: dict, seen: str) -> tuple[int, dict[str, 
     print(f"OculusDB contributed {len(data)} records")
     return len(data), package_map
 
-def fetch_sidequest(cfg: dict, records: dict, seen: str) -> tuple[set[str], dict[str, set[str]], dict]:
+def fetch_sidequest(
+    cfg: dict,
+    records: dict,
+    seen: str,
+) -> tuple[set[str], dict[str, set[str]], dict[str, set[str]], dict]:
     print("Fetching SideQuest…")
     page = 0
     meta_ids: set[str] = set()
     package_map: dict[str, set[str]] = {}
+    placeholder_map: dict[str, set[str]] = {}
     total = 0
     while True:
         params = urllib.parse.urlencode({
@@ -214,6 +237,17 @@ def fetch_sidequest(cfg: dict, records: dict, seen: str) -> tuple[set[str], dict
             meta_id = match.group(1) if match else None
             if meta_id:
                 meta_ids.add(meta_id)
+
+            # SideQuest uses com.autogen.<number> as a Store-listing placeholder for some
+            # Meta-hosted apps. It is not an Android package name and must never become a
+            # runtime apps/<package>.json key. Keep the Meta ID as discovery input so TOM can
+            # resolve the real package through Meta's binary metadata instead.
+            if is_sidequest_placeholder_package(package) and meta_id:
+                placeholder_map.setdefault(meta_id, set()).add(package)
+                total += 1
+                continue
+
+            if meta_id:
                 package_map.setdefault(meta_id, set()).add(package)
             rec = records.setdefault(package, {})
             merge_record(rec, {
@@ -230,8 +264,19 @@ def fetch_sidequest(cfg: dict, records: dict, seen: str) -> tuple[set[str], dict
             raise RuntimeError("SideQuest pagination safety limit reached")
     if total == 0:
         raise RuntimeError("SideQuest returned zero app records")
-    print(f"SideQuest contributed {total} records across {page} pages ({len(meta_ids)} Meta IDs)")
-    return meta_ids, package_map, {"status": "ok", "records": total, "pages": page, "metaIds": len(meta_ids)}
+    placeholder_count = sum(len(packages) for packages in placeholder_map.values())
+    print(
+        f"SideQuest contributed {total} records across {page} pages ({len(meta_ids)} Meta IDs; "
+        f"{placeholder_count} com.autogen placeholders treated as Meta-ID-only discovery)"
+    )
+    return meta_ids, package_map, placeholder_map, {
+        "status": "ok",
+        "records": total,
+        "pages": page,
+        "metaIds": len(meta_ids),
+        "placeholderPackages": placeholder_count,
+        "placeholderMetaIds": len(placeholder_map),
+    }
 
 def fetch_meta_section_ids(cfg: dict) -> tuple[set[str], dict]:
     print("Fetching current Meta Store sections…")
@@ -334,18 +379,43 @@ def fetch_meta_section_ids(cfg: dict) -> tuple[set[str], dict]:
     )
     return found, summary
 
-def resolve_package_from_meta_id(cfg: dict, app_id: str) -> str | None:
+def _store_binary_version_codes(node: dict) -> list[str]:
+    values: list[str] = []
+
+    def add(value):
+        value = clean(str(value)) if value is not None else None
+        if value and value not in values:
+            values.append(value)
+
+    # Current Store-details responses expose revision binaries even when the older
+    # release_channels query no longer yields a usable latest_supported_binary.
+    for revision_key in ("lastRevision", "firstRevision"):
+        for revision in ((node.get(revision_key) or {}).get("nodes") or []):
+            application = revision.get("application") or {}
+            for channel in ((application.get("liveChannel") or {}).get("nodes") or []):
+                add((channel.get("latest_supported_binary") or {}).get("version_code"))
+            add((revision.get("live_binary") or {}).get("version_code"))
+            add((revision.get("binary") or {}).get("version_code"))
+    return values
+
+
+def _legacy_binary_version_codes(cfg: dict, app_id: str) -> list[str]:
     details = post_form_json(cfg["oculusGraphqlEndpoint"], {
         "doc_id": cfg["appDetailsDocId"],
         "access_token": cfg["appDetailsAccessToken"],
         "variables": {"applicationID": app_id},
     })
     node = (details.get("data") or {}).get("node") or {}
-    channels = ((node.get("release_channels") or {}).get("nodes") or [])
-    binary = (channels[0].get("latest_supported_binary") if channels else None) or {}
-    version_code = binary.get("version_code")
-    if not version_code:
-        return None
+    values: list[str] = []
+    for channel in ((node.get("release_channels") or {}).get("nodes") or []):
+        version_code = (channel.get("latest_supported_binary") or {}).get("version_code")
+        value = clean(str(version_code)) if version_code is not None else None
+        if value and value not in values:
+            values.append(value)
+    return values
+
+
+def _package_from_binary_version(cfg: dict, app_id: str, version_code: str) -> tuple[str | None, str]:
     query = """query ($params: AppBinaryInfoArgs!) { app_binary_info(args: $params) { info { binary { ... on AndroidBinary { package_name version_code } } } } }"""
     payload = {
         "doc": query,
@@ -355,8 +425,101 @@ def resolve_package_from_meta_id(cfg: dict, app_id: str) -> str | None:
     result = post_json(cfg["oculusGraphqlEndpoint"], payload)
     info = (((result.get("data") or {}).get("app_binary_info") or {}).get("info") or [])
     if not info:
+        return None, "app_binary_info_empty"
+    saw_binary = False
+    for item in info:
+        binary = (item or {}).get("binary") or {}
+        if binary:
+            saw_binary = True
+        package = clean(binary.get("package_name"))
+        if package:
+            return package, "resolved"
+    return None, "package_name_missing" if saw_binary else "app_binary_info_empty"
+
+
+def resolve_package_from_meta_id(cfg: dict, app_id: str) -> dict[str, object]:
+    result: dict[str, object] = {
+        "package": None,
+        "stage": None,
+        "storeVersionCodes": [],
+        "legacyVersionCodes": [],
+        "binaryAttempts": [],
+    }
+    tried: set[str] = set()
+    store_node = {}
+    store_error = None
+
+    try:
+        store_root = post_form_json(cfg["oculusGraphqlEndpoint"], {
+            "doc_id": cfg["storeDetailsDocId"],
+            "access_token": cfg["storeAccessToken"],
+            "variables": {"applicationID": app_id},
+        })
+        store_node = (store_root.get("data") or {}).get("node") or {}
+    except Exception as exc:
+        store_error = str(exc)
+        result["storeDetailsError"] = store_error
+
+    store_versions = _store_binary_version_codes(store_node) if store_node else []
+    result["storeVersionCodes"] = store_versions
+
+    def try_versions(version_codes: list[str], source: str) -> str | None:
+        for version_code in version_codes:
+            if version_code in tried:
+                continue
+            tried.add(version_code)
+            try:
+                package, stage = _package_from_binary_version(cfg, app_id, version_code)
+                result["binaryAttempts"].append({
+                    "source": source,
+                    "versionCode": version_code,
+                    "stage": stage,
+                })
+                if package:
+                    return package
+            except Exception as exc:
+                result["binaryAttempts"].append({
+                    "source": source,
+                    "versionCode": version_code,
+                    "stage": "binary_lookup_error",
+                    "error": str(exc),
+                })
         return None
-    return clean(((info[0] or {}).get("binary") or {}).get("package_name"))
+
+    package = try_versions(store_versions, "store-details")
+    if package:
+        result["package"] = package
+        result["stage"] = "resolved_store_binary"
+        return result
+
+    legacy_error = None
+    legacy_versions: list[str] = []
+    try:
+        legacy_versions = _legacy_binary_version_codes(cfg, app_id)
+    except Exception as exc:
+        legacy_error = str(exc)
+        result["legacyDetailsError"] = legacy_error
+    result["legacyVersionCodes"] = legacy_versions
+
+    package = try_versions(legacy_versions, "legacy-release-channel")
+    if package:
+        result["package"] = package
+        result["stage"] = "resolved_legacy_binary"
+        return result
+
+    attempts = result["binaryAttempts"]
+    attempt_stages = [x.get("stage") for x in attempts if isinstance(x, dict)]
+    if not store_node and not legacy_versions:
+        result["stage"] = "no_store_node_and_no_binary_version" if not store_error else "store_details_error_no_legacy_binary"
+    elif not store_versions and not legacy_versions:
+        result["stage"] = "no_binary_version"
+    elif "package_name_missing" in attempt_stages:
+        result["stage"] = "package_name_missing"
+    elif attempts and all(stage == "binary_lookup_error" for stage in attempt_stages):
+        result["stage"] = "binary_lookup_error"
+    else:
+        result["stage"] = "app_binary_info_empty"
+    return result
 
 
 def fetch_meta_details(cfg: dict, app_id: str) -> dict:
@@ -431,7 +594,7 @@ def enrich_meta(
     meta_ids: set[str],
     seen: str,
     *,
-    current_validation_ids: set[str],
+    placeholder_ids: set[str],
     sidequest_packages: dict[str, set[str]],
     oculusdb_packages: dict[str, set[str]],
 ) -> dict:
@@ -440,18 +603,29 @@ def enrich_meta(
     verified_before = _verified_packages(records)
     unmapped_ids = set(meta_ids) - set(id_to_packages)
 
-    # Current Store/SideQuest IDs are worth validating against Meta's own binary package name.
-    # The first run after this feature lands may validate several thousand IDs, but successful
-    # verifications are persisted in the aggregate index and therefore do not repeat every day.
-    unverified_current_ids = {
-        app_id for app_id in current_validation_ids
-        if app_id in meta_ids and not verified_before.get(app_id)
+    ambiguous_ids = {app_id for app_id, packages in id_to_packages.items() if len(packages) > 1}
+    source_conflict_ids = {
+        app_id for app_id in meta_ids
+        if sidequest_packages.get(app_id)
+        and oculusdb_packages.get(app_id)
+        and set(sidequest_packages[app_id]) != set(oculusdb_packages[app_id])
     }
     multiply_verified_ids = {app_id for app_id, packages in verified_before.items() if len(packages) > 1}
-    lookup_ids = sorted(unmapped_ids | unverified_current_ids | multiply_verified_ids)
+
+    # Do not blindly validate every current third-party mapping. The Meta binary endpoint is
+    # expensive and can rate/network-fail under thousands of requests. Concentrate official
+    # package lookup on IDs that actually need repair or disambiguation.
+    lookup_ids = sorted(
+        unmapped_ids
+        | set(placeholder_ids)
+        | ambiguous_ids
+        | source_conflict_ids
+        | multiply_verified_ids
+    )
     print(
-        f"Resolving/validating {len(lookup_ids)} Meta package mappings "
-        f"({len(unmapped_ids)} unmapped, {len(unverified_current_ids)} current IDs unverified)…"
+        f"Resolving {len(lookup_ids)} focused Meta package mappings "
+        f"({len(unmapped_ids)} unmapped, {len(placeholder_ids)} placeholder IDs, "
+        f"{len(ambiguous_ids)} ambiguous, {len(source_conflict_ids)} source conflicts)…"
     )
 
     no_package_ids: list[dict[str, object]] = []
@@ -459,6 +633,7 @@ def enrich_meta(
     mapping_conflicts: list[dict[str, object]] = []
     official_packages_added = 0
     official_packages_verified = 0
+    resolution_stage_counts: dict[str, int] = {}
 
     def map_one(app_id):
         try:
@@ -467,10 +642,15 @@ def enrich_meta(
             return app_id, None, str(exc)
 
     with concurrent.futures.ThreadPoolExecutor(max_workers=MAX_WORKERS) as pool:
-        for app_id, package, error in pool.map(map_one, lookup_ids):
+        for app_id, resolution, error in pool.map(map_one, lookup_ids):
             known_packages = set(id_to_packages.get(app_id, set()))
             sidequest_known = set(sidequest_packages.get(app_id, set()))
             oculusdb_known = set(oculusdb_packages.get(app_id, set()))
+            package = clean((resolution or {}).get("package")) if isinstance(resolution, dict) else None
+            stage = clean((resolution or {}).get("stage")) if isinstance(resolution, dict) else None
+            if stage:
+                resolution_stage_counts[stage] = resolution_stage_counts.get(stage, 0) + 1
+
             if package:
                 if package not in known_packages:
                     official_packages_added += 1
@@ -479,9 +659,9 @@ def enrich_meta(
                 note_package_mapping(rec, "meta")
                 id_to_packages.setdefault(app_id, set()).add(package)
 
-                # Meta's current Android binary package is canonical. Preserve every historical or
-                # third-party alias for backward compatibility, but mark only the current package as
-                # verified. Official metadata/artwork is later copied to every alias for this app ID.
+                # Meta's current Android binary package is canonical. Preserve legitimate
+                # historical/third-party aliases, but com.autogen placeholders are discarded
+                # before this stage and never become runtime package keys.
                 for candidate in id_to_packages[app_id]:
                     candidate_record = records.setdefault(candidate, {})
                     candidate_record["metaPackageVerified"] = candidate == package
@@ -496,6 +676,7 @@ def enrich_meta(
                         "sideQuestPackages": sorted(sidequest_known),
                         "oculusDbPackages": sorted(oculusdb_known),
                         "knownPackagesBeforeValidation": sorted(known_packages),
+                        "resolutionStage": stage,
                     })
             elif error:
                 print(f"WARN package mapping failed for {app_id}: {error}", file=sys.stderr)
@@ -505,20 +686,29 @@ def enrich_meta(
                     "error": error,
                 })
             else:
-                no_package_ids.append({
+                entry = {
                     "appId": app_id,
                     "knownPackages": sorted(known_packages),
-                })
+                    "stage": stage or "unknown",
+                }
+                if isinstance(resolution, dict):
+                    for key in (
+                        "storeVersionCodes", "legacyVersionCodes", "binaryAttempts",
+                        "storeDetailsError", "legacyDetailsError",
+                    ):
+                        if resolution.get(key):
+                            entry[key] = resolution[key]
+                no_package_ids.append(entry)
 
     if no_package_ids:
         print(
-            f"WARN Meta package mapping returned no package for {len(no_package_ids)} IDs; "
+            f"WARN Meta package mapping returned no package for {len(no_package_ids)} focused IDs; "
             f"see metadata/{DIAGNOSTICS_PATH.name}",
             file=sys.stderr,
         )
     if mapping_errors:
         print(
-            f"WARN Meta package mapping raised errors for {len(mapping_errors)} IDs; "
+            f"WARN Meta package mapping raised errors for {len(mapping_errors)} focused IDs; "
             f"see metadata/{DIAGNOSTICS_PATH.name}",
             file=sys.stderr,
         )
@@ -555,7 +745,10 @@ def enrich_meta(
         "verifiedMetaIdsBeforeRun": len(verified_before),
         "packageMappingAttempts": len(lookup_ids),
         "unmappedMetaIdsBeforeLookup": len(unmapped_ids),
-        "currentUnverifiedMetaIdsBeforeLookup": len(unverified_current_ids),
+        "placeholderMetaIdsBeforeLookup": len(placeholder_ids),
+        "ambiguousMetaIdsBeforeLookup": len(ambiguous_ids),
+        "sourceConflictMetaIdsBeforeLookup": len(source_conflict_ids),
+        "packageMappingResolutionStages": resolution_stage_counts,
         "packageMappingNoResults": no_package_ids,
         "packageMappingErrors": mapping_errors,
         "packageMappingConflicts": mapping_conflicts,
@@ -574,7 +767,7 @@ def write_diagnostics(diagnostics: dict):
     print(f"Wrote collector diagnostics to metadata/{DIAGNOSTICS_PATH.name}")
 
 
-def write_outputs(records: dict, seen: str) -> int:
+def write_outputs(records: dict, seen: str, *, removed_placeholder_packages: set[str]) -> int:
     APPS_DIR.mkdir(parents=True, exist_ok=True)
     index_apps = {}
     valid_packages = re.compile(r"^[A-Za-z0-9_]+(?:\.[A-Za-z0-9_]+)+$")
@@ -610,6 +803,20 @@ def write_outputs(records: dict, seen: str) -> int:
             encoding="utf-8",
         )
     INDEX_PATH.write_text(json.dumps({"schema": 1, "generatedAt": seen, "apps": index_apps}, ensure_ascii=False, sort_keys=True, separators=(",", ":")) + "\n", encoding="utf-8")
+
+    # Remove stale runtime files emitted by older collector versions that treated SideQuest
+    # com.autogen placeholders as real Android packages.
+    removed_files = 0
+    for package in sorted(removed_placeholder_packages):
+        if not is_sidequest_placeholder_package(package):
+            continue
+        path = APPS_DIR / f"{package}.json"
+        if path.exists():
+            path.unlink()
+            removed_files += 1
+    if removed_files:
+        print(f"Removed {removed_files} stale SideQuest com.autogen runtime package files")
+
     print(f"Wrote {len(index_apps)} TOM metadata records")
     return len(index_apps)
 
@@ -620,6 +827,9 @@ def main():
         raise SystemExit("metadata/resolver-config.json schema must be 1")
     prior = load_json(INDEX_PATH, {"apps": {}})
     records = {k: dict(v) for k, v in (prior.get("apps") or {}).items() if isinstance(v, dict)}
+    pruned_placeholders = prune_sidequest_placeholder_records(records)
+    removed_placeholder_packages = {entry["package"] for entry in pruned_placeholders if entry.get("package")}
+    historical_placeholder_ids = {entry["appId"] for entry in pruned_placeholders if entry.get("appId")}
     seen = now_iso()
     for record in records.values():
         record.setdefault("firstSeen", record.get("lastSeen") or seen)
@@ -634,12 +844,13 @@ def main():
     # SideQuest is the preferred third-party discovery/artwork source. OculusDB remains useful for
     # historical/delisted package <-> Meta-ID gaps, but it is intentionally lower priority.
     try:
-        sidequest_ids, sidequest_packages, sidequest_status = fetch_sidequest(cfg, records, seen)
+        sidequest_ids, sidequest_packages, sidequest_placeholders, sidequest_status = fetch_sidequest(cfg, records, seen)
         diagnostics["sources"]["sideQuest"] = sidequest_status
     except Exception as exc:
         print(f"WARN SideQuest discovery failed: {exc}", file=sys.stderr)
         sidequest_ids = set()
         sidequest_packages = {}
+        sidequest_placeholders = {}
         diagnostics["sources"]["sideQuest"] = {"status": "failed", "error": str(exc)}
 
     try:
@@ -659,22 +870,32 @@ def main():
         diagnostics["sources"]["metaStore"] = {"status": "failed", "error": str(exc)}
     historical_ids = {clean(v.get("metaAppId")) for v in records.values() if clean(v.get("metaAppId"))}
     candidate_ids = set(x for x in historical_ids | sidequest_ids | store_ids if x)
+    current_placeholder_ids = set(sidequest_placeholders)
+    placeholder_ids = historical_placeholder_ids | current_placeholder_ids
     diagnostics["metaDiscovery"] = {
         "sideQuestMetaIds": sorted(sidequest_ids),
         "metaStoreIds": sorted(store_ids),
         "historicalMetaIdCount": len(historical_ids),
         "candidateMetaIdCount": len(candidate_ids),
+        "prunedHistoricalPlaceholderPackages": pruned_placeholders,
+        "sideQuestPlaceholderMappings": {
+            app_id: sorted(packages) for app_id, packages in sorted(sidequest_placeholders.items())
+        },
     }
     diagnostics["metaEnrichment"] = enrich_meta(
         cfg,
         records,
         candidate_ids,
         seen,
-        current_validation_ids=set(sidequest_ids) | set(store_ids),
+        placeholder_ids=placeholder_ids,
         sidequest_packages=sidequest_packages,
         oculusdb_packages=oculusdb_packages,
     )
-    diagnostics["outputRecords"] = write_outputs(records, seen)
+    diagnostics["outputRecords"] = write_outputs(
+        records,
+        seen,
+        removed_placeholder_packages=removed_placeholder_packages,
+    )
     write_diagnostics(diagnostics)
 
 
