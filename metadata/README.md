@@ -89,3 +89,25 @@ attempt as `app_binary_info_graphql_error` and includes a bounded error summary 
 `collector-diagnostics.json`. A GraphQL validation/authentication/type failure is therefore distinct
 from a genuine `app_binary_info_empty` result. Version codes in diagnostics retain their numeric type
 as well, making it possible to verify the exact request shape used for a failing package repair.
+
+## MetaMetadata package-map fallback and binary-query parity
+
+TOM's central collector now consumes MetaMetadata's public generated `data/known_oculus_apps.json`
+**only as a package-name mapping fallback** for Meta IDs that are otherwise unmapped or were exposed
+through SideQuest as `com.autogen.*` placeholders. This does not copy or execute MetaMetadata or
+Lightning Launcher code. The mapping provenance is retained only in the aggregate index as
+`packageSourceHints: ["metametadata-map"]`; the compact runtime package record still receives its
+name/artwork from TOM's own Meta enrichment whenever Meta details are available. MetaMetadata-derived
+package mappings are not labeled `metaPackageVerified`.
+
+This fallback exists because MetaMetadata already maintains the exact Meta-ID -> Android-package
+mapping problem that TOM was independently attempting to reconstruct. Its public repository and
+daily workflow are therefore used to avoid repeatedly reverse-engineering the same undocumented
+resolver. If that mapping source is unavailable, the collector continues with its own focused Meta
+package-repair path.
+
+For Meta IDs that still require direct binary repair, TOM's `app_binary_info` query now uses the full
+Android-binary selection shape exercised by the current public MetaMetadata collector (`id`,
+`package_name`, `version_code`, and asset-file fields) and sends the JSON request with `Accept: */*`.
+The existing GraphQL-error diagnostics remain in place, so a future Meta-side change is distinguishable
+from a genuine empty binary result.
