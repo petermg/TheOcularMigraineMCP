@@ -379,13 +379,32 @@ def fetch_meta_section_ids(cfg: dict) -> tuple[set[str], dict]:
     )
     return found, summary
 
-def _store_binary_version_codes(node: dict) -> list[str]:
-    values: list[str] = []
+def _normalize_version_code(value) -> int | str | None:
+    """Preserve Meta binary version codes as JSON numbers whenever they are numeric."""
+    if value is None or isinstance(value, bool):
+        return None
+    if isinstance(value, int):
+        return value
+    if isinstance(value, float) and value.is_integer():
+        return int(value)
+    text = clean(str(value))
+    if not text:
+        return None
+    if re.fullmatch(r"-?\d+", text):
+        try:
+            return int(text)
+        except ValueError:
+            pass
+    return text
+
+
+def _store_binary_version_codes(node: dict) -> list[int | str]:
+    values: list[int | str] = []
 
     def add(value):
-        value = clean(str(value)) if value is not None else None
-        if value and value not in values:
-            values.append(value)
+        normalized = _normalize_version_code(value)
+        if normalized is not None and normalized not in values:
+            values.append(normalized)
 
     # Current Store-details responses expose revision binaries even when the older
     # release_channels query no longer yields a usable latest_supported_binary.
@@ -399,33 +418,59 @@ def _store_binary_version_codes(node: dict) -> list[str]:
     return values
 
 
-def _legacy_binary_version_codes(cfg: dict, app_id: str) -> list[str]:
+def _legacy_binary_version_codes(cfg: dict, app_id: str) -> list[int | str]:
     details = post_form_json(cfg["oculusGraphqlEndpoint"], {
         "doc_id": cfg["appDetailsDocId"],
         "access_token": cfg["appDetailsAccessToken"],
         "variables": {"applicationID": app_id},
     })
     node = (details.get("data") or {}).get("node") or {}
-    values: list[str] = []
+    values: list[int | str] = []
     for channel in ((node.get("release_channels") or {}).get("nodes") or []):
-        version_code = (channel.get("latest_supported_binary") or {}).get("version_code")
-        value = clean(str(version_code)) if version_code is not None else None
-        if value and value not in values:
+        value = _normalize_version_code((channel.get("latest_supported_binary") or {}).get("version_code"))
+        if value is not None and value not in values:
             values.append(value)
     return values
 
 
-def _package_from_binary_version(cfg: dict, app_id: str, version_code: str) -> tuple[str | None, str]:
+def _compact_graphql_errors(errors) -> list[dict[str, object]]:
+    compact: list[dict[str, object]] = []
+    for raw in (errors or [])[:5]:
+        if isinstance(raw, dict):
+            item: dict[str, object] = {}
+            message = clean(raw.get("message"))
+            if message:
+                item["message"] = message[:500]
+            path = raw.get("path")
+            if isinstance(path, list):
+                item["path"] = path[:16]
+            extensions = raw.get("extensions") or {}
+            if isinstance(extensions, dict):
+                code = extensions.get("code")
+                if code is not None:
+                    item["code"] = str(code)[:120]
+            compact.append(item or {"message": str(raw)[:500]})
+        else:
+            compact.append({"message": str(raw)[:500]})
+    return compact
+
+
+def _package_from_binary_version(
+    cfg: dict,
+    app_id: str,
+    version_code: int | str,
+) -> tuple[str | None, str, list[dict[str, object]]]:
     query = """query ($params: AppBinaryInfoArgs!) { app_binary_info(args: $params) { info { binary { ... on AndroidBinary { package_name version_code } } } } }"""
     payload = {
         "doc": query,
+        # Keep numeric version codes numeric. Meta's AppBinaryInfoArgs accepts the native
+        # version-code scalar; converting it to a JSON string can produce an HTTP-200 GraphQL
+        # error/empty-data response that previously looked like an ordinary coverage miss.
         "variables": json.dumps({"params": {"app_params": [{"app_id": app_id, "version_code": version_code}]}}),
         "access_token": cfg["appBinaryAccessToken"],
     }
     result = post_json(cfg["oculusGraphqlEndpoint"], payload)
     info = (((result.get("data") or {}).get("app_binary_info") or {}).get("info") or [])
-    if not info:
-        return None, "app_binary_info_empty"
     saw_binary = False
     for item in info:
         binary = (item or {}).get("binary") or {}
@@ -433,8 +478,14 @@ def _package_from_binary_version(cfg: dict, app_id: str, version_code: str) -> t
             saw_binary = True
         package = clean(binary.get("package_name"))
         if package:
-            return package, "resolved"
-    return None, "package_name_missing" if saw_binary else "app_binary_info_empty"
+            return package, "resolved", []
+
+    graphql_errors = _compact_graphql_errors(result.get("errors"))
+    if graphql_errors:
+        return None, "app_binary_info_graphql_error", graphql_errors
+    if not info:
+        return None, "app_binary_info_empty", []
+    return None, "package_name_missing" if saw_binary else "app_binary_info_empty", []
 
 
 def resolve_package_from_meta_id(cfg: dict, app_id: str) -> dict[str, object]:
@@ -445,7 +496,7 @@ def resolve_package_from_meta_id(cfg: dict, app_id: str) -> dict[str, object]:
         "legacyVersionCodes": [],
         "binaryAttempts": [],
     }
-    tried: set[str] = set()
+    tried: set[int | str] = set()
     store_node = {}
     store_error = None
 
@@ -463,18 +514,21 @@ def resolve_package_from_meta_id(cfg: dict, app_id: str) -> dict[str, object]:
     store_versions = _store_binary_version_codes(store_node) if store_node else []
     result["storeVersionCodes"] = store_versions
 
-    def try_versions(version_codes: list[str], source: str) -> str | None:
+    def try_versions(version_codes: list[int | str], source: str) -> str | None:
         for version_code in version_codes:
             if version_code in tried:
                 continue
             tried.add(version_code)
             try:
-                package, stage = _package_from_binary_version(cfg, app_id, version_code)
-                result["binaryAttempts"].append({
+                package, stage, graphql_errors = _package_from_binary_version(cfg, app_id, version_code)
+                attempt = {
                     "source": source,
                     "versionCode": version_code,
                     "stage": stage,
-                })
+                }
+                if graphql_errors:
+                    attempt["graphqlErrors"] = graphql_errors
+                result["binaryAttempts"].append(attempt)
                 if package:
                     return package
             except Exception as exc:
@@ -493,7 +547,7 @@ def resolve_package_from_meta_id(cfg: dict, app_id: str) -> dict[str, object]:
         return result
 
     legacy_error = None
-    legacy_versions: list[str] = []
+    legacy_versions: list[int | str] = []
     try:
         legacy_versions = _legacy_binary_version_codes(cfg, app_id)
     except Exception as exc:
@@ -513,6 +567,8 @@ def resolve_package_from_meta_id(cfg: dict, app_id: str) -> dict[str, object]:
         result["stage"] = "no_store_node_and_no_binary_version" if not store_error else "store_details_error_no_legacy_binary"
     elif not store_versions and not legacy_versions:
         result["stage"] = "no_binary_version"
+    elif "app_binary_info_graphql_error" in attempt_stages:
+        result["stage"] = "app_binary_info_graphql_error"
     elif "package_name_missing" in attempt_stages:
         result["stage"] = "package_name_missing"
     elif attempts and all(stage == "binary_lookup_error" for stage in attempt_stages):
