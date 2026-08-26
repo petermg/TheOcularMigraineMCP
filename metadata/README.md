@@ -54,3 +54,25 @@ may return 404. TOM appends individual filenames such as `/resolver-config.json`
 A project maintainer may instead bake that same base path into `BuildConfig.TOM_METADATA_BASE_URL`.
 It is baked into current TOM builds as the default shared metadata source; users can override it in
 Settings, and clearing an override returns to the baked default.
+
+## SideQuest placeholder packages and focused Meta package repair
+
+Some Meta-hosted SideQuest listings use `com.autogen.<number>` as an internal placeholder rather than
+the Android package actually installed on Quest. The collector treats those values as **Meta-ID-only
+discovery**: the placeholder is not emitted as an `apps/<package>.json` runtime record, historical
+placeholder records from older collector runs are pruned, and their stale runtime JSON files are
+removed on the next successful run.
+
+Package repair now uses a focused queue instead of revalidating every current SideQuest/Meta Store
+mapping. Official Meta package lookup is attempted for unmapped Meta IDs, SideQuest placeholder IDs,
+ambiguous IDs, and source conflicts. This keeps the undocumented Meta binary endpoint out of the
+thousands-of-requests failure mode while still targeting the records that can actually improve
+coverage.
+
+For package repair, the collector first extracts Android binary version codes exposed by the already
+working Meta Store-details response (`lastRevision`/`firstRevision` revision binaries) and asks Meta's
+binary-info endpoint for the corresponding `package_name`. The older `release_channels` app-details
+path remains as a fallback. `collector-diagnostics.json` records the terminal resolution stage and
+per-version binary attempts (`resolved_store_binary`, `resolved_legacy_binary`, `no_binary_version`,
+`app_binary_info_empty`, `package_name_missing`, or network/error stages), so future coverage gaps show
+where resolution stopped instead of appearing as an undifferentiated "no result".
