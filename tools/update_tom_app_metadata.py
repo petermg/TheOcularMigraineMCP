@@ -35,6 +35,7 @@ DIAGNOSTICS_PATH = META_DIR / "collector-diagnostics.json"
 USER_AGENT = "TheOcularMigraineNative-metadata-collector/1"
 MAX_WORKERS = 8
 SIDEQUEST_ORIGIN = "https://sidequestvr.com"
+METAMETADATA_KNOWN_APPS_URL = "https://raw.githubusercontent.com/threethan/MetaMetadata/main/data/known_oculus_apps.json"
 META_STORE_PAGE_RETRIES = 3
 META_STORE_RETRY_BASE_SECONDS = 1.0
 SIDEQUEST_PLACEHOLDER_PACKAGE_RE = re.compile(r"^com\.autogen\.\d+$", re.I)
@@ -111,8 +112,12 @@ def post_form_json(url: str, fields: dict[str, object], headers: dict[str, str] 
     return json.loads(text)
 
 
-def post_json(url: str, payload: dict) -> dict:
-    raw = request(url, data=json.dumps(payload, separators=(",", ":")).encode(), headers={"Content-Type": "application/json"})
+def post_json(url: str, payload: dict, headers: dict[str, str] | None = None) -> dict:
+    raw = request(
+        url,
+        data=json.dumps(payload, separators=(",", ":")).encode(),
+        headers={"Content-Type": "application/json", **(headers or {})},
+    )
     return json.loads(raw.decode("utf-8"))
 
 
@@ -277,6 +282,52 @@ def fetch_sidequest(
         "placeholderPackages": placeholder_count,
         "placeholderMetaIds": len(placeholder_map),
     }
+
+def fetch_metametadata_package_map() -> tuple[dict[str, set[str]], dict]:
+    """Fetch MetaMetadata's generated Meta-ID -> Android-package map as a fallback only.
+
+    TOM does not copy or execute MetaMetadata/Lightning Launcher code here. This consumes the
+    project's public generated known-app list, just as TOM already consumes its public per-package
+    metadata in the separate MetaMetadata provider. Package provenance remains collector-only.
+    """
+    print("Fetching MetaMetadata known package map…")
+    data = get_json(METAMETADATA_KNOWN_APPS_URL, provider="MetaMetadata known app map")
+    if not isinstance(data, list):
+        raise RuntimeError("MetaMetadata known app map was not a list")
+
+    valid_package = re.compile(r"^[A-Za-z0-9_]+(?:\.[A-Za-z0-9_]+)+$")
+    package_map: dict[str, set[str]] = {}
+    invalid = 0
+    placeholder = 0
+    for item in data:
+        if not isinstance(item, dict):
+            invalid += 1
+            continue
+        app_id = clean(str(item.get("id") or ""))
+        package = clean(item.get("packageName"))
+        if not app_id or not package or not valid_package.fullmatch(package):
+            invalid += 1
+            continue
+        if is_sidequest_placeholder_package(package):
+            placeholder += 1
+            continue
+        package_map.setdefault(app_id, set()).add(package)
+
+    package_count = sum(len(packages) for packages in package_map.values())
+    print(
+        f"MetaMetadata package map contributed {package_count} package mappings across "
+        f"{len(package_map)} Meta IDs"
+    )
+    return package_map, {
+        "status": "ok",
+        "records": len(data),
+        "metaIds": len(package_map),
+        "packageMappings": package_count,
+        "invalidRecords": invalid,
+        "placeholderPackagesSkipped": placeholder,
+        "url": METAMETADATA_KNOWN_APPS_URL,
+    }
+
 
 def fetch_meta_section_ids(cfg: dict) -> tuple[set[str], dict]:
     print("Fetching current Meta Store sections…")
@@ -460,7 +511,36 @@ def _package_from_binary_version(
     app_id: str,
     version_code: int | str,
 ) -> tuple[str | None, str, list[dict[str, object]]]:
-    query = """query ($params: AppBinaryInfoArgs!) { app_binary_info(args: $params) { info { binary { ... on AndroidBinary { package_name version_code } } } } }"""
+    # Keep the AppBinaryInfo selection shape compatible with the currently working public
+    # MetaMetadata collector. This undocumented endpoint has returned server-side execution
+    # exceptions for smaller selection sets even though ordinary GraphQL semantics would allow
+    # them. TOM independently issues the request; no MetaMetadata/Lightning Launcher code runs.
+    query = """
+query ($params: AppBinaryInfoArgs!) {
+  app_binary_info(args: $params) {
+    info {
+      binary {
+        ... on AndroidBinary {
+          id
+          package_name
+          version_code
+          asset_files {
+            edges {
+              node {
+                ... on AssetFile {
+                  file_name
+                  uri
+                  size
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+"""
     payload = {
         "doc": query,
         # Keep numeric version codes numeric. Meta's AppBinaryInfoArgs accepts the native
@@ -469,7 +549,7 @@ def _package_from_binary_version(
         "variables": json.dumps({"params": {"app_params": [{"app_id": app_id, "version_code": version_code}]}}),
         "access_token": cfg["appBinaryAccessToken"],
     }
-    result = post_json(cfg["oculusGraphqlEndpoint"], payload)
+    result = post_json(cfg["oculusGraphqlEndpoint"], payload, headers={"Accept": "*/*"})
     info = (((result.get("data") or {}).get("app_binary_info") or {}).get("info") or [])
     saw_binary = False
     for item in info:
@@ -653,11 +733,45 @@ def enrich_meta(
     placeholder_ids: set[str],
     sidequest_packages: dict[str, set[str]],
     oculusdb_packages: dict[str, set[str]],
+    metametadata_packages: dict[str, set[str]],
 ) -> dict:
     id_to_packages = _id_to_packages(records)
     known_before = len(id_to_packages)
     verified_before = _verified_packages(records)
+
+    # MetaMetadata already maintains a public generated Meta-ID -> Android-package list and
+    # updates it daily. Use that data as a package-mapping fallback for the exact cases that
+    # would otherwise require reverse-engineering Meta's undocumented app_binary_info resolver:
+    # currently unmapped IDs and SideQuest com.autogen placeholders. Artwork/name enrichment
+    # still comes from TOM's own Meta fetch below, and this mapping is never marked Meta-verified.
+    mapping_seed_ids = (set(meta_ids) - set(id_to_packages)) | set(placeholder_ids)
+    metametadata_applied: list[dict[str, object]] = []
+    metametadata_ambiguous: list[dict[str, object]] = []
+    for app_id in sorted(mapping_seed_ids):
+        packages = sorted(metametadata_packages.get(app_id, set()))
+        if not packages:
+            continue
+        if len(packages) > 1:
+            metametadata_ambiguous.append({"appId": app_id, "packages": packages})
+        added: list[str] = []
+        for package in packages:
+            rec = records.setdefault(package, {})
+            existing_id = clean(rec.get("metaAppId"))
+            if existing_id and existing_id != app_id:
+                continue
+            if not existing_id:
+                rec["metaAppId"] = app_id
+            rec["lastSeen"] = seen
+            rec.setdefault("firstSeen", seen)
+            note_package_mapping(rec, "metametadata-map")
+            if package not in id_to_packages.setdefault(app_id, set()):
+                id_to_packages[app_id].add(package)
+                added.append(package)
+        if added:
+            metametadata_applied.append({"appId": app_id, "packages": added})
+
     unmapped_ids = set(meta_ids) - set(id_to_packages)
+    placeholder_ids_needing_lookup = set(placeholder_ids) - set(id_to_packages)
 
     ambiguous_ids = {app_id for app_id, packages in id_to_packages.items() if len(packages) > 1}
     source_conflict_ids = {
@@ -673,14 +787,14 @@ def enrich_meta(
     # package lookup on IDs that actually need repair or disambiguation.
     lookup_ids = sorted(
         unmapped_ids
-        | set(placeholder_ids)
+        | placeholder_ids_needing_lookup
         | ambiguous_ids
         | source_conflict_ids
         | multiply_verified_ids
     )
     print(
         f"Resolving {len(lookup_ids)} focused Meta package mappings "
-        f"({len(unmapped_ids)} unmapped, {len(placeholder_ids)} placeholder IDs, "
+        f"({len(unmapped_ids)} unmapped, {len(placeholder_ids_needing_lookup)} placeholder IDs still unresolved, "
         f"{len(ambiguous_ids)} ambiguous, {len(source_conflict_ids)} source conflicts)…"
     )
 
@@ -801,7 +915,10 @@ def enrich_meta(
         "verifiedMetaIdsBeforeRun": len(verified_before),
         "packageMappingAttempts": len(lookup_ids),
         "unmappedMetaIdsBeforeLookup": len(unmapped_ids),
-        "placeholderMetaIdsBeforeLookup": len(placeholder_ids),
+        "placeholderMetaIdsBeforeLookup": len(placeholder_ids_needing_lookup),
+        "metaMetadataPackageMappingsApplied": len(metametadata_applied),
+        "metaMetadataPackageMappingDetails": metametadata_applied,
+        "metaMetadataPackageMappingAmbiguities": metametadata_ambiguous,
         "ambiguousMetaIdsBeforeLookup": len(ambiguous_ids),
         "sourceConflictMetaIdsBeforeLookup": len(source_conflict_ids),
         "packageMappingResolutionStages": resolution_stage_counts,
@@ -910,6 +1027,14 @@ def main():
         diagnostics["sources"]["sideQuest"] = {"status": "failed", "error": str(exc)}
 
     try:
+        metametadata_packages, metametadata_status = fetch_metametadata_package_map()
+        diagnostics["sources"]["metaMetadataPackageMap"] = metametadata_status
+    except Exception as exc:
+        print(f"WARN MetaMetadata package-map discovery failed: {exc}", file=sys.stderr)
+        metametadata_packages = {}
+        diagnostics["sources"]["metaMetadataPackageMap"] = {"status": "failed", "error": str(exc)}
+
+    try:
         oculusdb_count, oculusdb_packages = fetch_oculusdb(cfg, records, seen)
         diagnostics["sources"]["oculusDb"] = {"status": "ok", "records": oculusdb_count}
     except Exception as exc:
@@ -946,6 +1071,7 @@ def main():
         placeholder_ids=placeholder_ids,
         sidequest_packages=sidequest_packages,
         oculusdb_packages=oculusdb_packages,
+        metametadata_packages=metametadata_packages,
     )
     diagnostics["outputRecords"] = write_outputs(
         records,
