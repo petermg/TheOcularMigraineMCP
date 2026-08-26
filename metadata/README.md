@@ -74,5 +74,18 @@ working Meta Store-details response (`lastRevision`/`firstRevision` revision bin
 binary-info endpoint for the corresponding `package_name`. The older `release_channels` app-details
 path remains as a fallback. `collector-diagnostics.json` records the terminal resolution stage and
 per-version binary attempts (`resolved_store_binary`, `resolved_legacy_binary`, `no_binary_version`,
-`app_binary_info_empty`, `package_name_missing`, or network/error stages), so future coverage gaps show
+`app_binary_info_empty`, `app_binary_info_graphql_error`, `package_name_missing`, or network/error stages), so future coverage gaps show
 where resolution stopped instead of appearing as an undifferentiated "no result".
+
+## Meta binary version-code typing and GraphQL diagnostics
+
+Meta binary package repair preserves numeric `version_code` values as JSON numbers when calling
+`app_binary_info`; numeric strings from Store/App Details are normalized back to integers instead of
+being submitted as quoted JSON strings. This matches the native type returned by Meta's own GraphQL
+responses and avoids turning a type mismatch into a misleading empty package lookup.
+
+If Meta returns an HTTP-200 GraphQL response with an `errors` array, the collector now records the
+attempt as `app_binary_info_graphql_error` and includes a bounded error summary in
+`collector-diagnostics.json`. A GraphQL validation/authentication/type failure is therefore distinct
+from a genuine `app_binary_info_empty` result. Version codes in diagnostics retain their numeric type
+as well, making it possible to verify the exact request shape used for a failing package repair.
