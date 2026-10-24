@@ -1,4 +1,17 @@
-This is a test. How does this look? Does it look nice? I think it's fun.
 
+<h2 style="color:#34caaa">Welcome to Native TOM!</h2>
 
-Do you also think it's fun?
+<p>We're excited to announce
+<strong>The Ocular Migraine Native!</strong></p>
+
+<ul>
+  <li>Better recording workflows</li>
+  <li>Custom themes and fonts</li>
+  <li>New media processing features</li>
+</ul>
+
+<p>
+  <a href="https://github.com/petermg/TheOcularMigraineMCP">
+    Visit our GitHub project
+  </a>
+</p>
