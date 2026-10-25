@@ -25,14 +25,14 @@ This guide describes the **current development build** of The Ocular Migraine Na
 
 ## First-run setup and permissions
 
-This chapter is for someone installing **The Ocular Migraine Native (TOM)** on a Meta Quest for the first time, replacing the original Tasker-based TOM, or fixing missing access after an update. TOM's startup page is titled **The Ocular Migraine — Setup & Recovery**. Completing it prepares the local ADB connection and verifies the access needed by the Native app. It does **not** require the old Tasker application or a permanently connected PC.
+This chapter is for someone installing **The Ocular Migraine Native (TOM)** on a Meta Quest for the first time, replacing the original Tasker-based TOM, or fixing missing access after an update. TOM's startup page is titled **The Ocular Migraine — Setup & Recovery**. Completing it prepares the local ADB connection and verifies the access needed by the Native app. It does **not** require the old Tasker application or a permanently connected PC. **You can install TOM entirely on the Quest, without using a computer, when your headset supports the Android file-manager installation route described below.**
 
 > **Version and verification:** The controls described here were checked against Native TOM **0.1.0-alpha.13.5.138** (`versionCode 2000`). Exact Quest system menus, grant behavior and install prompts can vary by Horizon OS version. Descriptions of what *should* happen are based on source code; final screenshots and behavior still need confirmation on a headset. This is the **user guide**, not a guide to compiling TOM or publishing GitHub releases.
 
 ### 1. What to prepare before installation
 
-- **A supported Meta Quest** in which you can install a compatible, signed Native TOM APK. A new user must first get TOM onto the headset through an authorized sideload/installation method; TOM cannot install itself before it is installed.
-- **Meta Developer Mode enabled.** This is configured through the Meta Horizon mobile app for the headset linked to your eligible Meta developer account. It is **not** the same switch as Android's **Developer options** inside the headset. See [Meta's current device setup instructions](https://developers.meta.com/vr/documentation/android-apps/enable-developer-mode/) if the mobile app's wording has changed.
+- **A supported Meta Quest** in which you can install a compatible, signed Native TOM APK. A new user must first get TOM onto the headset through an authorized sideload/installation method; TOM cannot install itself before it is installed. **A computer is not inherently required for this step.**
+- **Developer access for TOM setup.** The headset-only APK installation path in the original TOM guide did not require Meta Developer Mode to *install the APK*. Native TOM still needs access to Android **Developer options → Wireless debugging** for its on-headset ADB pairing and permission setup. TOM's setup screen tells you to enable **Meta Developer Mode** in the Meta Horizon mobile app if it is off; that switch is distinct from Android **Developer options**. See [Meta's current device setup instructions](https://developers.meta.com/vr/documentation/android-apps/enable-developer-mode/) for current requirements. **Installing the APK and completing TOM's ADB onboarding are separate tasks.**
 - **Wireless debugging access** to the headset's Android settings. TOM will help open Android Settings, but the initial consent and the pairing code come from the headset's own settings UI.
 - **The current TOM APK from a source you trust.** For an upgrade, use the APK with the intended package name, valid signing certificate and appropriate Android versionCode. Do not uninstall an existing TOM simply to try an update.
 - **A few minutes without interruptions.** The pairing code is temporary. Keep the Android pairing-code dialog accessible until TOM has attempted to pair; do not share the code publicly.
@@ -41,13 +41,40 @@ This chapter is for someone installing **The Ocular Migraine Native (TOM)** on a
 
 ### 2. Install TOM or update an existing installation
 
-**New installation:** Obtain a signed Native TOM APK and install it using your preferred trusted Quest sideloading method. One example for users who already have Android Platform Tools and a working USB debugging connection from a PC is:
+**New installation — choose a method:** You can install Native TOM directly on the headset using **Mobile VR Station and the Android Files interface** if that route works on your current Horizon OS. **A PC is not required for that method.** A PC with ADB remains an alternative if the headset-only method is unavailable or your particular headset blocks the installer.
+
+#### Method A — Entirely on your Quest, no PC (Mobile VR Station)
+
+The original TOM guide included a complete **Standalone Installation Method** using [Mobile VR Station on the Meta Quest Store](https://www.meta.com/experiences/mobile-vr-station/3887008398005125/). It is important to preserve that beginner-friendly option. **The exact old menu path is no longer current**: in June 2025, Meta required Mobile VR Station to remove its direct APK-install shortcut. Subsequent no-PC guides describe opening the separate **Android Files** interface from Mobile VR Station's **Configure Manage All Files** tools. This newer path has been documented publicly but **has not yet been verified by us on the exact Horizon OS build used for this guide**.
+
+1. Put on your Quest and open its **Browser**. Download the appropriately signed **Native TOM APK** from the project's trusted release source. Keep the file in **Downloads**; do not download an unrelated APK merely because it has the same application name.
+2. While still wearing the headset, open the [Mobile VR Station store page](https://www.meta.com/experiences/mobile-vr-station/3887008398005125/), or search the Meta Quest Store for **Mobile VR Station**. Install it directly from the store; then launch it.
+3. Allow the storage/file permissions Mobile VR Station actually requests if you are comfortable using it to access the downloaded file.
+4. In Mobile VR Station, look for **Configuration Wizard → Show All Options → Configure Manage All Files**. Menu wording may differ between releases. If offered, select **Enable Manage All Files** and approve the Android access dialog, then return to Mobile VR Station. Some versions may require reopening the app or restarting the headset before the access check succeeds.
+5. Select **Open Files All** (sometimes labeled **Open Files**). This should open Android's built-in **Files** interface, which is distinct from Mobile VR Station's own file browser.
+6. In Android Files, open the navigation menu if necessary and select your headset's **Download / Downloads** folder. Find the actual downloaded **Native TOM `.apk`** file, then select it.
+7. If Android asks whether to allow installation from the app/source that opened the file, use **Settings → Allow from this source**, and return to the file installer. Only authorize an installer and APK that you deliberately chose and trust.
+8. Choose **Install**. For a completely fresh installation, wait for Android's completion message; then choose **Open** or locate **The Ocular Migraine** in the headset's **Unknown Sources** app listing (the Library interface may label it differently). Continue to **step 3: Setup & Recovery** below.
+
+**Updating an existing TOM?** An on-headset install is still subject to Android's **signing-certificate and versionCode checks**. If Android rejects the APK, follow the migration/update notes below. **Do not uninstall your existing TOM to bypass an error.**
+
+> **If these menus are missing:** The original guide's historical route was **Look HERE to Continue → Android Fixes… Configuration Wizard → I'm here to Mod → Configure Scoped Storage → Step 1: Request Access**, ending with the special four-arrow icon beside the APK. That sequence was written for an earlier Mobile VR Station / Quest OS version and **must not be treated as a dependable current installer**. Try the newer **Configure Manage All Files → Open Files All** route above instead. If the Android Files route is also unavailable, move to Method B or another trustworthy, supported installation option. Do not search for modified or unofficial copies of Mobile VR Station merely to restore removed menu options.
+
+> **SCREENSHOT NEEDED — S-008:** The Quest Store's **Mobile VR Station** listing and its **Configuration Wizard → Show All Options → Configure Manage All Files / Open Files All** flow. The Store and Mobile VR Station are external to TOM: capture these separately and use multiple images if needed. (Planned files: `images/user-guide/S-008-mobile-vr-station-setup-a.png`, `images/user-guide/S-008-mobile-vr-station-setup-b.png`)
+
+> **SCREENSHOT NEEDED — S-009:** Android **Files → Downloads → Native TOM APK**, installation permission/confirmation, and **Unknown Sources** entry. Do not expose private downloaded files or identifiers. (Planned files: `images/user-guide/S-009-headset-apk-install-a.png`, `images/user-guide/S-009-headset-apk-install-b.png`)
+
+For context, see [the original TOM standalone installation instructions](https://github.com/petermg/TheOcularMigraineMCP/blob/main/README.md#standalone-installation-method-new), [UploadVR's report about the June 2025 Mobile VR Station restriction](https://www.uploadvr.com/vr-android-file-manager-quest-install-apks-without-a-pc/), and [a newer headset-only walkthrough showing the Manage All Files route](https://vrpupu.com/en/2026/01/show-to-setup-qgo-on-vr-headset-without-pc/). The latter guide installs a different application but demonstrates the same general Android Files installation mechanism; TOM's screens thereafter are different.
+
+#### Method B — Using a computer (optional)
+
+If you already have Android Platform Tools, a data-capable USB connection to the headset, and authorized USB debugging, install the *actual signed Native TOM APK* with:
 
 ```text
 adb install -r TheOcularMigraine.apk
 ```
 
-The command is **an optional PC-based installation example**, not something to enter into the TOM pairing-code fields. APK filenames and download locations may differ; use the real downloaded filename. If installation succeeds, open **The Ocular Migraine** on the Quest and continue to step 3.
+The command is **not something to enter into the TOM pairing-code fields**. Replace `TheOcularMigraine.apk` with the real filename or absolute path you downloaded. After installation, open **The Ocular Migraine** in your headset and continue to the Native **Setup & Recovery** wizard. **This PC method does not eliminate the first-run Wireless Debugging/permission checks in Native TOM.**
 
 **Updating Native TOM over Native TOM:** An ordinary in-place Android update should preserve the app's private data when the package name and signing certificate match and the new versionCode is acceptable. On the next launch TOM rechecks required grants. Do not confuse retaining Android app data with guaranteeing that every old setting is compatible with a newer file format.
 
@@ -165,7 +192,10 @@ Android or Horizon updates, changed Wi-Fi network authorization, expired pairing
 
 | Symptom | First check | Correct next action |
 | --- | --- | --- |
-| **I cannot find Developer Mode on the headset.** | Meta Developer Mode is a **mobile-app** headset setting, not the Android Developer options menu. | Enable it in the Meta Horizon app; then follow TOM's Android Settings instructions. |
+| **I cannot find Developer Mode on the headset.** | The Meta Horizon mobile-app Developer Mode switch is distinct from Android Developer options; the old on-headset APK install method did not require Meta Developer Mode merely to install a file. | For Native TOM's ADB setup, follow the **Setup & Recovery** instructions for obtaining Android Wireless debugging access. |
+| **I want to install TOM without using a PC.** | A Quest-browser download plus Mobile VR Station **Configure Manage All Files → Open Files All** may open Android Files for direct APK installation. | Follow **Method A**, including the installer permission prompt; use Method B only if the headset-only method is unavailable. |
+| **I cannot find Configure Scoped Storage or the four-arrow APK icon.** | These belong to Mobile VR Station's **older** installation route, affected by a June 2025 Meta restriction. | In the newer version, look for **Configure Manage All Files → Open Files All** instead. Exact behavior requires headset testing. |
+| **Android Files does not offer Install.** | Check that the selected file is a real `.apk`, the installing source has permission, and the current Horizon build permits installation through this interface. | Try opening it from Downloads after granting **Allow from this source** when prompted; if still blocked, use an authorized alternative, not a third-party modified installer. |
 | **Open Android Settings only shows App info.** | On the audited Quest firmware, this is expected. | Tap **OPEN** on the Android Settings App info screen. |
 | **Developer options is missing.** | Look under **About headset** for **Build number**. | Tap the build number **seven times**, then open **System → Developer options**. |
 | **Find Pairing Port found nothing.** | Is **Pair device with pairing code** still open? | Reopen that popup; enter its pairing port manually if discovery remains unavailable. |
@@ -187,7 +217,7 @@ For onboarding screens that no longer appear automatically after success, **Setu
 adb shell am start -n openpc.ocular.migraine/openpc.ocular.migraine.nativeapp.StartupSetupActivity --ez openpc.ocular.migraine.extra.OPEN_SETUP_REPAIR true
 ```
 
-The command invokes the source-defined **open for repair** flag; it should display the setup instructions even after completed onboarding, but still needs confirmation on the headset. It is **not** a command to pair, grant permissions or change debugging settings. Do **not** deliberately break your working headset's permissions merely to stage a failure screenshot. Success and permission-failure states (**S-004**, **S-005**) may require a dedicated test setup. TOM's own in-app capture does **not** guarantee capture of separately opened Android Settings or installer prompts (**S-007**); use a legitimate external screenshot workflow for those screens if needed. Always hide a real six-digit pairing code, personal headset identifiers, Wi-Fi details and private app information before publishing.
+The command invokes the source-defined **open for repair** flag; it should display the setup instructions even after completed onboarding, but still needs confirmation on the headset. It is **not** a command to pair, grant permissions or change debugging settings. Do **not** deliberately break your working headset's permissions merely to stage a failure screenshot. Success and permission-failure states (**S-004**, **S-005**) may require a dedicated test setup. TOM's own in-app capture does **not** guarantee capture of separately opened Android Settings, Mobile VR Station, Android Files, or installer prompts (**S-007** to **S-009**); use a legitimate external screenshot workflow for those screens if needed. Always hide a real six-digit pairing code, personal headset identifiers, Wi-Fi details and private app information before publishing.
 
 **Next:** [Finding your way around](#finding-your-way-around) explains the Dashboard, workspace navigation and status indicators. [ADB / Tools](#adb--tools) later covers diagnostics and the live shell beyond the initial pairing procedure.
 
